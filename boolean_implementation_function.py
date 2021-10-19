@@ -19,6 +19,7 @@ weekday_input = bool(weekday_input)
 vacation_input = [input("Insert True or False for Vacation: ")]
 vacation_input = bool(vacation_input)  
 
+#setting the input values manually here. ignore 16-20 lines.
 weekday_input  = True
 vacation_input = False
 
