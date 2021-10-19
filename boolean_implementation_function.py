@@ -23,8 +23,9 @@ vacation_input = bool(vacation_input)
 weekday_input  = True
 vacation_input = False
 
-print(weekday_input)
-print(vacation_input)
+#debugging
+#print(weekday_input)
+#print(vacation_input)
 print(sleep_in(weekday_input, vacation_input))
 # print(type(vacation_input))
 # print(type(weekday_input))
