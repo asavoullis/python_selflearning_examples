@@ -18,6 +18,7 @@ def countEven():
         i+=1;                                       #incriment the sequence by 1
     return sumEven;
 
+#recursion 
 #take the Nth number of fibonacci, initialize the computed ie first 2 values of the fibonacci which are f(0)=1 f(1)=1
 def fib(n, computed = {0: 1, 1: 1}):                    
     if n not in computed:                   #if we don't have the Nth number of the fibonacci then find it
