@@ -6,21 +6,24 @@
 #f(n) = f(n-1) + f(n-2) where n >= 2
 
 def countEven():
-    count = 0;
-    i = 0;
-    sumEven = 0;
+    count = 0;  #loop only for the first 100 numbers
+    i = 0;      #initialize the sequence of numbers
+
+    sumEven = 0;                                #initialize the sum          
     while count<100 :
-        value = fib(i);
-        if(value % 2 == 0):
-          sumEven = sumEven + value;
-          count+=1;
-        i+=1;
+        value = fib(i);                             #find the fibonacci
+        if(value % 2 == 0):                         #check if the fibonacci number is even
+          sumEven = sumEven + value;                    #if its even add it to the sum
+          count+=1;                                     #increment by one 
+        i+=1;                                       #incriment the sequence by 1
     return sumEven;
 
-def fib(n, computed = {0: 1, 1: 1}):
-    if n not in computed:
-        computed[n] = fib(n-2, computed) + fib(n-1, computed)
-    return computed[n]
+#recursion in python 
+#take the Nth number of fibonacci, initialize the computed ie first 2 values of the fibonacci which are f(0)=1 f(1)=1
+def fib(n, computed = {0: 1, 1: 1}):                    
+    if n not in computed:                   #if we don't have the Nth number of the fibonacci then find it
+        computed[n] = fib(n-2, computed) + fib(n-1, computed)               #f(n) = f(n-1) + f(n-2)
+    return computed[n]                              #output the fibonacci number
 
 
 print(countEven())
