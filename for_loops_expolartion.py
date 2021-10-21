@@ -33,6 +33,7 @@ for i in range(1, 10):
 print("\n")
 
 
+
 print("Task4: Type the word Gilly")
 #make the user enter the word Gilly!
 while True:
@@ -43,11 +44,12 @@ print("Finally!")
 print("\n")
 
 
+
+print("Task5: Print the average of positive numbers, enter a negative number to stop.")
+#output the average of positive numbers
 num5 = 0
 count = 0 
 sum = 0
-print("Task5: Print the average of positive numbers, enter a negative number to stop. ")
-#output the average of positive numbers
 while num5 >= 0:
 	num5 = int(input('Enter any positive number: '))
 	if num5 >= 0:
@@ -55,11 +57,33 @@ while num5 >= 0:
 		sum = sum + num5
 avg = sum/count
 print('Total sum of numbers: ', sum, 'Average: ', avg)
+print("\n")
 
 
 
+print("Task6: Reverse order print the strings in a list.")
+#reverse sort the string list 
+players = ['Messi', 'Benzema', 'Neymar','Ronaldo', 'Salah', 'Harry', 'Rooney']
+for i in sorted(players, reverse = True):
+	print(i)
+print("\n")
 
 
+print("Task7: Sort the dictionary.")
+#Sort the dictionary
+dictio = {'f': 1, 'b':4, 'a':3, 'e':9, 'c':2}
+for x in sorted(dictio.items()):
+	print(x)
+print("\n")
+
+	
+print("Task8: Output only the even aged animals.")
+#Sort the dictionary
+animals = [{'name': "Dog", "age": 11}, {'name': "Cat", "age": 16},
+{'name': "Elephant", "age": 44},{'name': "Tiger", "age": 33}]
+for animals in filter(lambda i: i["age"] %2 ==0, animals):
+	print(animals)
+print("\n")
 
 
 
