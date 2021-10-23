@@ -36,6 +36,12 @@ for i in range(0, n):
           break;
       except ValueError:
           print("This is not an integer.\nPlease enter a valid integer...")
+#n = int(input('Enter number of elements for list 1 : '))   
+#for i in range(0, n):         
+#  ele = int(input())
+#  list.append(ele)
+
+
 
 print("Sum of the squares of all even numbers of that list:")
 print(sumofsquares(list))
