@@ -207,3 +207,33 @@ print(double_chars(str1))
 print(double_chars(str2))
 print(double_chars(str3))
 print("\n")
+
+
+
+print("Task 13: String manipulation with the input of the user. ")
+#this function returns the string you entered X times the input integer you entered
+def string_multiplier(string1, integer1):
+#just multiply the inputted string n times
+  return string1 * n
+
+#this program just says hello to your inputted string!
+def hello_name(nam):
+  return "Hello " + nam + "!"
+
+# Using a while True loop to get the different elements for a list of integers.
+while True:
+      number1 = input("Please enter an integer: ")
+      try:
+          n = int(number1)  
+          #used for testing
+          #print("Input is an integer number.")
+          #print("Input number is: ", n)
+          break;
+          #if not an integer
+      except ValueError:
+          print("This is not an integer.\nPlease enter a valid integer...") 
+
+name = input("Please enter your name: ")
+print(hello_name(name))
+print(string_multiplier(name, n))
+print("\n")
