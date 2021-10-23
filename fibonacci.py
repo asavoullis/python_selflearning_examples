@@ -1,9 +1,18 @@
-
 #Program that calculates the sum of the first 100 even-valued Fibonacci numbers
 #The Fibonacci sequence is defined as a sequence of integers starting with 1 and 1, where each subsequent value is the sum of the preceding two. I.e.
 #f(0) = 1
 #f(1) = 1
 #f(n) = f(n-1) + f(n-2) where n >= 2
+
+#######################################
+#from functools import cache,lru_cache
+
+#cache just remembers all of the previous value of the function that it had computed before - Uses alot of memory
+#@cache
+
+#same as cache but, instead of storing all the previous values of the function that you called it with, it only stores a certain number of them - we free alot of memory
+#@lru_cache(maxsize = 5)
+#######################################
 
 def countEven():
     count = 0;  #loop only for the first 100 numbers
