@@ -53,7 +53,7 @@ print("\n")
 
 
 
-print("Task 5: Print the average of positive numbers, enter a negative number to stop. ")
+print("Task 5: Print the average of positive integer numbers, enter a negative integer to stop. ")
 #output the average of positive numbers
 num5 = 0
 count = 0 
@@ -135,12 +135,11 @@ print("\n")
 
 
 
-print("Task 10: Check how many even numbers in a list using a function. Additionally, if it finds a number takes squares it and adds it to the sum ")
+print("Task 10: Check how many even numbers in a list using a function. Additionally, if it finds a number takes squares it and adds it to the sum. ")
 #Create function that checks if its an even number then takes the square of the number if its even and then adds it to the sum -VERSION 2
 inputlist1 = [1,2,3,4,5,6,7,9]   #3
 inputlist2 = [5,8,15,33,5,6,8,2] #4
 inputlist3 = [12,5,8,9,2,4,5,7,3,1,6,6] #6
-
 
 def count_even_in_list(inputlist):
   sumofeven = 0
@@ -166,13 +165,13 @@ print(f"We have {count_even_in_list(inputlist3)[0]} even integers in {inputlist3
 print("\n")
 
 
+
 print("Task 11: Check if the first or the last element in a list is 7. ")
 #given an array of ints within a list check if the first or the last element is a 7
 #if its a 7 print True else False
 list1 = [7,5,6,8,9,6,7,8]
 list2 = [77,5,6,8,9,6,7,78]
 list3 = [9,5,6,8,9,6,7,7]
-
 
 def first_last_7(nums):
 #if the first element of the list or the last element of the list is 7
@@ -184,4 +183,27 @@ def first_last_7(nums):
 print(f"In {list1} its {first_last_7(list1)}")
 print(f"In {list2} its {first_last_7(list2)}")
 print(f"In {list3} its {first_last_7(list3)}")
+print("\n")
+
+
+
+print("Task 12: Return the string with every chracter outputted twice in the same order. ")
+#Given a string return the string where every char in the original,
+#there are 2 same chars in the same order
+str1 = 'Hello'
+str2 = 'Alkis'
+str3 = "John"	
+
+def double_chars(string):
+#initialize an empty string
+  to_return = ''
+#loop over the inputted string
+  for c in string:
+#add 2 times the character in a string
+	  to_return += c*2
+  return to_return
+
+print(double_chars(str1))
+print(double_chars(str2))
+print(double_chars(str3))
 print("\n")
