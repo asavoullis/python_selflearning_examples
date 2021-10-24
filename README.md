@@ -23,7 +23,7 @@ python_selflearning_examples1.py
 python_selflearning_examples2.py 
 
 1:Sum the numbers from 0 to n-1 in different ways - complexity
-2: Multiple input arguments and parameters in funcs *args **args
+2: Multiple input arguments and parameters in funcs *args 2*args
 3: Scope: Global vs Local Variables 
 4: Function that takes int and has 4 different output cases
 
