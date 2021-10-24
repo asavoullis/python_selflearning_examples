@@ -8,7 +8,7 @@ import numpy
 
 ###TASK1###
 """
-Sum the numbers from 0 to n-1 in different ways
+1: Sum the numbers from 0 to n-1 in different ways - complexity
 """
 #although the for and the while loop are essentially doing the same, the while loop takes longer than the for loop to run
 def while_loop(n=50_000_000):
@@ -57,7 +57,7 @@ def sum_math(n=50_000_000):
 
 ###TASK2###
 """
-Multiple input arguments and parameters in funcs
+2: Multiple input arguments and parameters in funcs *args **args
 """
 #passing how ever many input parameters we want 
 def multiply(*numbers):
@@ -82,10 +82,11 @@ def save_user(**user):
 
 
 ###TASK3###
+
+"""
+3: Scope: Global vs Local Variables 
+"""
 message = 'b'
-"""
-Scope: Global vs Local Variables
-"""
 #Scope - the region of the code where a variable is defined
 def greet(name):
 #global message
@@ -97,7 +98,7 @@ def greet(name):
 
 ###Task4###
 """
-Task 4 create a function which takes a single integer
+4: Function that takes int and has 4 different output cases
 """
 #Create a function that when passed an integer, will return Fizz if the int is divisible by 3, Buzz if the int is divisible by 5, FizzBuzz if divisible by both 3 and 5 else the number
 def fizz_buzz(input):
