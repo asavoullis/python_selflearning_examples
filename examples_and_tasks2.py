@@ -4,13 +4,15 @@
 import timeit
 import numpy
 
+
+
+###TASK1###
 """
 Sum the numbers from 0 to n-1 in different ways
 """
-
-###TASK1###
 #although the for and the while loop are essentially doing the same, the while loop takes longer than the for loop to run
 def while_loop(n=50_000_000):
+#when using large numbers we can use _ to make them easier to read
 	i = 0
 	s = 0 #sum
 	#loop all numbers
@@ -54,6 +56,9 @@ def sum_math(n=50_000_000):
 
 
 ###TASK2###
+"""
+Multiple input arguments and parameters in funcs
+"""
 #passing how ever many input parameters we want 
 def multiply(*numbers):
   total = 1
@@ -78,6 +83,9 @@ def save_user(**user):
 
 ###TASK3###
 message = 'b'
+"""
+Scope: Global vs Local Variables
+"""
 #Scope - the region of the code where a variable is defined
 def greet(name):
 #global message
@@ -88,6 +96,9 @@ def greet(name):
 
 
 ###Task4###
+"""
+Task 4 create a function which takes a single integer
+"""
 #Create a function that when passed an integer, will return Fizz if the int is divisible by 3, Buzz if the int is divisible by 5, FizzBuzz if divisible by both 3 and 5 else the number
 def fizz_buzz(input):
   if (input % 3 == 0) and (input % 5 == 0):
@@ -134,7 +145,7 @@ def main():
 
 #dunder == double underscore 
 #allows you to check whether the file is being run as a script or not 
-#__main__ = scritp
+#__main__ = script
 #if __name__ = '__main__' is used to signal that this file is a script and you can run it
 #if your file doesn't contain it then assume the file is used as a library or you should import it.
 if __name__ == '__main__':
