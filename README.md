@@ -19,6 +19,7 @@ python_selflearning_examples1.py
 15: Aquiring index and element from list using for loop
 16: Looping over 3 lists and combine output - using zip
 17: Unpacking
+18: Understanding try, except, else and finally
 
 python_selflearning_examples2.py 
 
