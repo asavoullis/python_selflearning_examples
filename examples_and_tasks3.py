@@ -67,11 +67,13 @@ def multiple_assignment():
   print(c, d, e,f)
   print("\n")
 
+#unpacking
 def tuple_assignment():
 	a, b = 1,2
 	print(a,b)
 	print("\n")
 
+#advanced unpacking
 def tricky_assignments():
 #recursive cyclic structure   ... = cyclic reference
   #a becomes a member of its self b = []
@@ -87,10 +89,41 @@ def tricky_assignments():
   print("\n")
 
 def tricky_assignemnt2():
-  a,b = a[b] = a = [1,2,3], 2
-  print(a,b)
-  print("\n")
+	a,b = a[b] = a = [1,2,3], 2
+	print(a,b)
+	print("\n")
  
+
+
+
+#dynamically adding values v1
+class Person():
+	pass
+person = Person()
+
+first_key = 'first'
+first_val = 'Corey'
+
+
+#setattr is able to use the value of a variable
+#pass in the object that we want to set an attirubute on
+setattr(person, first_key, first_val)  
+
+#we want to get the first attirubute here
+first = getattr(person, first_key)
+
+
+#v2
+class Person2():
+  pass
+person2 = Person()
+
+person_info = {'first': 'Corey', 'last': 'Schafer'}
+
+#the keys will be equal to the keys and the values to the values eg corey for value
+for key, value in person_info.items():
+  setattr(person2, key, value)
+
 
 
 def main():
@@ -102,6 +135,16 @@ def main():
   tricky_assignments()
   multiple_assignment_expression()
   tricky_assignemnt2()
+
+  print("v1:", person.first)
+  
+  print("v2:", person2.first)
+  print("v2:", person2.last)
+  
+  for key in person_info.keys():
+    print("v2 for loop:",getattr(person2, key))
+
+  
 
 #dunder == double underscore 
 #allows you to check whether the file is being run as a script or not 
