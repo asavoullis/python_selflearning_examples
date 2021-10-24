@@ -312,6 +312,7 @@ def f1():
   finally:
     return 2
 print(f1())
+#returns only 2
 
 #v2
 # Python code to illustrate
