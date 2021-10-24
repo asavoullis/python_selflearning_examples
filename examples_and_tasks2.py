@@ -7,8 +7,9 @@ import numpy
 
 
 ###TASK1###
+
 """
-1: Sum the numbers from 0 to n-1 in different ways - complexity
+Sum the numbers from 0 to n-1 in different ways
 """
 #although the for and the while loop are essentially doing the same, the while loop takes longer than the for loop to run
 def while_loop(n=50_000_000):
@@ -56,8 +57,9 @@ def sum_math(n=50_000_000):
 
 
 ###TASK2###
+
 """
-2: Multiple input arguments and parameters in funcs *args **args
+Multiple input arguments and parameters in funcs
 """
 #passing how ever many input parameters we want 
 def multiply(*numbers):
@@ -84,7 +86,7 @@ def save_user(**user):
 ###TASK3###
 
 """
-3: Scope: Global vs Local Variables 
+Scope: Global vs Local Variables
 """
 message = 'b'
 #Scope - the region of the code where a variable is defined
@@ -97,8 +99,9 @@ def greet(name):
 
 
 ###Task4###
+
 """
-4: Function that takes int and has 4 different output cases
+Task 4 create a function which takes a single integer
 """
 #Create a function that when passed an integer, will return Fizz if the int is divisible by 3, Buzz if the int is divisible by 5, FizzBuzz if divisible by both 3 and 5 else the number
 def fizz_buzz(input):
@@ -118,9 +121,10 @@ def main():
   #print('built in sum func\t\t', timeit.timeit(sum_range, number =1))
   #print('built in sum func\t\t', timeit.timeit(numpy_sum, number =1))
   #print('built in sum func\t\t', timeit.timeit(sum_math, number =1))
-  #print(numpy_sum())
+#:, formats the output number to have , and separate every 3 numbers 
+  print(f'{numpy_sum():,}')
   #print(sum_math())
-  #print("\n")
+  print("\n")
 
   print("Task 2: Functions with many or a variable amount of input parameters *args and **args. ")
   print(multiply(2,3,4,5))
@@ -128,17 +132,17 @@ def main():
   print(incriment(2,5))
   print(incriment(2))
   save_user(id = 1, name = "John", age = 22)
-  #print("\n")
+  print("\n")
 
   print("Task 3: Scope of variables. ")
 #for example we have a global variable 
   greet("John")
   print(message)
-  #print("\n")
+  print("\n")
 
   print("Task 4: The fizz_buzz function. ")
   print(fizz_buzz(15), fizz_buzz(3), fizz_buzz(5), fizz_buzz(4))
-  #print("\n")
+  print("\n")
 
 
 
@@ -146,7 +150,7 @@ def main():
 
 #dunder == double underscore 
 #allows you to check whether the file is being run as a script or not 
-#__main__ = script
+#__main__ = scritp
 #if __name__ = '__main__' is used to signal that this file is a script and you can run it
 #if your file doesn't contain it then assume the file is used as a library or you should import it.
 if __name__ == '__main__':
