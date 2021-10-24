@@ -1,6 +1,6 @@
 Table of Contents: 
 
-python_selflearning_examples.py 
+python_selflearning_examples1.py 
 
 1: Print the cube of the ints inside a list
 2: Prints a patern depending on users input
@@ -19,3 +19,11 @@ python_selflearning_examples.py
 15: Aquiring index and element from list using for loop
 16: Looping over 3 lists and combine output - using zip
 17: Unpacking
+
+python_selflearning_examples2.py 
+
+1:Sum the numbers from 0 to n-1 in different ways - complexity
+2: Multiple input arguments and parameters in funcs *args **args
+3: Scope: Global vs Local Variables 
+4: Function that takes int and has 4 different output cases
+
