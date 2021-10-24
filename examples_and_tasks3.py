@@ -90,6 +90,8 @@ def tricky_assignemnt2():
   a,b = a[b] = a = [1,2,3], 2
   print(a,b)
   print("\n")
+ 
+
 
 def main():
   equals_debugging()
@@ -103,7 +105,7 @@ def main():
 
 #dunder == double underscore 
 #allows you to check whether the file is being run as a script or not 
-#__main__ = scritp
+#__main__ = script
 #if __name__ = '__main__' is used to signal that this file is a script and you can run it
 #if your file doesn't contain it then assume the file is used as a library or you should import it.
 if __name__ == '__main__':
