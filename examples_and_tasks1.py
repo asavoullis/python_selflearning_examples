@@ -135,8 +135,8 @@ print("\n")
 
 
 
-print("Task 10: Check how many even numbers in a list using a function. Additionally, if it finds a number takes squares it and adds it to the sum. ")
-#Create function that checks if its an even number then takes the square of the number if its even and then adds it to the sum -VERSION 2
+print("Task 10: Check how many even ints are in a list. For every even int square it and add it to the sum. ")
+#Check how many even ints in a list using a function. Additionally, if it finds an even int then squares the int and then adds it to the sum   -VERSION 2
 inputlist1 = [1,2,3,4,5,6,7,9]   #3
 inputlist2 = [5,8,15,33,5,6,8,2] #4
 inputlist3 = [12,5,8,9,2,4,5,7,3,1,6,6] #6
@@ -238,6 +238,8 @@ print(hello_name(name))
 print(string_multiplier(name, n))
 print("\n")
 
+
+
 print("Task 14: Using context manager - with. ")
 #using with allows you not to have to have to close that file manually  f.close() - this is not only for files, its whenever you are setting up and tearing down resources eg threads and releasing logs OR with databases
 with open('test.txt', 'r') as f:    #opens the file
@@ -251,3 +253,54 @@ print(words)
 #counts the number of elements inside the list 
 word_count = len(words)
 print(f'There are {word_count} words')
+print("\n")
+
+
+
+print("Task 15: Aquiring index and element from list using for loop. ")
+#acquiring both the element and its index from a list.
+names_list = ['Mat', 'John', 'Max', 'Chris', 'Dave', 'Akis']
+
+#to get both the index and the lement use the enumerate function
+for index, name in enumerate(names_list, start =1):
+#start=1 is not necessary, it just indicates we start the index from 1 instead of the default which is 0
+	print(index, name)
+print("\n")
+
+
+
+print("Task 16: Looping over 3 lists and combine output - using zip. ")
+#Given two lists print the same index elements together 
+names_list2 = ['Peter Parker', 'Clark Kent', 'Wade Wilson', 'Bruce Wayne']
+heroes = ['Spiderman', 'Superman', 'Deadpool', 'Batman']
+universes = ['Marvel', 'DC', 'Marvel', 'DC']
+###Traditional way
+#to get both the index and the lement use the enumerate function
+#for index, name in enumerate(names_list2):
+#	hero = heroes[index]	
+
+#advanced way - using zip - #Zip can be used with 3 lists
+#zip is actually returning a tuple of 3 items but we are unpacking them by setting 3 different variables
+for name, hero, universe in zip(names_list2, heroes, universes):
+	print(f'{name} is actually {hero} from {universe}.')
+#in this case all of our lists are of the same length but when using zip with lists of different lenghts then zip will just stop when the shortest list is exhausted.
+#if you want zip to continue until the end of the longest list then you need to use the itertools module , the zip_longest function
+print("\n")
+
+
+
+print("Task 17: Unpacking. ")
+#when unpacking and you are not going to use that variable you can set it to _ to avoid warnings or errors due to unused variable
+a, _ = (1, 2)
+print(a)
+
+#*c takes the values of the remainders, becomes a list containing [3 ,4 ,5]
+a , b, *c = (1, 2, 3, 4, 5)
+print(a, b, c)
+
+#d takes the value of the last element 6 .*c takes the values of the remainders, becomes a list containing [3 ,4 ,5] 
+a , b, *c, d = (1, 2, 3, 4, 5, 6)
+print(a, b, c, d)
+print("\n")
+
+
