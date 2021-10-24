@@ -304,3 +304,55 @@ print(a, b, c, d)
 print("\n")
 
 
+print("Task 18: Understanding try, except, else and finally . ")
+#v1
+def f1():
+  try:
+    return 1
+  finally:
+    return 2
+print(f1())
+
+#v2
+# Python code to illustrate
+# working of try() 
+def divide(x, y):
+    try:
+      # Floor Division : Gives only Fractional
+      # Part as Answer
+      result = x // y
+#Else block will execute only when no exception occurs.
+#The code enters the else block only if the try clause does not raise an exception.
+    except ZeroDivisionError:
+      print("Sorry ! You are dividing by zero ")
+#The code enters the else block only if the try clause does not raise an exception.
+    else:
+      print("Yeah ! Your answer is :", result)
+#Python provides a keyword finally, which is always executed after try and except blocks. The finally block always executes after normal termination of try block or after try block terminates due to some exception.
+    finally: 
+# this block is always executed  
+# regardless of exception generation or try. 
+      print('This is always executed') 
+   
+# Look at parameters and note the working of Program
+divide(3, 2)
+print("\n")
+divide(3, 0)
+print("\n")
+divide(2, 44)
+print("\n")
+
+#Try: This block will test the excepted error to occur
+#Except:  Here you can handle the error
+#Else: If there is no exception then this block will be executed
+#Finally: Finally block always gets executed either exception is generated or not
+
+
+#First try clause is executed i.e. the code between try and except clause.
+#If there is no exception, then only try clause will run, except clause will not get executed.
+#If any exception occurs, the try clause will be skipped and except clause will run.
+#If any exception occurs, but the except clause within the code doesn’t handle it, it is passed on to the outer try statements. If the exception is left unhandled, then the execution stops.
+#A try statement can have more than one except clause.
+
+
+
