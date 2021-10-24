@@ -17,3 +17,5 @@ python_selflearning_examples.py
 13: String manipulation with the input of the user
 14: Using context manager - with
 15: Aquiring index and element from list using for loop
+16: Looping over 3 lists and combine output - using zip
+17: Unpacking
