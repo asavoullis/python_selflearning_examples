@@ -237,3 +237,17 @@ name = input("Please enter your name: ")
 print(hello_name(name))
 print(string_multiplier(name, n))
 print("\n")
+
+print("Task 14: Using context manager - with. ")
+#using with allows you not to have to have to close that file manually  f.close() - this is not only for files, its whenever you are setting up and tearing down resources eg threads and releasing logs OR with databases
+with open('test.txt', 'r') as f:    #opens the file
+	file_contents = f.read()          #reads the file
+
+#splits the number of words and saves them as elements in a list called words
+#it parses over the file contents and splits the words whenever there is a space
+words = file_contents.split(' ')     
+print(words)
+
+#counts the number of elements inside the list 
+word_count = len(words)
+print(f'There are {word_count} words')
