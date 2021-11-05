@@ -51,7 +51,23 @@ python_selflearning_examples2.py
 
 4: Function that takes int and has 4 different output cases
 
-  
+5: Concatinate 2 tuples
+
+6: Initialize a 5 by 5 numpy array with only zeros.
+
+7: Read a .csv file using Pandas.
+
+8: Create a Pandas Series from data.
+
+9: Reverse a string.
+
+10: Create a new column in pandas by using values from other column.
+
+11: Select columns in pandas and add them to a new dataframe.
+
+12: Select columns in pandas and add them to a new dataframe.
+
+
   
   
 python_selflearning_examples3.py 
