@@ -209,18 +209,67 @@ def simplify_if_statements_ifxin():
 
 
 
+"""
+Task12: Simplify if statements with if x in list 
+Please write a python function that returns the length of the longest sequence of ascending digits found in a string. Non-digit characters should terminate a sequence of digits.
+"""
+# Examples:
+#  1. Input string: “834562f”. The output integer should be 4 because the longest sequence is
+#  “3456”.
+#  2. Input string: “12g168rfa23”. The output integer should be 3 because the longest sequence is
+#  “168”
+string0 = "834562f"
+string1 = "12g168rfa23"
+#string2 = "1234fga5782"
+
+def countLongestAscending(array):
+    maxCount = 0
+    currentCount = 0
+    previousItem = array[0]
+    for item in array:
+        if (item.isnumeric() and previousItem.isnumeric()):
+            #print("current item is:", item)
+            #print("previous item is:", previousItem)
+          # cast previous item to int and compare it with the next item that is also casted into int
+            if(int(previousItem)< int(item)):
+          # if the next item is greater increase current count
+                currentCount += 1
+            else:
+          # else set it back to 1
+                currentCount =1
+        else:
+          # if the current element is not numeric set currentCount to 1
+            currentCount =1
+        previousItem = item
+        #print("storing previousItem:", item)
+        #print("currentCount:", currentCount)
+        #print("maxCount", maxCount)
+        #print("\n")
+
+      # if the currentCount's value is greater than the maxCount's value then
+        if(currentCount> maxCount):
+      # set the maxCount's value to the currentCount's value
+            maxCount = currentCount
+    return maxCount
+
+
 
 def main():
 	iterate_with_enumerate()
 	list_comprehension()
 	sort_complex_iterables()
+	
 	store_unique_values_with_sets()
 	save_memory_with_generators()
 	define_default_values_dicts()
+	
 	count_hashable_objects()
 	formating_strings()
 	merge_dictionaries_double_star()
+	
 	simplify_if_statements_ifxin()
+	countLongestAscending(string0)
+	countLongestAscending(string1)
 	
 if __name__ == '__main__':
 	main()
