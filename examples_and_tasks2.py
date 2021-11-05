@@ -8,8 +8,6 @@ import pandas as pd
 """
 Task1: Sum the numbers from 0 to n-1 in different ways
 """
-
-
 # although the for and the while loop are essentially doing the same, the while loop takes longer than the for loop to run
 def while_loop(n=50_000_000):
     # when using large numbers we can use _ to make them easier to read
@@ -63,8 +61,6 @@ def sum_math(n=50_000_000):
 """
 Task2: Multiple input arguments and parameters in funcs
 """
-
-
 # passing how ever many input parameters we want
 def multiply(*numbers):
     total = 1
@@ -93,8 +89,6 @@ def save_user(**user):
 Task3: Scope - Global vs Local Variables
 """
 message = 'b'
-
-
 # Scope - the region of the code where a variable is defined
 def greet(name):
     # global message
@@ -107,8 +101,6 @@ def greet(name):
 """
 Task4: Create a function which takes a single integer
 """
-
-
 # Create a function that when passed an integer, will return Fizz if the int is divisible by 3, Buzz if the int is divisible by 5, FizzBuzz if divisible by both 3 and 5 else the number
 def fizz_buzz(input):
     if (input % 3 == 0) and (input % 5 == 0):
@@ -126,8 +118,6 @@ Task5: Concatinate 2 tuples
 # create a function that concatinates 2 tuples
 tup1 = (1, "a", True)
 tup2 = (4, 5, 6, False)
-
-
 def tupleconcat(tupl1, tupl2):
     # adds them in order first tup1 and then tup2 at its end
     return (tupl1 + tupl2)
@@ -136,8 +126,6 @@ def tupleconcat(tupl1, tupl2):
 """
 Task 6: Initialize a 5 by 5 numpy array with only zeros.
 """
-
-
 def array5by5zeros():
     n1 = np.zeros((5, 5))
     return n1
@@ -146,8 +134,6 @@ def array5by5zeros():
 """
 Task 7: Read a .csv file using Pandas.
 """
-
-
 # def read_csv_file_pandas(file):
 #     df = pd.read_csv(file)
 #     return df
@@ -157,8 +143,6 @@ Task 7: Read a .csv file using Pandas.
 Task 8: Create a Pandas Series from data.
 """
 data = ["1", 2, "three", 4.0]
-
-
 def createa_Pandas_Series(inputdata):
     series = pd.Series(inputdata)
     typeofseries = type(series)
@@ -209,6 +193,52 @@ def delete_Column_from_dataframe(inputdataframe):
     # axis = 1 means columns, default - axis = 0 means rows
     dataframe2 = dataframe2.drop(["col1"], axis=1)
     return (dataframe2)
+
+
+
+"""
+Task 13: Warmup-1 > monkey_trouble. Return True if both smile or neither is smiling.
+"""
+def monkey_trouble(a_smile, b_smile):
+  if (a_smile and not b_smile) or (not a_smile and b_smile):
+    return False
+  else:
+    return True
+
+
+
+"""
+Task 14: Given two int values, return their sum. Unless the two values are the same, then return double their sum.
+"""
+def sum_double(a, b):
+  if a == b:
+    return (2*(a+b))
+  else:
+    return (a+b)
+
+
+
+"""
+Task 15: Given an int n, return the absolute difference between n and 21, except return double the absolute difference if n is over 21.
+"""
+def diff21(n):
+  if n <= 21:
+    return 21 - n
+  else:
+    return (n - 21) * 2
+
+
+
+"""
+Task 16: We have a loud talking parrot. The "hour" parameter is the current hour time in the range 0..23. We are in trouble if the parrot is talking and the hour is before 7 or after 20. Return True if we are in trouble.
+"""
+def parrot_trouble(talking, hour):
+# or just return (talking and (hour < 7 or hour > 20))
+  if (talking and hour<7) or (talking and hour>20):
+    return True
+  else:
+    return False
+
 
 
 
@@ -275,7 +305,31 @@ def main():
     print(delete_Column_from_dataframe(d2))
     print("\n")
 
+    print("Task 13: Warmup-1 > monkey_trouble. Return True if both smile or neither is smiling. ")
+    print(monkey_trouble(True, True))
+    print(monkey_trouble(False, False))
+    print(monkey_trouble(False, True))
+    print(monkey_trouble(True, False))
+    print("\n")
 
+    print("Task 14: Given two int values, return their sum. Unless the two values are the same, then return double their sum. ")
+    print(sum_double(2, 2))
+    print(sum_double(1, 4))
+    print("\n")
+
+    print("Task 15: Given an int n, return the absolute difference between n and 21, except return double the absolute difference if n is over 21. ")
+    print(diff21(5))
+    print(diff21(0))
+    print(diff21(25))
+    print("\n")
+
+    print("Task16: We are in trouble if the parrot is talking and the hour is before 7 or after 20. Return True if we are in trouble. ")
+    print(parrot_trouble(True,6))
+    print(parrot_trouble(True, 20))
+    print(parrot_trouble(False, 14))
+    print(parrot_trouble(True, 15))
+    print(parrot_trouble(False, 3))
+    print("\n")
 
 
 
