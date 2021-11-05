@@ -223,6 +223,7 @@ string1 = "12g168rfa23"
 #string2 = "1234fga5782"
 
 def countLongestAscending(array):
+#counts longest ascending order numbers in a string
     maxCount = 0
     currentCount = 0
     previousItem = array[0]
