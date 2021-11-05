@@ -210,8 +210,7 @@ def simplify_if_statements_ifxin():
 
 
 """
-Task12: Simplify if statements with if x in list 
-Please write a python function that returns the length of the longest sequence of ascending digits found in a string. Non-digit characters should terminate a sequence of digits.
+Task12: Please write a python function that returns the length of the longest sequence of ascending digits found in a string. Non-digit characters should terminate a sequence of digits.
 """
 # Examples:
 #  1. Input string: “834562f”. The output integer should be 4 because the longest sequence is
