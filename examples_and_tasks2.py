@@ -105,7 +105,7 @@ def greet(name):
 
 
 """
-Task4: create a function which takes a single integer
+Task4: Create a function which takes a single integer
 """
 
 
@@ -161,8 +161,8 @@ data = ["1", 2, "three", 4.0]
 
 def createa_Pandas_Series(inputdata):
     series = pd.Series(inputdata)
-    return (series)
-    return (type(series))
+    typeofseries = type(series)
+    return (series, typeofseries)
 
 
 """
@@ -206,6 +206,7 @@ Task 12: Select columns in pandas and add them to a new dataframe.
 d2={"col1":[1,2,3],"col2":["A","B","C"]}
 def delete_Column_from_dataframe(inputdataframe):
     dataframe2 = pd.DataFrame(inputdataframe)
+    # axis = 1 means columns, default - axis = 0 means rows
     dataframe2 = dataframe2.drop(["col1"], axis=1)
     return (dataframe2)
 
