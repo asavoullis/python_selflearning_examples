@@ -268,6 +268,72 @@ def not_String(str):
 
 
 
+"""
+Task19: Given a non-empty string and an int n, return a new string where the char at index n has been removed. 
+The value of n will be a valid index of a char in the original string (i.e. n will be in the range 0..len(str)-1 inclusive).
+"""
+def missing_char(str, n):
+  newstr = str.replace(str[n], "")
+  return newstr
+
+
+
+"""
+Task20: Given a string, we'll say that the front is the first 3 chars of the string. 
+If the string length is less than 3, the front is whatever is there. Return a new string which is 3 copies of the front.
+"""
+def front3(str):
+  str_new = 3*str[0:3]
+  return str_new
+
+
+
+"""
+Task21: Given 2 strings, a and b, return the number of the positions where they contain the same length 2 substring. 
+So "xxcaazz" and "xxbaaz" yields 3, since the "xx", "aa", and "az" substrings appear in the same place in both strings.
+"""
+def string_match(a, b):
+    # Figure which string is shorter.
+    shorter = min(len(a), len(b))
+    count = 0
+
+    # Loop i over every substring starting spot.
+    # Use length-1 here, so can use char str[i+1] in the loop
+    # range(len(b)-1) or range(len(a)-1) also works
+    for i in range(shorter - 1):
+        a_sub = a[i:i + 2]
+        b_sub = b[i:i + 2]
+        if a_sub == b_sub:
+            count = count + 1
+    return count
+
+
+
+"""
+Task22: Given an array of ints, return True if the sequence of numbers 1, 2, 3 appears in the array somewhere.
+"""
+def array123(nums):
+    # Note: the range() of a negative value will not iterate and go on to retrun False immediately
+    # Note: iterate with length-2, so can use i+1 and i+2 in the loop
+    for i in range(len(nums)-2):
+        if nums[i]==1 and nums[i+1]==2 and nums[i+2]==3:
+            return True
+    return False
+
+
+
+"""
+Task23: Given an array of ints, return True if one of the first 4 elements in the array is a 9. 
+The array length may be less than 4.
+"""
+def array_front9(nums):
+    for i in range(0,len(nums)):
+        if nums[i] == 9 and i < 4:
+            return True
+    return False
+
+
+
 
 
 def main():
@@ -369,6 +435,40 @@ def main():
     print(not_String('candy'))
     print(not_String('x'))
     print(not_String('not bad'))
+    print("\n")
+
+    print("Task19: Given a non-empty string and an int n, return a new string where the char at index n has been removed. ")
+    print(missing_char('kitten', 1))
+    print(missing_char('chocolate', 8))
+    print(missing_char('Hi', 0))
+    print("\n")
+
+    print("Task20: Given a string, if the string length is less than 3, the front is whatever is there. Return a new string which is 3 copies of the front.")
+    print(front3('ab'))
+    print(front3('a'))
+    print(front3(''))
+    print(front3('Chocolate'))
+    print("\n")
+
+    print("Task21: Given 2 strings, a and b, return the number of the positions where they contain the same length 2 substring. ")
+    print(string_match('abc', 'abc'))
+    print(string_match('abc', 'axc'))
+    print(string_match('xxcaazz', 'xxbaaz'))
+    print("\n")
+
+    print("Task22: Given an array of ints, return True if the sequence of numbers 1, 2, 3 appears in the array somewhere. ")
+    print(array123([1, 1, 2, 3, 1]))
+    print(array123([1, 1, 2, 4, 1]))
+    print(array123([1, 1, 2, 1, 2, 3]))
+    print(array123([1, 2]))
+    print("\n")
+
+    print("Task23: Given an array of ints, return True if one of the first 4 elements in the array is a 9. ")
+    print(array_front9([1, 2, 9, 3, 4]))
+    print(array_front9([1, 2, 3, 4, 9]))
+    print(array_front9([1, 2, 3, 4, 5]))
+    print(array_front9([2]))
+    print(array_front9([]))
     print("\n")
 
 
