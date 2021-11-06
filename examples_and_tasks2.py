@@ -199,7 +199,7 @@ def delete_Column_from_dataframe(inputdataframe):
 """
 Task 13: Warmup-1 > monkey_trouble. Return True if both smile or neither is smiling.
 """
-def monkey_trouble(a_smile, b_smile):
+def monkey_Trouble(a_smile, b_smile):
   if (a_smile and not b_smile) or (not a_smile and b_smile):
     return False
   else:
@@ -230,14 +230,42 @@ def diff21(n):
 
 
 """
-Task 16: We have a loud talking parrot. The "hour" parameter is the current hour time in the range 0..23. We are in trouble if the parrot is talking and the hour is before 7 or after 20. Return True if we are in trouble.
+Task 16: We have a loud talking parrot. The "hour" parameter is the current hour time in the range 0..23. 
+We are in trouble if the parrot is talking and the hour is before 7 or after 20. Return True if we are in trouble.
 """
-def parrot_trouble(talking, hour):
+def parrot_Trouble(talking, hour):
 # or just return (talking and (hour < 7 or hour > 20))
   if (talking and hour<7) or (talking and hour>20):
     return True
   else:
     return False
+
+
+
+"""
+Task 17: Given a string, return a new string where the first and last chars have been exchanged. 
+"""
+def str_Replace_Front_Back(str):
+    if len(str) <= 1:
+        return str
+
+    mid = str[1:len(str) - 1]  # can be written as str[1:-1]
+
+    # last + mid + first
+    return str[len(str) - 1] + mid + str[0]
+
+
+
+"""
+Task18: Given a string, return a new string where "not " has been added to the front. 
+However, if the string already begins with "not", return the string unchanged.
+"""
+def not_String(str):
+  if str[0:3] == "not":
+    return str
+  else:
+    return ("not " + str)
+
 
 
 
@@ -306,10 +334,10 @@ def main():
     print("\n")
 
     print("Task 13: Warmup-1 > monkey_trouble. Return True if both smile or neither is smiling. ")
-    print(monkey_trouble(True, True))
-    print(monkey_trouble(False, False))
-    print(monkey_trouble(False, True))
-    print(monkey_trouble(True, False))
+    print(monkey_Trouble(True, True))
+    print(monkey_Trouble(False, False))
+    print(monkey_Trouble(False, True))
+    print(monkey_Trouble(True, False))
     print("\n")
 
     print("Task 14: Given two int values, return their sum. Unless the two values are the same, then return double their sum. ")
@@ -324,14 +352,24 @@ def main():
     print("\n")
 
     print("Task16: We are in trouble if the parrot is talking and the hour is before 7 or after 20. Return True if we are in trouble. ")
-    print(parrot_trouble(True,6))
-    print(parrot_trouble(True, 20))
-    print(parrot_trouble(False, 14))
-    print(parrot_trouble(True, 15))
-    print(parrot_trouble(False, 3))
+    print(parrot_Trouble(True,6))
+    print(parrot_Trouble(True, 20))
+    print(parrot_Trouble(False, 14))
+    print(parrot_Trouble(True, 15))
+    print(parrot_Trouble(False, 3))
     print("\n")
 
+    print("Task 17: Given a string, return a new string where the first and last chars have been exchanged. ")
+    print(str_Replace_Front_Back("code"))
+    print(str_Replace_Front_Back("a"))
+    print(str_Replace_Front_Back("ba"))
+    print("\n")
 
+    print("Task18: Given a string, return a new string where 'not' has been added to the front. However, if the string already begins with 'not', return the string unchanged. ")
+    print(not_String('candy'))
+    print(not_String('x'))
+    print(not_String('not bad'))
+    print("\n")
 
 
 
