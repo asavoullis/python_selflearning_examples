@@ -216,6 +216,216 @@ def countLongestAscending(array):
     return maxCount
 
 
+"""Task13: Given a string name, e.g. "Bob", return a greeting of the form "Hello Bob!". """
+def hello_name(name):
+    return 'Hello ' + name + "!"
+
+
+"""Task14: Given two strings, a and b, return the result of putting them together in the order abba, 
+e.g. "Hi" and "Bye" returns "HiByeByeHi. """
+def make_abba(a, b):
+    return a+b+b+a
+
+
+"""Task15: Given a string, return a "rotated left 2" version where the first 2 chars are moved to the end. 
+The string length will be at least 2."""
+def left2(str):
+    return str[2:] + str[:2]
+
+
+"""Task16: Given 2 strings return their concatenation, except omit the first char of each. 
+The strings will be at least length 1."""
+def non_start(a, b):
+    return a[1:] + b[1:]
+
+
+"""Task17: Given 2 strings, a and b, return a string of the form short+long+short, 
+with the shorter string on the outside and the longer string on the inside."""
+def combo_string(a, b):
+    if len(a) >= len(b):
+        return b + a + b
+    else:
+        return a + b + a
+
+
+"""Task18: Given a string, return a version without the first and last char, so "Hello" yields "ell". """
+def without_end(input_string):
+    return input_string[1:-1]
+
+
+"""Task19: Given a string of even length, return the first half. So the string "WooHoo" yields "Woo"."""
+def first_half(str):
+    # we need // rounds it down to the lowest integer 5//2 = 2  but 5/2 = 2.5
+    return str[:(len(str)//2)]
+
+
+"""Task20: Given an array of ints, return True if the array contains a 2 next to a 2 somewhere. """
+def has22(nums):
+    # using the zip function
+    # the zip function returns tuples , in this case if array is [1, 2, 2] then it will return (1, 2) and (2, 2)
+    return (2, 2) in zip(nums, nums[1:])
+
+def has22v2(nums):
+    for x in range(len(nums)-1):
+        if (nums[x] == 2) and (nums[x+1] == 2):
+            return True
+    return False
+
+
+"""Task21: Return the sum of the numbers in the array, except ignore sections of numbers 
+starting with a 6 and extending to the next 7 
+(every 6 will be followed by at least one 7). Return 0 for no numbers."""
+def sum67(nums):
+    flag = False
+    sum = 0
+
+    for num in nums:
+        if (num == 6):  # Turn the flag on if the number is 6
+            flag = True
+            continue
+        if (num == 7 and flag is True):  # Turn the flag Off when 7 is seen after 6
+            flag = False
+            continue
+        if (flag is False):  # Keep on adding the nums otherwise
+            sum += num
+    return sum
+
+def sum67v2(nums):
+    state = 0
+    s = 0
+    for n in nums:
+        if state == 0:
+            if n == 6:
+                state = 1
+            else:
+                s += n
+        else:
+            if n == 7:
+                state = 0
+    return s
+
+
+"""Task22: Return the sum of the numbers in the array, returning 0 for an empty array. Except the number 13 is very unlucky, 
+so it does not count and numbers that come immediately after a 13 also do not count."""
+def sum13(nums):
+    sum1 = 0
+    state = 0
+    for i in nums:
+        if state == 0 and i != 13:
+            sum1 = sum1 + i
+        if i == 13:
+            state = 1
+        else:
+            state = 0
+    return sum1
+
+
+"""Task23: Return the "centered" average of an array of ints, which we'll say is the mean average of the values, 
+except ignoring the largest and smallest values in the array. If there are multiple copies of the smallest value, 
+ignore just one copy, and likewise for the largest value. Use int division to produce the final average. You may 
+assume that the array is length 3 or more. """
+def centered_average(nums):
+    return (sum(nums) - max(nums) - min(nums)) / (len(nums) - 2)
+
+
+"""Task24: Given an array length 1 or more of ints, return the difference between the largest and smallest values in the array. """
+def big_diff(nums):
+    return max(nums) - min(nums)
+
+
+"""Task25: Return the number of even ints in the given array. """
+def count_evens(nums):
+    count = 0
+    for i in nums:
+        if i % 2 == 0:
+            count += 1
+        else:
+            count = count
+    return count
+
+
+"""Task26: Return True if the given string contains an appearance of "xyz" where the xyz is not directly preceeded by a fullstop. 
+So "xxyz" counts but "x.xyz" does not. """
+def xyz_there(str):
+    for i in range(0, len(str) - 2):
+        if str[i-1] != "." and str[i:i+3] == "xyz":
+            return True
+    return False
+
+
+"""Task27: Given two strings, return True if either of the strings appears at the very end of the other string, ignoring upper/lower case. """
+def end_other(a, b):
+    alen = len(a)
+    blen = len(b)
+    a = a.lower()
+    b = b.lower()
+    if a[-blen:] == b:
+        return True
+    if b[-alen:] == a:
+        return True
+    return False
+
+def end_otherv2(a, b):
+    # using the function endswith
+    a = a.lower()
+    b = b.lower()
+    return a.endswith(b) or b.endswith(a)
+
+
+"""Task28: Return the number of times that the string "code" appears anywhere in the given string, 
+except we'll accept any letter for the 'd', so "cope" and "cooe" count."""
+def count_code(str):
+    count = 0
+    for i in range(len(str) - 3):
+        if str[i:i + 2] == "co" and str[i + 3] == "e":
+            count += 1
+    return count
+
+
+"""Task29: Return the number of times that the string "hi" appears anywhere in the given string."""
+def count_hi(str):
+    count = 0
+    for i in range(len(str)-1):
+        if str[i:i+2] == "hi":
+            count += 1
+    return count
+
+
+"""Task30: Given a string, return a string where for every char in the original, there are two chars. """
+def double_char(str):
+    str_output = ""
+    for i in str:
+        str_output = str_output + i*2
+    return str_output
+
+def double_charv2(str):
+    result = ""
+    for i in range(len(str)):
+        result += str[i] + str[i]
+    return result
+
+
+"""Task31: Return True if the string "cat" and "dog" appear the same number of times in the given string. """
+def cat_dog(str):
+    if str.count('cat') == str.count('dog'):
+        return True
+    else:
+        return False
+
+
+"""Task32: We want make a package of goal kilos of chocolate. We have small bars (1 kilo each) and big bars (5 kilos each). 
+Return the number of small bars to use, assuming we always use big bars before small bars. Return -1 if it can't be done. """
+def make_chocolate(small, big, goal):
+    if goal >= 5 * big:
+        remainder = goal - 5 * big
+    else:
+        remainder = goal % 5
+    if remainder <= small:
+        return remainder
+    return -1
+
+
+
 def main():
     print("Task1: Iterate with enumerate instead of range + len. ")
     print(iterate_with_enumerate())
@@ -252,16 +462,150 @@ def main():
     print(countLongestAscending(string1))
 
     print("Task12: Function that returns the length of the longest sequence of ascending digits found in a string. \
-    Non-digit characters should terminate a sequence of digits.")
+Non-digit characters should terminate a sequence of digits.")
     arrayexample = "123fsg213"
     arrayexample2 = "fas12f1f45678"
     print(countLongestAscending(arrayexample))
     print(countLongestAscending(arrayexample2))
     print(countLongestAscending(string1))
     print(countLongestAscending(string0))
+    print("\n")
 
+    print('Task13: Given a string name, e.g. "Bob", return a greeting of the form "Hello Bob!". ')
+    print(hello_name("Bob"))
+    print(hello_name("X"))
+    print("\n")
 
+    print("Task14: Given two strings, a and b, return the result of putting them together in the order abba. ")
+    print(make_abba('Hi', 'Bye'))
+    print(make_abba('What', 'Up'))
+    print("\n")
 
+    print('Task15: Given a string, return a "rotated left 2" version where the first 2 chars are moved to the end. ')
+    print(left2('Hello'))
+    print(left2('Chocolate'))
+    print(left2('12345'))
+    print("\n")
+
+    print('Task16: Given 2 strings, return their concatenation, except omit the first char of each. ')
+    print(non_start('shotl', 'java'))
+    print(non_start('mart', 'dart'))
+    print(non_start('ab', 'xy'))
+    print("\n")
+
+    print("Task17: Given 2 strings, a and b, return a string of the form short+long+short, \
+with the shorter string on the outside and the longer string on the inside.")
+    print(combo_string('Hello', 'hi'))
+    print(combo_string('hi', 'Hello'))
+    print("\n")
+
+    print('Task18: Given a string, return a version without the first and last char, so "Hello" yields "ell". ')
+    print(without_end('java'))
+    print(without_end('coding'))
+    print("\n")
+
+    print('Task19: Given a string of even length, return the first half. So the string "WooHoo" yields "Woo". ')
+    print(first_half('WooHoo'))
+    print(first_half('HelloThere'))
+    print("\n")
+
+    print("Task20: Given an array of ints, return True if the array contains a 2 next to a 2 somewhere. ")
+    print(has22([2, 1, 2, 2]))
+    print(has22v2([2, 1, 2, 2]))
+    print(has22([2, 1, 2]))
+    print(has22v2([2, 1, 2]))
+    print("\n")
+
+    print("Return the sum of the numbers in the array, except ignore sections of numbers starting with a 6 and extending to the next 7 \
+    (every 6 will be followed by at least one 7). Return 0 for no numbers")
+    print(sum67([1, 2, 2, 6, 99, 99, 7]))
+    print(sum67v2([1, 2, 2, 6, 99, 99, 7]))
+    print(sum67([1, 1, 6, 7, 2]))
+    print(sum67v2([1, 1, 6, 7, 2]))
+    print(sum67([1, 2, 2]))  #5
+    print(sum67v2([1, 2, 2]))
+    print("\n")
+
+    print("Task22: Return the sum of the numbers in the array, returning 0 for an empty array. Except the number 13 is very unlucky, \
+so it does not count and numbers that come immediately after a 13 also do not count.")
+    print(sum13([1, 2, 2, 1]))  #6
+    print(sum13([1, 2, 2, 1, 13]))  #6
+    print(sum13([13, 1, 2, 13, 2, 1, 13])) #3
+    print("\n")
+
+    print("Task23: Return the 'centered' average of an array of ints, which we'll say is the mean average of the values, \
+except ignoring the largest and smallest values in the array.")
+    print(centered_average([1, 2, 3, 4, 100])) #5
+    print(centered_average([1, 1, 5, 5, 10, 8, 7])) #5
+    print(centered_average([-10, -4, -2, -4, -2, 0])) #-3
+    print("\n")
+
+    print("Task24: Given an array length 1 or more of ints, return the difference between the largest and smallest values in the array")
+    print(big_diff([10, 3, 5, 6])) #7
+    print(big_diff([7, 2, 10, 9])) #8
+    print(big_diff([2, 10, 7, 2])) #8
+    print(big_diff([2, 2])) #0
+    print("\n")
+
+    print("Task25: Return the number of even ints in the given array. ")
+    print(count_evens([2, 1, 2, 3, 4])) #3
+    print(count_evens([2, 2, 0])) #3
+    print(count_evens([1, 3, 5])) #0
+    print("\n")
+
+    print('Task26: Return True if the given string contains an appearance of "xyz" where the xyz is not directly preceeded by a period. ')
+    print(xyz_there('abc.xyz')) #False
+    print(xyz_there('xyz.abc')) #True
+    print(xyz_there('abcxyz')) #True
+    print(xyz_there('abc.xyzxyz')) #False
+    print(xyz_there('1.xyz.xyz2.xyz')) #False
+    print("\n")
+
+    print("Task27: Given two strings, return True if either of the strings appears at the very end of the other string, ignoring upper/lower case differences. ")
+    print(end_other('ab', 'ab12')) #False
+    print(end_otherv2('ab', 'ab12'))
+    print(end_other('AbC', 'HiaBc')) #True
+    print(end_otherv2('AbC', 'HiaBc'))
+    print(end_other('abc', 'abXabc')) #True
+    print(end_otherv2('abc', 'abXabc'))
+    print(end_other('yz', '12xz')) #False
+    print(end_otherv2('yz', '12xz'))
+    print("\n")
+
+    print('Task28: Return the number of times that the string "code" appears anywhere in the given string, \
+except we will accept any letter for the "d", so "cope" and "cooe" count.')
+    print(count_code('ode')) #0
+    print(count_code('cozexxcope')) #2
+    print(count_code('cozfxxcope')) #1
+    print(count_code('AAcodeBBcoleCCccoreDD')) #3
+    print("\n")
+
+    print("Task29: Return the number of times that the string 'hi' appears anywhere in the given string. ")
+    print(count_hi('abc hi ho')) #1
+    print(count_hi('ABChi hi')) #2
+    print(count_hi('hiho not HOHIhi')) #2
+    print("\n")
+
+    print("Task30: Given a string, return a string where for every char in the original, there are two chars. ")
+    print(double_char('Hi-There'))
+    print(double_charv2('Hi-There'))
+    print(double_char('Word!'))
+    print(double_charv2('Word!'))
+    print("\n")
+
+    print('Task31: Return True if the string "cat" and "dog" appear the same number of times in the given string. ')
+    print(cat_dog('1cat1cadodog')) #True
+    print(cat_dog('catcat')) #False
+    print(cat_dog('c')) #True
+    print(cat_dog('catxdogxdogxca')) #False
+
+    print("Task32: We want make a package of goal kilos of chocolate. We have small bars (1 kilo each) and big bars (5 kilos each). \
+Return the number of small bars to use, assuming we always use big bars before small bars. Return -1 if it can't be done.")
+    print(make_chocolate(4, 1, 10)) #-1
+    print(make_chocolate(4, 1, 7)) #2
+    print(make_chocolate(4, 1, 9)) #4
+    print(make_chocolate(1, 2, 5)) #0
+    print("\n")
 
 if __name__ == '__main__':
     main()
