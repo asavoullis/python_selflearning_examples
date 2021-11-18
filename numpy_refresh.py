@@ -107,7 +107,20 @@ def main():
     print(arr_copy)
     print("\n")
 
-    """ SORTING ARRAY """
+
+    # range vs np.arange
+    print(range(10))
+
+    abc =list(range(10))
+    print(abc)
+    print("\n")
+
+    # array_rng = np.arange(start = 0, stop = 30, step = 2.5, dtype = np.float32) or np.int32
+    array_rng = np.arange(10)
+    print(array_rng)
+
+
+    """ Sorting Array """
     ba = np.array([8, 7, 5, 4, 3])
     print(ba)
     # # now lets sort it! - Use it as a function np.sort()
@@ -250,10 +263,33 @@ def main():
 
     a = arrh2.ravel()
     print(a)
+    print("\n")
 
+    """ Specific Value Extraction from Arrays """
+    print(a.min())
+    print(a.max())
+    print(a.sum())
+    print("\n")
 
+    # np.cumsum - displays array with sum up to that element
+    print(np.cumsum(a))
+    print(np.std(a))
+    print("\n")
+    print(np.median(a))
+    print(np.mean(a))
+    print("\n")
+    print(a.mean())
 
+    """ Arithmetic Operations """
 
+    arr3 = np.array([[1, 2], [3, 4]])
+    arr4 = np.array([[5, 6], [7, 8]])
+    arr5 = np.add(arr3, arr4)
+    print(arr5)
+    print(np.multiply(arr3, arr4))
+    print("\n")
+    print(np.subtract(arr3, arr4))
+    print(np.divide(arr3, arr4))
 
 
 
