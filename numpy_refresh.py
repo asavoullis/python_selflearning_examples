@@ -5,7 +5,9 @@ import sys
 
 
 def main():
+
     """ Array Creation """
+    
     # 1d array
     a = np.array([1, 2, 3, 4])
     # 2d array
@@ -107,7 +109,6 @@ def main():
     print(arr_copy)
     print("\n")
 
-
     # range vs np.arange
     print(range(10))
 
@@ -119,8 +120,8 @@ def main():
     array_rng = np.arange(10)
     print(array_rng)
 
-
     """ Sorting Array """
+
     ba = np.array([8, 7, 5, 4, 3])
     print(ba)
     # # now lets sort it! - Use it as a function np.sort()
@@ -153,6 +154,7 @@ def main():
     """
 
     """ Array Indexing """
+
     # displays the 5th element - starting from 0
     print(arr[4])
     # prints the 3rd element of the 2nd 1D array
@@ -162,16 +164,19 @@ def main():
     print('\n')
 
     """ Array Slicing """
+
     # get the 3rd element from every 1D array
     print(b[:, 2])
     print("\n")
 
     """ Boolean Indexing """
+
     # prints a 1D array with elements only greater than 1
     print(b[b > 1])
     print("\n")
 
     """ Reshaping an Array """
+
     # transposing the array
     b_trans = b.T
     print(b_trans)
@@ -195,6 +200,7 @@ def main():
     print("\n")
 
     """ Inserting Elements into the array """
+
     d = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
     print(d)
     # flattens the array and adds in the 4th (3) position  a 10
@@ -212,6 +218,7 @@ def main():
     print("\n")
 
     """ Deleting Elements from array """
+
     # deletes the 2nd element (1)
     g = np.delete(f, 1)
     # f = np.delete(f, [1]) - same thing
@@ -221,6 +228,7 @@ def main():
     print("\n")
 
     """ Combining Arrays """
+
     arr1 = np.array([1, 2, 3])
     arr2 = np.array([4, 5, 6])
 
@@ -253,6 +261,7 @@ def main():
     print("\n")
 
     """ Splitting Arrays """
+
     # horizontal split of array
     a1 = np.hsplit(arrh2, 2)
     print(a1)
@@ -266,6 +275,7 @@ def main():
     print("\n")
 
     """ Specific Value Extraction from Arrays """
+
     print(a.min())
     print(a.max())
     print(a.sum())
@@ -290,6 +300,17 @@ def main():
     print("\n")
     print(np.subtract(arr3, arr4))
     print(np.divide(arr3, arr4))
+    print(np.exp(arr4))
+
+    """ Importing Files in Python using Numpy """
+
+    # np.loadtxt() vs np.genfromtxt()
+    #
+    # Load: implies the data is ready to be directly imported and used
+    # Genfromtxt: indicates that the function creates the data from the text file.
+    # Generating requires constructing the array as we go through the file. This allows us only to take certain
+    # rows or columns, as well as split the input into multiple variables.
+
 
 
 
