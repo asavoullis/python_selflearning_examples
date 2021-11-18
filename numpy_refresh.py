@@ -287,7 +287,7 @@ def main():
 
     """ Types of Data Supported By Numpy """
     # Defining all the values as floats (decimals).
-    array_a = np.array([[1,2,3],[4,5,6]], dtype = np.float16)
+    array_a = np.array([[1, 2, 3], [4, 5, 6]], dtype=np.float16)
 
     # Defining all the values as complex numbers.
     array_a = np.array([[1, 2, 3], [4, 5, 6]], dtype=np.complex64)
@@ -461,20 +461,19 @@ def main():
     matrix_C = np.array([[1, 2, 3], [4, 5, 6]])
 
     # Axis = 0 runs the function over every column.
-    mean_arr = np.mean(matrix_C, axis = 0)
+    mean_arr = np.mean(matrix_C, axis=0)
     print(mean_arr)
-    mean_arr2 = np.mean(matrix_C, axis = 1)
+    mean_arr2 = np.mean(matrix_C, axis=1)
     print(mean_arr2)
 
 
 
     """ Numpy DataTypes """
     print(array_b.shape)
-    ## We can use indexing to get a specific part of the output tuple.
+    # We can use indexing to get a specific part of the output tuple.
     print(array_b.shape[0])
     # array_b.shape[1]
 
-    ## We can use indexing to get a specific part of the output tuple.
 
 
     """Dimensions and the Squeeze Function"""
@@ -506,9 +505,60 @@ def main():
     print(matrix_D[0:1, 0:1].squeeze().shape)
 
 
+    """ Using Like function to create an Array """
+    matrix_A = np.array([[1, 0, 9, 2, 2], [3, 23, 4, 5, 1], [0, 2, 3, 4, 1]])
+
+    array_empty_like = np.empty_like(matrix_A)
+    print(array_empty_like)
+
+    array_0s_like = np.zeros_like(matrix_A)
+    print(array_0s_like)
+    print("\n")
 
 
 
+    """ NAN equivalent funcitons """
+    matrix_A = np.array([[1, 0, 0, 3, 1], [3, 6, 6, 2, 9], [4, 5, 3, 8, 0]])
+    # same as we don't have nan values
+    print(np.nanmean(matrix_A))
+    print(np.mean(matrix_A))
+    print("\n")
+
+    matrix_B = np.array([[1, 0, 0, 3, 1], [3, 6, np.nan, 2, 9], [4, 5, 3, 8, 0]])
+    print(np.nanmean(matrix_B))
+    print(np.mean(matrix_B))
+    print("\n")
+    print(np.nanquantile(matrix_B, 0.7))
+    np.nanvar(matrix_B)
+    print("\n")
+
+    z1 = np.cov(matrix_A)
+    print(z1)
+    z2 = np.corrcoef(matrix_A)
+    print(z2)
+    print("\n")
+
+    # MORE FUNCTIONS
+
+    q3 = np.quantile(matrix_A, 0.70)
+    print(q3)
+    # we get the median
+    q2 = np.percentile(matrix_A, 50)
+    print(q2)
+    print('\n')
+
+    b1 = np.percentile(matrix_A, 70, interpolation="midpoint")
+    print(b1)
+    b2 = np.percentile(matrix_A, 70, interpolation ="higher")
+    print(b2)
+    print("\n")
+
+    print(matrix_A)
+    # Returns the difference between the highest and the lowest values within an array
+    print(np.ptp(matrix_A))
+    # axis = 0  columns , axis = 1 row
+    print(np.ptp(matrix_A, axis=0))
+    print("\n")
 
     """ Importing Files in Python using Numpy """
     # np.loadtxt() vs np.genfromtxt()
