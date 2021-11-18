@@ -538,8 +538,12 @@ def main():
     print(z2)
     print("\n")
 
-    # MORE FUNCTIONS
+    """ MORE FUNCTIONS """
 
+    # np.percentile()
+    # Returns a specific percentile of a given set
+    # Requires a second input – the percentile
+    # A percentile is a value that is greater than the corresponding % of the dataset
     q3 = np.quantile(matrix_A, 0.70)
     print(q3)
     # we get the median
