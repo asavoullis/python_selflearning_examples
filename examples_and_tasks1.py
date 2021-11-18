@@ -365,10 +365,29 @@ def divide(x, y):
     # First try clause is executed i.e. the code between try and except clause.
     # If there is no exception, then only try clause will run, except clause will not get executed.
     # If any exception occurs, the try clause will be skipped and except clause will run.
-    # If any exception occurs, but the except clause within the code doesn’t handle it,
+    # If any exception occurs, but the except clause within the code doesn't handle it,
     # it is passed on to the outer try statements. If the exception is left unhandled, then the execution stops.
     # A try statement can have more than one except clause.
 
+
+"""Task19: Remove elements in List while looping. """
+list1to4 = [1, 2, 3, 4]
+# Never loop over a list and remove elements at the same time. This will lead to errors.
+
+# Function that determines if a function is even or not.
+def even(x):
+    return x % 2 == 0
+
+def new_list1(input_list):
+    # looping over a copy of the list
+    for item in input_list[:]:
+        if even(item):
+            input_list.remove(item)
+    return input_list
+
+    # alternative option
+    # input_list = [x for x in input_list if not even(x)]
+    # return input_list
 
 
 def main():
@@ -450,6 +469,9 @@ def main():
     divide(3, 0)
     divide(2, 44)
 
+    print("Task19: Remove elements in List while looping. ")
+    print(new_list1(list1to4))
+    print("\n")
 
 # dunder == double underscore
 # allows you to check whether the file is being run as a script or not
