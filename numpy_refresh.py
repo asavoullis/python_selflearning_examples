@@ -1,5 +1,10 @@
 # NumPy Full course - DataScience RoadMap   -- Data Analyst self learning examples
 
+# NumPy is a library for the Python programming language, adding support for large, multi-dimensional arrays and
+# matrices, along with a large collection of high-level mathematical functions to operate on these arrays.
+# Written in: Python and C
+
+
 import numpy as np
 import sys
 
@@ -7,7 +12,7 @@ import sys
 def main():
 
     """ Array Creation """
-    
+
     # 1d array
     a = np.array([1, 2, 3, 4])
     # 2d array
@@ -146,6 +151,47 @@ def main():
     print(arr3)
     print('\n')
 
+    """ Assigning Values in Array """
+
+    print(arr3)
+    # sets the first (0) element of the array equal to 2
+    arr3[0] = 2
+    print(arr3)
+    print("\n")
+
+    array_a = np.array([[1, 2, 3], [4, 5, 6]])
+    list_a = [8, 7, 8]
+    # sets the first 1D array to the values of list_a
+    array_a[0] = list_a
+    print(array_a)
+    print(type(array_a[0]))
+    print("\n")
+
+    """ Elementwise Properties """
+
+    array_a = np.array([7, 8, 9])
+    array_b = np.array([[1, 2, 3], [4, 5, 6]])
+    # multiplies all elements inside array_c by 2
+    array_c = array_a * 2
+    print(array_c)
+    print("\n")
+    # adds the value of 2 to each element of the array_a
+    print(array_a + 2)
+    print("\n")
+
+    # We multiply each individual element of array_a by its corresponding element in the second row of array_b.
+    array_d = array_a * array_b[1]
+    print(array_d)
+    print("\n")
+
+    list_a = [1, 2, 3]
+    list_a = list_a + [2]
+    print(list_a)
+    print("\n")
+
+    print(array_b - array_a)
+    ## The order of the elements matters for elementwise subtraction, division, as well as other operations.
+
     """
     arr = np.array([3, 7, 6, 8, 9, 1, 2, 3])
     a = np.array([1, 2, 3, 4])
@@ -161,6 +207,8 @@ def main():
     print(b[1, 2])
     # prints the first 1D array
     print(b[0, ])
+    # prints last value
+    print(arr[-1])
     print('\n')
 
     """ Array Slicing """
@@ -169,10 +217,47 @@ def main():
     print(b[:, 2])
     print("\n")
 
+    print(b)
+    # assigning all the elements of the first position at the 1st (0) position vertically to 9
+    b[:, 0] = 9
+    print(b)
+    print("\n")
+
     """ Boolean Indexing """
 
     # prints a 1D array with elements only greater than 1
     print(b[b > 1])
+    print("\n")
+
+    """ Types of Data Supported By Numpy """
+
+    # Defining all the values as floats (decimals).
+    array_a = np.array([[1,2,3],[4,5,6]], dtype = np.float16)
+
+    # Defining all the values as complex numbers.
+    array_a = np.array([[1, 2, 3], [4, 5, 6]], dtype=np.complex64)
+
+    # array_a = np.array([[1,2,0],[4,5,6]], dtype = np.bool)
+    # array_a = np.array([[10,2,3],[4,5,6]], dtype = np.str)
+
+    """ Characteristics of Numpy Functions """
+
+    array_a = np.array([1, 2, 3])
+    array_b = np.array([[1], [2]])
+    matrix_C = np.array([[1, 2, 3], [4, 5, 6]])
+
+    # We can add up values, even though the arrays don't have matching shapes.
+    add_a_c = np.add(array_a, matrix_C)
+    print(add_a_c)
+    add_b_c = np.add(array_b, matrix_C)
+    print(add_b_c)
+    print("\n")
+
+    """ Type Casting """
+
+    # we can also change the type of the values in the arrays while adding
+    array_e = np.add(array_b, matrix_C, dtype=np.float64)
+    print(array_e)
     print("\n")
 
     """ Reshaping an Array """
@@ -299,7 +384,9 @@ def main():
     print(np.multiply(arr3, arr4))
     print("\n")
     print(np.subtract(arr3, arr4))
+    print("\n")
     print(np.divide(arr3, arr4))
+    print("\n")
     print(np.exp(arr4))
 
     """ Importing Files in Python using Numpy """
@@ -311,7 +398,43 @@ def main():
     # Generating requires constructing the array as we go through the file. This allows us only to take certain
     # rows or columns, as well as split the input into multiple variables.
 
+    """
+    LOADTXT:
+    lending_co_data_numeric_NAN2 = np.loadtxt("Lending-Company-Numeric-Data-NAN.csv",
+                                          delimiter = ';',
+                                          dtype = np.str)
+    
+    GENFROMTXT:
+    lending_co_data_numeric_NAN = np.genfromtxt("Lending-Company-Numeric-Data-NAN.csv",
+                                            delimiter = ';',
+                                            usecols = (0,1,5)) 
+    """
 
+    """ Saving File using Numpy """
+    # stores the data in a special file extension called .npy
+    # creates a “file-name.npy” in the same directory (folder)
+    # This npy is a special type of text file native to numpy
+    # np.save(“filename here”, dataset_variable)
+
+    """
+    lending_co = np.genfromtxt("Lending-Company-Saving.csv", 
+                           delimiter = ',', 
+                           dtype = np.str)
+    np.save("Lending-Company-Saving", lending_co)
+    lending_data_save = np.load("Lending-Company-Saving.npy")
+    np.array_equal(lending_data_save, lending_co)
+
+    
+    np.savetxt("Lending-Company-Saving.txt", #set format .txt
+           lending_co, 
+           fmt = '%s', #s = strings , c for chracters , d for integers
+           delimiter = ',')
+
+    np.savez("Lending-Company-Saving", lending_co, lending_data_save)
+    lending_data_savez = np.load('Lending-Company-Saving.npz')
+    print(lending_data_savez)
+
+    """
 
 
 if __name__ == '__main__':
