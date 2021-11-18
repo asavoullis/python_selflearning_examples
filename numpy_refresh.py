@@ -1,3 +1,5 @@
+# NumPy Full course - DataScience RoadMap   -- Data Analyst self learning examples
+
 import numpy as np
 import sys
 
@@ -148,14 +150,13 @@ def main():
 
     """ Array Slicing """
     # get the 3rd element from every 1D array
-    print(b[:,2])
+    print(b[:, 2])
     print("\n")
 
     """ Boolean Indexing """
     # prints a 1D array with elements only greater than 1
     print(b[b > 1])
     print("\n")
-
 
     """ Reshaping an Array """
     # transposing the array
@@ -176,7 +177,7 @@ def main():
     print("\n")
 
     # lets reshape c_flat!
-    c_flat2 = c_flat.reshape(4,3)
+    c_flat2 = c_flat.reshape(4, 3)
     print(c_flat2)
     print("\n")
 
@@ -214,7 +215,44 @@ def main():
     arrh = np.concatenate((arr1, arr2), axis=0)
     print(arrh)
     print("\n")
-    
+
+    # Rows x Columns
+    arr3 = np.array([[1, 2], [3, 4]])
+    arr4 = np.array([[5, 6], [7, 8]])
+    arrV = np.concatenate((arr3, arr4), axis=1)
+    # from  2 x 2,2     to   1 x  2, 4
+    print(arrV)
+    print("\n")
+
+    # from  2 x 2,2     to   1 x  4, 2
+    arrH = np.concatenate((arr3, arr4), axis=0)
+    print(arrH)
+    print("\n")
+
+    # alternative way Vertically:
+    arrv2 = np.vstack((arr3, arr4))
+    print(arrv2)
+    print("\n")
+
+    # alternative way Horizontally:
+    arrh2 = np.hstack((arr3, arr4))
+    print(arrh2)
+    print("\n")
+
+    """ Splitting Arrays """
+    # horizontal split of array
+    a1 = np.hsplit(arrh2, 2)
+    print(a1)
+    # vertical split of array
+    a2 = np.vsplit(arrh2, 2)
+    print(a2)
+    print("\n")
+
+    a = arrh2.ravel()
+    print(a)
+
+
+
 
 
 
