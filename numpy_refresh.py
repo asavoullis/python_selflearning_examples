@@ -12,7 +12,6 @@ import sys
 def main():
 
     """ Array Creation """
-
     # 1d array
     a = np.array([1, 2, 3, 4])
     # 2d array
@@ -22,6 +21,7 @@ def main():
 
     print(a)
     # prints the shape of the array - in this case it will be a 1D (4,) array
+    # "shape" is an attribute of the ndarray, rather than a method, so it's not callable (doesn't need "()" at the end)
     print(a.shape)
     # prints the length of the array (horizontally)
     print(len(a))
@@ -125,8 +125,9 @@ def main():
     array_rng = np.arange(10)
     print(array_rng)
 
-    """ Sorting Array """
 
+
+    """ Sorting Array """
     ba = np.array([8, 7, 5, 4, 3])
     print(ba)
     # # now lets sort it! - Use it as a function np.sort()
@@ -151,8 +152,9 @@ def main():
     print(arr3)
     print('\n')
 
-    """ Assigning Values in Array """
 
+
+    """ Assigning Values in Array """
     print(arr3)
     # sets the first (0) element of the array equal to 2
     arr3[0] = 2
@@ -167,8 +169,9 @@ def main():
     print(type(array_a[0]))
     print("\n")
 
-    """ Elementwise Properties """
 
+
+    """ Elementwise Properties """
     array_a = np.array([7, 8, 9])
     array_b = np.array([[1, 2, 3], [4, 5, 6]])
     # multiplies all elements inside array_c by 2
@@ -190,7 +193,7 @@ def main():
     print("\n")
 
     print(array_b - array_a)
-    ## The order of the elements matters for elementwise subtraction, division, as well as other operations.
+    # The order of the elements matters for elementwise subtraction, division, as well as other operations.
 
     """
     arr = np.array([3, 7, 6, 8, 9, 1, 2, 3])
@@ -199,8 +202,9 @@ def main():
     c = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
     """
 
-    """ Array Indexing """
 
+
+    """ Array Indexing """
     # displays the 5th element - starting from 0
     print(arr[4])
     # prints the 3rd element of the 2nd 1D array
@@ -211,7 +215,10 @@ def main():
     print(arr[-1])
     print('\n')
 
+
+
     """ Array Slicing """
+    # slicing = interval indexing
 
     # get the 3rd element from every 1D array
     print(b[:, 2])
@@ -223,14 +230,62 @@ def main():
     print(b)
     print("\n")
 
-    """ Boolean Indexing """
+    matrix_A = np.array([[1, 2, 3], [4, 5, 6]])
+    # prints from first until second 0->1 but 1 excluded
+    print(matrix_A[:1])
 
+
+
+    """ Stepwise Slicing """
+    matrix_B = np.array([[1, 1, 1, 2, 0], [3, 6, 6, 7, 4], [4, 5, 3, 8, 0]])
+    # prints entire array
+    print(matrix_B[::, ::])
+    # we take the first and the 3rd row
+    print(matrix_B[::2, ::])
+    print("\n")
+    # we take every other column
+    print(matrix_B[::, ::2])
+    # print Every other value of every other row, starting from the first
+    print(matrix_B[::2, ::2])
+    print("\n")
+
+    print(matrix_B[::-2, ::2])
+    print(matrix_B[-1::-2, ::2])
+    print('\n')
+
+
+
+    """ Conditional Slicing"""
+    matrix_C = np.array([[1, 1, 1, 2, 0], [3, 6, 6, 7, 4], [4, 5, 3, 8, 0]])
+    # slice the first column
+    print(matrix_C[:, 0])
+    # outputs an array with boolean elements True or False depending opn the condition
+    print(matrix_C[:, 0] > 2)
+    print("\n")
+
+    print(matrix_C[:, 0] > 2)
+    print(matrix_C[:, :] > 2)
+    print("\n")
+
+    print(matrix_C[matrix_C[:, :] > 2])
+    print(matrix_C[matrix_C[:, :] == 2])
+    print("\n")
+    print(matrix_C[matrix_C[:, :] >= 2])
+    print(matrix_C[matrix_C[:, :] != 2])
+    print("\n")
+    print(matrix_C[matrix_C[:, :] % 2 == 0])
+    print(matrix_C[(matrix_C[:, :] % 2 == 0) & (matrix_C[:, :] <= 4)])
+
+
+
+    """ Boolean Indexing """
     # prints a 1D array with elements only greater than 1
     print(b[b > 1])
     print("\n")
 
-    """ Types of Data Supported By Numpy """
 
+
+    """ Types of Data Supported By Numpy """
     # Defining all the values as floats (decimals).
     array_a = np.array([[1,2,3],[4,5,6]], dtype = np.float16)
 
@@ -240,8 +295,9 @@ def main():
     # array_a = np.array([[1,2,0],[4,5,6]], dtype = np.bool)
     # array_a = np.array([[10,2,3],[4,5,6]], dtype = np.str)
 
-    """ Characteristics of Numpy Functions """
 
+
+    """ Characteristics of Numpy Functions """
     array_a = np.array([1, 2, 3])
     array_b = np.array([[1], [2]])
     matrix_C = np.array([[1, 2, 3], [4, 5, 6]])
@@ -253,15 +309,17 @@ def main():
     print(add_b_c)
     print("\n")
 
-    """ Type Casting """
 
+
+    """ Type Casting """
     # we can also change the type of the values in the arrays while adding
     array_e = np.add(array_b, matrix_C, dtype=np.float64)
     print(array_e)
     print("\n")
 
-    """ Reshaping an Array """
 
+
+    """ Reshaping an Array """
     # transposing the array
     b_trans = b.T
     print(b_trans)
@@ -284,8 +342,9 @@ def main():
     print(c_flat2)
     print("\n")
 
-    """ Inserting Elements into the array """
 
+
+    """ Inserting Elements into the array """
     d = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
     print(d)
     # flattens the array and adds in the 4th (3) position  a 10
@@ -302,8 +361,9 @@ def main():
     print(f)
     print("\n")
 
-    """ Deleting Elements from array """
 
+
+    """ Deleting Elements from array """
     # deletes the 2nd element (1)
     g = np.delete(f, 1)
     # f = np.delete(f, [1]) - same thing
@@ -312,8 +372,9 @@ def main():
     print(g)
     print("\n")
 
-    """ Combining Arrays """
 
+
+    """ Combining Arrays """
     arr1 = np.array([1, 2, 3])
     arr2 = np.array([4, 5, 6])
 
@@ -345,8 +406,9 @@ def main():
     print(arrh2)
     print("\n")
 
-    """ Splitting Arrays """
 
+
+    """ Splitting Arrays """
     # horizontal split of array
     a1 = np.hsplit(arrh2, 2)
     print(a1)
@@ -359,8 +421,9 @@ def main():
     print(a)
     print("\n")
 
-    """ Specific Value Extraction from Arrays """
 
+
+    """ Specific Value Extraction from Arrays """
     print(a.min())
     print(a.max())
     print(a.sum())
@@ -375,8 +438,9 @@ def main():
     print("\n")
     print(a.mean())
 
-    """ Arithmetic Operations """
 
+
+    """ Arithmetic Operations """
     arr3 = np.array([[1, 2], [3, 4]])
     arr4 = np.array([[5, 6], [7, 8]])
     arr5 = np.add(arr3, arr4)
@@ -389,8 +453,64 @@ def main():
     print("\n")
     print(np.exp(arr4))
 
-    """ Importing Files in Python using Numpy """
 
+
+    """ Running over an Axis of an Array """
+    array_a = np.array([1, 2, 3])
+    array_b = np.array([[1], [2]])
+    matrix_C = np.array([[1, 2, 3], [4, 5, 6]])
+
+    # Axis = 0 runs the function over every column.
+    mean_arr = np.mean(matrix_C, axis = 0)
+    print(mean_arr)
+    mean_arr2 = np.mean(matrix_C, axis = 1)
+    print(mean_arr2)
+
+
+
+    """ Numpy DataTypes """
+    print(array_b.shape)
+    ## We can use indexing to get a specific part of the output tuple.
+    print(array_b.shape[0])
+    # array_b.shape[1]
+
+    ## We can use indexing to get a specific part of the output tuple.
+
+
+    """Dimensions and the Squeeze Function"""
+    matrix_D = np.array([[1, 1, 1, 2, 0], [3, 6, 6, 7, 4], [4, 5, 3, 8, 0]])
+    print(print(matrix_D[0, 0]))
+    print(type(matrix_D[0, 0]))
+    print(matrix_D[0, 0:1])
+    print("\n")
+    print(matrix_D[0:1, 0:1])
+    print(type(matrix_D[0:1, 0:1]))
+    print('\n')
+
+    # Same value stored in 3 different ways -> 0-D, 1-D and 2-D array
+    print(matrix_D[0, 0].shape)
+    print(matrix_D[0, 0:1].shape)
+    print(matrix_D[0:1, 0:1].shape)
+    print("\n")
+
+    # [[1]]
+    print(matrix_D[0:1,0:1])
+    # 1
+    print(matrix_D[0:1, 0:1].squeeze())
+    print('\n')
+
+    print(np.squeeze(matrix_D[0:1, 0:1]))
+    ## All excess dimensions are lost and our outputs are aligned.
+    print(matrix_D[0, 0].squeeze().shape)
+    print(matrix_D[0, 0:1].squeeze().shape)
+    print(matrix_D[0:1, 0:1].squeeze().shape)
+
+
+
+
+
+
+    """ Importing Files in Python using Numpy """
     # np.loadtxt() vs np.genfromtxt()
     #
     # Load: implies the data is ready to be directly imported and used
@@ -409,6 +529,9 @@ def main():
                                             delimiter = ';',
                                             usecols = (0,1,5)) 
     """
+
+
+
 
     """ Saving File using Numpy """
     # stores the data in a special file extension called .npy
@@ -435,6 +558,8 @@ def main():
     print(lending_data_savez)
 
     """
+
+
 
 
 if __name__ == '__main__':
