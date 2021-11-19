@@ -401,79 +401,125 @@ def remainders5():
     return [(i**2) % 5 for i in range(1, 101)]
 
 
+"""Task22: From a list of movies find those who start with the letter G. """
+movies =['Star Wars', 'Gandhi', 'Casablanca', 'Toy Story', 'Matrix', 'Lord of The Rings',
+         'Gone with the Wind', 'Citizen Kane', "It's a Wonderful Life", 'The Wizard of Oz']
+def movies_starting_with_G(list):
+    # Version 1
+    # gmovies = []
+    # for title in movies:
+    #     if title.startswith('G'):
+    #         gmovies.append(title)
+    # return gmovies
+    # Version 2 using list comprehension:
+    return [title for title in movies if title.startswith("G")]
+
+
+"""Task23: Find movies released before 2000 from a list with movie names and year released. """
+movies2 = [('Star Wars', 1943), ('Gandhi', 1924), ('Casablanca', 1999), ('The Wizard of Oz', 2000),
+           ('Toy Story', 1950), ('Matrix', 2004), ('Lord of The Rings', 1960),
+           ('Gone with the Wind', 1949), ('Citizen Kane', 1690)]
+def pre2k_movies(list):
+    pre2k = [title for (title, year) in list if year < 2000]
+    return pre2k
+
+
+"""Task24: Multiply the elements of the vector by 4. """
+v = [2, -3, 1]
+def multiply_vector(list):
+    return [x*4 for x in list]
+    # 4v = 4*list - This does NOT WORK
+
+
+"""Task25: Calculate the cartesian (cross) product of the 2 lists. """
+A = [1, 3 ,5 ,7]
+B = [2, 4 ,6, 8]
+def cartesian_product(list1, list2):
+    return [(a,b) for a in list1 for b in list2]
+
+
+
 def main():
-    # print("Task 1: Print the cube of the ints inside a list.")
-    # print(cube_Of_Ints(num), "\n")
-    # print("Task 2: Prints a pattern of stars depending on users input. ")
-    # print(pattern(), "\n")
-    # print("Task 3: Use the break function. ")
-    # print(use_break(), "\n")
-    # print("Task 4: Type the word Gilly: ")
-    # print(type_Gilly(), "\n")
-    # print("Task 5: Print the average of positive integer numbers, enter a negative integer to stop. ")
-    # print(avg_of_pos_nums(), "\n")
-    #
-    # print("Task 6: Reverse sort order print the strings in a list. ")
-    # print(reverse_order_list(), "\n")
-    # print("Task 7: Sort the dictionary. ")
-    # print(sort_dict())
-    # print("Task 8: Output only the even aged animals. ")
-    # print(dict_even_aged_animals())
-    # print("Task 9: Weekday or Vacation. ")
-    # print(sleep_in(weekday_input, vacation_input), "\n")
-    #
-    # print("Task 10: Check how many even ints are in a list. For every even int square it and add it to the sum. ")
-    # count_even_in_list(inputlist1)
-    # print(f"We have {count_even_in_list(inputlist1)[0]} even integers in {inputlist1},with a sum of {count_even_in_list(inputlist1)[1]}")
-    # count_even_in_list(inputlist2)
-    # print(f"We have {count_even_in_list(inputlist2)[0]} even integers in {inputlist2},with a sum of {count_even_in_list(inputlist2)[1]}")
-    # print("\n")
-    #
-    # print("Task 11: Check if the first or the last element in a list is 7. ")
-    # print(f"In {list1} its {first_last_7(list1)}")
-    # print(f"In {list2} its {first_last_7(list2)}")
-    # print(f"In {list3} its {first_last_7(list3)}", "\n")
-    #
-    # print("Task 12: Return the string with every character outputted twice in the same order. ")
-    # print(double_chars(str1))
-    # print(double_chars(str2))
-    # print(double_chars(str3), "\n")
-    #
-    # print("Task 13: Python Functional implimentation. Use various functions to perform string manipulation with the input of the user. ")
-    # name,n= get_name_and_number()
-    # print(hello_name(name))
-    # print(string_multiplier(name,n))
-    # print("\n")
-    #
-    # print("Task 14: Using context manager - with. ")
-    # print(file_context_manager_with())
-    # print("\n")
-    #
-    # print("Task 15: Acquiring index and element from list using for loop. ")
-    # print(get_index_and_element())
-    #
-    # print("Task 16: Looping over 3 lists and combine output - using zip. ")
-    # print(combine_three_lists(names_list2, heroes, universes))
-    #
-    # print("Task 17: Unpacking. ")
-    # print(unpack_examples())
-    #
-    # print("Task 18: Understanding try, except, else and finally .")
-    # print(f1())
-    # divide(3, 2)
-    # divide(3, 0)
-    # divide(2, 44)
-    #
-    # print("Task19: Remove elements in List while looping. ")
-    # print(new_list1(list1to4))
-    # print("\n")
-    #
+    print("Task 1: Print the cube of the ints inside a list.")
+    print(cube_Of_Ints(num), "\n")
+    print("Task 2: Prints a pattern of stars depending on users input. ")
+    print(pattern(), "\n")
+    print("Task 3: Use the break function. ")
+    print(use_break(), "\n")
+    print("Task 4: Type the word Gilly: ")
+    print(type_Gilly(), "\n")
+    print("Task 5: Print the average of positive integer numbers, enter a negative integer to stop. ")
+    print(avg_of_pos_nums(), "\n")
+
+    print("Task 6: Reverse sort order print the strings in a list. ")
+    print(reverse_order_list(), "\n")
+    print("Task 7: Sort the dictionary. ")
+    print(sort_dict())
+    print("Task 8: Output only the even aged animals. ")
+    print(dict_even_aged_animals())
+    print("Task 9: Weekday or Vacation. ")
+    print(sleep_in(weekday_input, vacation_input), "\n")
+
+    print("Task 10: Check how many even ints are in a list. For every even int square it and add it to the sum. ")
+    count_even_in_list(inputlist1)
+    print(f"We have {count_even_in_list(inputlist1)[0]} even integers in {inputlist1},with a sum of {count_even_in_list(inputlist1)[1]}")
+    count_even_in_list(inputlist2)
+    print(f"We have {count_even_in_list(inputlist2)[0]} even integers in {inputlist2},with a sum of {count_even_in_list(inputlist2)[1]}")
+    print("\n")
+
+    print("Task 11: Check if the first or the last element in a list is 7. ")
+    print(f"In {list1} its {first_last_7(list1)}")
+    print(f"In {list2} its {first_last_7(list2)}")
+    print(f"In {list3} its {first_last_7(list3)}", "\n")
+
+    print("Task 12: Return the string with every character outputted twice in the same order. ")
+    print(double_chars(str1))
+    print(double_chars(str2))
+    print(double_chars(str3), "\n")
+
+    print("Task 13: Python Functional implimentation. Use various functions to perform string manipulation with the input of the user. ")
+    name, n= get_name_and_number()
+    print(hello_name(name))
+    print(string_multiplier(name, n), "\n")
+
+    print("Task 14: Using context manager - with. ")
+    print(file_context_manager_with(), "\n")
+
+    print("Task 15: Acquiring index and element from list using for loop. ")
+    print(get_index_and_element())
+
+    print("Task 16: Looping over 3 lists and combine output - using zip. ")
+    print(combine_three_lists(names_list2, heroes, universes))
+
+    print("Task 17: Unpacking. ")
+    print(unpack_examples())
+
+    print("Task 18: Understanding try, except, else and finally .")
+    print(f1())
+    divide(3, 2)
+    divide(3, 0)
+    divide(2, 44, "\n")
+
+    print("Task19: Remove elements in List while looping. ")
+    print(new_list1(list1to4), "\n")
+
     print("Task20: Print the squares of the first 100 positive integers. ")
-    print(first_100_squares())
+    print(first_100_squares(), "\n")
 
     print("Task21: Print the remainder of the first 100 positive integers after squaring them and then you divide \
     them by 5.")
-    print(remainders5())
+    print(remainders5(), "\n")
+
+    print("Task22: From a list of movies find those who start with the letter G. ")
+    print(movies_starting_with_G(movies), "\n")
+
+    print('Task23: Find movies released before 2000 from a list with movie names and year released.')
+    print(pre2k_movies(movies2))
+    print("Task24: Multiply the elements of the vector by 4. ")
+    print(multiply_vector(v), "\n")
+
+    print("Task25: Calculate the cartesian (cross) product of the 2 lists. ")
+    print(cartesian_product(A, B), "\n")
 
 # dunder == double underscore
 # allows you to check whether the file is being run as a script or not
