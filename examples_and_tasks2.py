@@ -5,9 +5,7 @@ import timeit
 import numpy as np
 import pandas as pd
 
-"""
-Task1: Sum the numbers from 0 to n-1 in different ways
-"""
+"""Task1: Sum the numbers from 0 to n-1 in different ways. """
 # although the for and the while loop are essentially doing the same, the while loop takes longer than the for loop to run
 def while_loop(n=50_000_000):
     # when using large numbers we can use _ to make them easier to read
@@ -58,9 +56,7 @@ def sum_math(n=50_000_000):
 # use while loop
 
 
-"""
-Task2: Multiple input arguments and parameters in funcs
-"""
+"""Task2: Multiple input arguments and parameters in funcs. """
 # passing how ever many input parameters we want
 def multiply(*numbers):
     total = 1
@@ -85,9 +81,7 @@ def save_user(**user):
     return (user)
 
 
-"""
-Task3: Scope - Global vs Local Variables
-"""
+"""Task3: Scope - Global vs Local Variables. """
 message = 'b'
 # Scope - the region of the code where a variable is defined
 def greet(name):
@@ -98,9 +92,7 @@ def greet(name):
     message = "a"
 
 
-"""
-Task4: Create a function which takes a single integer
-"""
+"""Task4: Create a function which takes a single integer. """
 # Create a function that when passed an integer, will return Fizz if the int is divisible by 3, Buzz if the int is divisible by 5, FizzBuzz if divisible by both 3 and 5 else the number
 def fizz_buzz(input):
     if (input % 3 == 0) and (input % 5 == 0):
@@ -112,10 +104,8 @@ def fizz_buzz(input):
     return input
 
 
-"""
-Task5: Concatinate 2 tuples
-"""
-# create a function that concatinates 2 tuples
+"""Task5: Concatenate 2 tuples. """
+# create a function that concatenates 2 tuples
 tup1 = (1, "a", True)
 tup2 = (4, 5, 6, False)
 def tupleconcat(tupl1, tupl2):
@@ -123,25 +113,19 @@ def tupleconcat(tupl1, tupl2):
     return (tupl1 + tupl2)
 
 
-"""
-Task 6: Initialize a 5 by 5 numpy array with only zeros.
-"""
+"""Task 6: Initialize a 5 by 5 numpy array with only zeros. """
 def array5by5zeros():
     n1 = np.zeros((5, 5))
     return n1
 
 
-"""
-Task 7: Read a .csv file using Pandas.
-"""
+"""Task 7: Read a .csv file using Pandas. """
 # def read_csv_file_pandas(file):
 #     df = pd.read_csv(file)
 #     return df
 
 
-"""
-Task 8: Create a Pandas Series from data.
-"""
+"""Task 8: Create a Pandas Series from data. """
 data = ["1", 2, "three", 4.0]
 def createa_Pandas_Series(inputdata):
     series = pd.Series(inputdata)
@@ -149,9 +133,7 @@ def createa_Pandas_Series(inputdata):
     return (series, typeofseries)
 
 
-"""
-Task 9: Reverse a string.
-"""
+"""Task 9: Reverse a string. """
 strng1 = "Hello"
 strng2 = "My name is Johnas123"
 def reverse_String(inputstrg):
@@ -159,9 +141,7 @@ def reverse_String(inputstrg):
     return (str_reverse)
 
 
-"""
-Task 10: Create a new column in pandas by using values from other column.
-"""
+"""Task 10: Create a new column in pandas by using values from other column. """
 a = [1, 2, 3]
 b = [2, 3, 5]
 d = {"col1": a, "col2": b}
@@ -169,82 +149,68 @@ def new_Column_Using_Values_ofOther_Columns(dict):
     df = pd.DataFrame(d)
     df["Sum"] = df["col1"] + df["col2"]
     df["Difference"] = df["col1"] - df["col2"]
-    return (df)
+    return df
 
 
 
-"""
-Task 11: Select columns in pandas and add them to a new dataframe.
-"""
+"""Task 11: Select columns in pandas and add them to a new dataframe. """
 def add_Column_toNew_Dataframe(dataframe):
-# If there are two columns with the same name then both columns get copied to the new dataframe.
+    # If there are two columns with the same name then both columns get copied to the new dataframe.
     print(dataframe.columns)
     newdataframe = dataframe[["col1"]]
-    return (newdataframe)
+    return newdataframe
 
 
 
-"""
-Task 12: Select columns in pandas and add them to a new dataframe.
-"""
-d2={"col1":[1,2,3],"col2":["A","B","C"]}
+"""Task 12: Select columns in pandas and add them to a new dataframe. """
+d2={"col1": [1, 2, 3], "col2": ["A", "B", "C"]}
 def delete_Column_from_dataframe(inputdataframe):
     dataframe2 = pd.DataFrame(inputdataframe)
     # axis = 1 means columns, default - axis = 0 means rows
     dataframe2 = dataframe2.drop(["col1"], axis=1)
-    return (dataframe2)
+    return dataframe2
 
 
 
-"""
-Task 13: Warmup-1 > monkey_trouble. Return True if both smile or neither is smiling.
-"""
+"""Task 13: Warmup-1 > monkey_trouble. Return True if both smile or neither is smiling. """
 def monkey_Trouble(a_smile, b_smile):
-  if (a_smile and not b_smile) or (not a_smile and b_smile):
-    return False
-  else:
-    return True
+    if (a_smile and not b_smile) or (not a_smile and b_smile):
+        return False
+    else:
+        return True
 
 
 
-"""
-Task 14: Given two int values, return their sum. Unless the two values are the same, then return double their sum.
-"""
+"""Task 14: Given two int values, return their sum. Unless the two values are the same, then return double their sum. """
 def sum_double(a, b):
-  if a == b:
-    return (2*(a+b))
-  else:
-    return (a+b)
+    if a == b:
+        return 2 * (a + b)
+    else:
+        return (a + b)
 
 
 
-"""
-Task 15: Given an int n, return the absolute difference between n and 21, except return double the absolute difference if n is over 21.
-"""
+"""Task 15: Given an int n, return the absolute difference between n and 21, except return double the absolute difference if n is over 21. """
 def diff21(n):
-  if n <= 21:
-    return 21 - n
-  else:
-    return (n - 21) * 2
+    if n <= 21:
+        return 21 - n
+    else:
+        return (n - 21) * 2
 
 
 
-"""
-Task 16: We have a loud talking parrot. The "hour" parameter is the current hour time in the range 0..23. 
-We are in trouble if the parrot is talking and the hour is before 7 or after 20. Return True if we are in trouble.
-"""
-def parrot_Trouble(talking, hour):
-# or just return (talking and (hour < 7 or hour > 20))
-  if (talking and hour<7) or (talking and hour>20):
-    return True
-  else:
-    return False
+"""Task 16: We have a loud talking parrot. The "hour" parameter is the current hour time in the range 0..23. 
+We are in trouble if the parrot is talking and the hour is before 7 or after 20. Return True if we are in trouble. """
+def parrot_Trouble(talking,hour):
+    # or just return (talking and (hour < 7 or hour > 20))
+    if (talking and hour < 7) or (talking and hour > 20):
+        return True
+    else:
+        return False
 
 
 
-"""
-Task 17: Given a string, return a new string where the first and last chars have been exchanged. 
-"""
+"""Task 17: Given a string, return a new string where the first and last chars have been exchanged. """
 def str_Replace_Front_Back(str):
     if len(str) <= 1:
         return str
@@ -256,42 +222,34 @@ def str_Replace_Front_Back(str):
 
 
 
-"""
-Task18: Given a string, return a new string where "not " has been added to the front. 
-However, if the string already begins with "not", return the string unchanged.
-"""
+"""Task18: Given a string, return a new string where "not " has been added to the front. 
+However, if the string already begins with "not", return the string unchanged. """
 def not_String(str):
-  if str[0:3] == "not":
-    return str
-  else:
-    return ("not " + str)
+    if str[0:3] == "not":
+        return str
+    else:
+        return "not " + str
 
 
 
-"""
-Task19: Given a non-empty string and an int n, return a new string where the char at index n has been removed. 
-The value of n will be a valid index of a char in the original string (i.e. n will be in the range 0..len(str)-1 inclusive).
-"""
+"""Task19: Given a non-empty string and an int n, return a new string where the char at index n has been removed. 
+The value of n will be a valid index of a char in the original string (i.e. n will be in the range 0..len(str)-1 inclusive). """
 def missing_char(str, n):
-  newstr = str.replace(str[n], "")
-  return newstr
+    newstr = str.replace(str[n], "")
+    return newstr
 
 
 
-"""
-Task20: Given a string, we'll say that the front is the first 3 chars of the string. 
-If the string length is less than 3, the front is whatever is there. Return a new string which is 3 copies of the front.
-"""
+"""Task20: Given a string, we'll say that the front is the first 3 chars of the string. 
+If the string length is less than 3, the front is whatever is there. Return a new string which is 3 copies of the front. """
 def front3(str):
-  str_new = 3*str[0:3]
-  return str_new
+    str_new = 3*str[0:3]
+    return str_new
 
 
 
-"""
-Task21: Given 2 strings, a and b, return the number of the positions where they contain the same length 2 substring. 
-So "xxcaazz" and "xxbaaz" yields 3, since the "xx", "aa", and "az" substrings appear in the same place in both strings.
-"""
+"""Task21: Given 2 strings, a and b, return the number of the positions where they contain the same length 2 substring. 
+So "xxcaazz" and "xxbaaz" yields 3, since the "xx", "aa", and "az" substrings appear in the same place in both strings. """
 def string_match(a, b):
     # Figure which string is shorter.
     shorter = min(len(a), len(b))
@@ -309,30 +267,23 @@ def string_match(a, b):
 
 
 
-"""
-Task22: Given an array of ints, return True if the sequence of numbers 1, 2, 3 appears in the array somewhere.
-"""
+"""Task22: Given an array of ints, return True if the sequence of numbers 1, 2, 3 appears in the array somewhere. """
 def array123(nums):
-    # Note: the range() of a negative value will not iterate and go on to retrun False immediately
+    # Note: the range() of a negative value will not iterate and go on to return False immediately
     # Note: iterate with length-2, so can use i+1 and i+2 in the loop
     for i in range(len(nums)-2):
-        if nums[i]==1 and nums[i+1]==2 and nums[i+2]==3:
+        if nums[i] == 1 and nums[i+1] == 2 and nums[i+2] == 3:
             return True
     return False
 
 
 
-"""
-Task23: Given an array of ints, return True if one of the first 4 elements in the array is a 9. 
-The array length may be less than 4.
-"""
+"""Task23: Given an array of ints, return True if one of the first 4 elements in the array is a 9. The array length may be less than 4. """
 def array_front9(nums):
-    for i in range(0,len(nums)):
+    for i in range(0, len(nums)):
         if nums[i] == 9 and i < 4:
             return True
     return False
-
-
 
 
 
@@ -358,124 +309,104 @@ def main():
     print("Task 3: Scope of variables. ")
     # for example we have a global variable
     greet("John")
-    print(message)
-    print("\n")
+    print(message, "\n")
 
     print("Task 4: The fizz_buzz function. ")
-    print(fizz_buzz(15), fizz_buzz(3), fizz_buzz(5), fizz_buzz(4))
-    print("\n")
+    print(fizz_buzz(15), fizz_buzz(3), fizz_buzz(5), fizz_buzz(4), "\n")
 
     print("Task 5: Concatinate 2 tuples together. ")
-    print(tupleconcat(tup1, tup2))
-    print("\n")
+    print(tupleconcat(tup1, tup2), "\n")
 
     print("Task 6: Initialize a 5 by 5 numpy array with only zeros. ")
-    print(array5by5zeros())
-    print("\n")
+    print(array5by5zeros(), "\n")
 
     print("Task 7: Read a .csv file using pandas. ")
     #print(read_csv_file_pandas(file.csv))
     print("\n")
 
     print("Task 8: Creat a Pandas Series from data. ")
-    print(createa_Pandas_Series(data))
-    print("\n")
+    print(createa_Pandas_Series(data), "\n")
 
     print("Task 9: Reverse the string. ")
     print(reverse_String(strng1))
-    print(reverse_String(strng2))
-    print("\n")
+    print(reverse_String(strng2), "\n")
 
     print("Task 10: Create a new column in pandas by using values from other column. ")
-    print(new_Column_Using_Values_ofOther_Columns(d))
-    print("\n")
+    print(new_Column_Using_Values_ofOther_Columns(d), "\n")
 
     print("Task 11: Select columns in pandas and add them to a new dataframe. ")
     dfnew = (new_Column_Using_Values_ofOther_Columns(d))
-    print(add_Column_toNew_Dataframe(dfnew))
-    print("\n")
+    print(add_Column_toNew_Dataframe(dfnew), "\n")
 
     print("Task 12: Select columns in pandas and add them to a new dataframe. ")
-    print(delete_Column_from_dataframe(d2))
-    print("\n")
+    print(delete_Column_from_dataframe(d2), "\n")
 
     print("Task 13: Warmup-1 > monkey_trouble. Return True if both smile or neither is smiling. ")
     print(monkey_Trouble(True, True))
     print(monkey_Trouble(False, False))
     print(monkey_Trouble(False, True))
-    print(monkey_Trouble(True, False))
-    print("\n")
+    print(monkey_Trouble(True, False), "\n")
 
     print("Task 14: Given two int values, return their sum. Unless the two values are the same, then return double their sum. ")
     print(sum_double(2, 2))
-    print(sum_double(1, 4))
-    print("\n")
+    print(sum_double(1, 4), "\n")
 
     print("Task 15: Given an int n, return the absolute difference between n and 21, except return double the absolute difference if n is over 21. ")
     print(diff21(5))
     print(diff21(0))
-    print(diff21(25))
-    print("\n")
+    print(diff21(25), "\n")
 
     print("Task16: We are in trouble if the parrot is talking and the hour is before 7 or after 20. Return True if we are in trouble. ")
     print(parrot_Trouble(True,6))
     print(parrot_Trouble(True, 20))
     print(parrot_Trouble(False, 14))
     print(parrot_Trouble(True, 15))
-    print(parrot_Trouble(False, 3))
-    print("\n")
+    print(parrot_Trouble(False, 3), "\n")
 
     print("Task 17: Given a string, return a new string where the first and last chars have been exchanged. ")
     print(str_Replace_Front_Back("code"))
     print(str_Replace_Front_Back("a"))
-    print(str_Replace_Front_Back("ba"))
-    print("\n")
+    print(str_Replace_Front_Back("ba"), "\n")
 
     print("Task18: Given a string, return a new string where 'not' has been added to the front. However, if the string already begins with 'not', return the string unchanged. ")
     print(not_String('candy'))
     print(not_String('x'))
-    print(not_String('not bad'))
-    print("\n")
+    print(not_String('not bad'), "\n")
 
     print("Task19: Given a non-empty string and an int n, return a new string where the char at index n has been removed. ")
     print(missing_char('kitten', 1))
     print(missing_char('chocolate', 8))
-    print(missing_char('Hi', 0))
-    print("\n")
+    print(missing_char('Hi', 0), "\n")
 
     print("Task20: Given a string, if the string length is less than 3, the front is whatever is there. Return a new string which is 3 copies of the front.")
     print(front3('ab'))
     print(front3('a'))
     print(front3(''))
-    print(front3('Chocolate'))
-    print("\n")
+    print(front3('Chocolate'), "\n")
 
     print("Task21: Given 2 strings, a and b, return the number of the positions where they contain the same length 2 substring. ")
     print(string_match('abc', 'abc'))
     print(string_match('abc', 'axc'))
-    print(string_match('xxcaazz', 'xxbaaz'))
-    print("\n")
+    print(string_match('xxcaazz', 'xxbaaz'), "\n")
 
     print("Task22: Given an array of ints, return True if the sequence of numbers 1, 2, 3 appears in the array somewhere. ")
     print(array123([1, 1, 2, 3, 1]))
     print(array123([1, 1, 2, 4, 1]))
     print(array123([1, 1, 2, 1, 2, 3]))
-    print(array123([1, 2]))
-    print("\n")
+    print(array123([1, 2]), "\n")
 
     print("Task23: Given an array of ints, return True if one of the first 4 elements in the array is a 9. ")
     print(array_front9([1, 2, 9, 3, 4]))
     print(array_front9([1, 2, 3, 4, 9]))
     print(array_front9([1, 2, 3, 4, 5]))
     print(array_front9([2]))
-    print(array_front9([]))
-    print("\n")
+    print(array_front9([]), "\n")
 
 
 
 # dunder == double underscore
 # allows you to check whether the file is being run as a script or not
-# __main__ = scritp
+# __main__ = script
 # if __name__ = '__main__' is used to signal that this file is a script and you can run it
 # if your file doesn't contain it then assume the file is used as a library or you should import it.
 if __name__ == '__main__':
