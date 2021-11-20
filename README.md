@@ -38,6 +38,20 @@ python_selflearning_examples1.py
 
 18: Understanding try, except, else and finally  
 
+19: Remove elements in List while looping
+
+20: Print the squares of the first 100 positive integers
+
+21: Print the remainder of the first 100 positive integers after squaring them and then
+divide them by 5
+
+22: From a list of movies find those who start with the letter G
+
+23: Find movies released before 2000 from a list with movie names and year released
+
+24: Multiply the elements of the vector by 4
+
+25: Calculate the cartesian (cross) product of the 2 lists
 
 
 
@@ -45,13 +59,13 @@ python_selflearning_examples2.py
 
 1:Sum the numbers from 0 to n-1 in different ways - complexity  
 
-2: Multiple input arguments and parameters in funcs *args 2*args  
+2: Functions with multiple input arguments and parameters in funcs *args 2*args  
 
 3: Scope: Global vs Local Variables   
 
 4: Function that takes int and has 4 different output cases
 
-5: Concatinate 2 tuples
+5: Concatenate 2 tuples
 
 6: Initialize a 5 by 5 numpy array with only zeros.
 
@@ -94,6 +108,7 @@ So "xxcaazz" and "xxbaaz" yields 3, since the "xx", "aa", and "az" substrings ap
 
 23: Given an array of ints, return True if one of the first 4 elements in the array is a 9. 
 The array length may be less than 4
+
 
 
 python_selflearning_examples3.py 
