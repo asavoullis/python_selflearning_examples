@@ -76,7 +76,7 @@ def main():
 
     # create an identity matrix
     i_4 = np.identity(4)
-    print(i_4 , "\n")
+    print(i_4, "\n")
     # alternative way
     i_5 = np.eye(5)
     print(i_5, "\n")
@@ -94,6 +94,17 @@ def main():
     e = np.empty((2, 5))
     print(e, "\n")
 
+    # range vs np.arange
+    print(range(10))
+
+    abc = list(range(10))
+    print(abc, "\n")
+
+    # array_rng = np.arange(start = 0, stop = 30, step = 2.5, dtype = np.float32) or np.int32
+    array_rng = np.arange(10)
+    print(array_rng)
+
+    """ Be Careful when copying arrays """
     # create an array with fixed values
     arr = np.array([3, 7, 6, 8, 9, 1, 2, 3])
     print(arr)
@@ -101,15 +112,18 @@ def main():
     arr_copy = arr.copy()
     print(arr_copy, "\n")
 
-    # range vs np.arange
-    print(range(10))
+    a3 = np.array([1, 2, 3])
+    print(a3, "\n ")
+    # b3 points to a3 so if you change a value of b3 a3 will also change
+    b3 = a3
+    b3[0] = 100
+    # changing b3's first element also changes a3's first element because of b3 = a3 they point to each other
+    print(a3, "\n ")
+    print(b3, "\n ")
 
-    abc =list(range(10))
-    print(abc, "\n")
-
-    # array_rng = np.arange(start = 0, stop = 30, step = 2.5, dtype = np.float32) or np.int32
-    array_rng = np.arange(10)
-    print(array_rng)
+    # BETTER USE COPY to copy an array!
+    a4 = a3.copy()
+    print(a4, "\n ")
 
 
     """ Sorting Array """
@@ -187,13 +201,15 @@ def main():
 
 
     """ Array Slicing """
+    print(b, "\n")
     # slicing = interval indexing
 
-    # get the 3rd element from every 1D array
-    print(b[:, 2])
-    print("\n")
+    # get the 3rd element from every row
+    print(b[:, 2], "\n")
 
-    print(b)
+    # get the first row only from array
+    print(b[0, :], "\n")
+
     # assigning all the elements of the first position at the 1st (0) position vertically to 9
     b[:, 0] = 9
     print(b, "\n")
@@ -214,6 +230,8 @@ def main():
     # print Every other value of every other row, starting from the first
     print(matrix_B[::2, ::2], "\n")
 
+    # getting a little more fancy [startindex:endindex:stepsize]
+    print(b[0, 1:-2: 2])
     print(matrix_B[::-2, ::2], "\n")
     print(matrix_B[-1::-2, ::2], '\n')
 
@@ -244,9 +262,11 @@ def main():
     """ Types of Data Supported By Numpy """
     # Defining all the values as floats (decimals).
     array_a = np.array([[1, 2, 3], [4, 5, 6]], dtype=np.float16)
+    print(array_a, "\n")
 
     # Defining all the values as complex numbers.
     array_a = np.array([[1, 2, 3], [4, 5, 6]], dtype=np.complex64)
+    print(array_a, "\n")
 
     # array_a = np.array([[1,2,0],[4,5,6]], dtype = np.bool)
     # array_a = np.array([[10,2,3],[4,5,6]], dtype = np.str)
@@ -416,7 +436,7 @@ def main():
     print(matrix_D[0:1, 0:1].shape, "\n")
 
     # [[1]]
-    print(matrix_D[0:1,0:1])
+    print(matrix_D[0:1, 0:1])
     # 1
     print(matrix_D[0:1, 0:1].squeeze(), '\n')
 
@@ -449,7 +469,7 @@ def main():
     print(np.mean(matrix_B), "\n")
 
     print(np.nanquantile(matrix_B, 0.7))
-    np.nanvar(matrix_B,"\n")
+    # print(np.nanvar(matrix_B,"\n"))
 
     z1 = np.cov(matrix_A)
     print(z1)
