@@ -1,5 +1,4 @@
-# Python practise examples and tasks
-# more advanced than examples_and_tasks
+# Python practise examples and tasks 2
 
 import timeit
 import numpy as np
@@ -8,7 +7,7 @@ import math
 import statistics
 
 """Task1: Sum the numbers from 0 to n-1 in different ways. """
-# although the for and the while loop are essentially doing the same, the while loop takes longer than the for loop to run
+# although for and while loop are essentially doing the same, the while loop takes longer than the for loop to run
 def while_loop(n=50_000_000):
     # when using large numbers we can use _ to make them easier to read
     i = 0
@@ -39,7 +38,8 @@ def numpy_sum(n=50_000_000):
     return np.sum(np.arange(n))
 
 
-# much faster because entire operation is written in c, this whole function is 1 c call, both the iteration and the adding itself is done in c.
+# much faster because entire operation is written in c, this whole function is 1 c call,
+# both the iteration and the adding itself is done in c.
 # the downside is that arange creates a whole array in memory
 
 # fastest way to calulate it is to use math knowledge - we are adding the first n-1 integers therefore: we can use this formula
@@ -47,7 +47,7 @@ def sum_math(n=50_000_000):
     return (n * (n - 1)) // 2
 
 
-##  conclusion:
+#   conclusion:
 # the fastest way to loop in python is to:
 # not to loop in python
 # try to compute the answer mathematically ahead of time definitely do that
@@ -448,8 +448,7 @@ def main():
     for r in radii:
         a = area(r)
         areas.append(a)
-    print(areas)
-    print("\n")
+    print(areas,"\n")
 
     #   Alternative way using the MAP function
     # map takes 2 arguments, function, tuple/list
@@ -468,6 +467,8 @@ def main():
 
     print("Task28: Extract values from 2 lists at the same time using the ZIP function. ")
     print(loop_over_2_lists(x_list, y_list))
+
+
 
 # dunder == double underscore
 # allows you to check whether the file is being run as a script or not
