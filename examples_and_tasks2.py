@@ -318,14 +318,44 @@ def loop_over_2_lists(list1, list2):
     # this is the way to extract them from a tuple
     for x, y in zip(list1, list2):
         print(x, y)
-
     return "\n"
 
 
-"""Task29: """
+"""Task29: Switch over the values of 2 variables. """
+def switch_variables(x, y):
+    x, y = y, x
+    return "After: x = %d, y = %d" % (x, y)
 
 
+"""Task30: Try to get of find a value from dictionary. Use the GET function. """
+ages = {'Mary': 31, 'Jonathan': 28}
+ages2 = {'Mary': 31, 'Jonathan': 28, 'Dick': 51}
+def find_value_in_dict(dict):
+    age = dict.get('Dick', 'Unknown')
+    return f'Dick is {age} years old.'
 
+
+"""Task31: The correct way to open a file and print the output. Using the WITH function. """
+def open_read_file(file):
+    # with open(file) as f:
+    with open(f'{file}') as f:
+        for line in f:
+            print(line)
+    return "\n"
+
+
+"""Task32: Build a function that converts the input to integer if possible. """
+def int_conv(x):
+    try:
+        print(int(x))
+    except:
+        print('Conversion failed!')
+    else:
+        print('Conversion successful!')
+    finally:
+        # always executed
+        print("Done")
+    return ""
 
 def main():
     print("Task1: Find the fastest way to compute the sum of the first 50 000 000 integers. ")
@@ -448,7 +478,7 @@ def main():
     for r in radii:
         a = area(r)
         areas.append(a)
-    print(areas,"\n")
+    print(areas, "\n")
 
     #   Alternative way using the MAP function
     # map takes 2 arguments, function, tuple/list
@@ -468,6 +498,24 @@ def main():
     print("Task28: Extract values from 2 lists at the same time using the ZIP function. ")
     print(loop_over_2_lists(x_list, y_list))
 
+    print("Task29: Switch over the values of 2 variables. ")
+    # x = -10
+    # y = 15
+    x, y = 10, -10
+    print("Before: x = %d, y = %d" % (x, y))
+    print(switch_variables(x, y), "\n")
+
+    print("Task30: Try to get or find a value from dictionary. Use the GET function. ")
+    print(find_value_in_dict(ages))
+    print(find_value_in_dict(ages2), "\n")
+
+    print("Task31: The correct way to open a file and print the output. Using the WITH function. ")
+    # print(open_read_file('README.md'))
+    print("\n")
+
+    print("Task32: Build a function that converts the input to integer if possible. ")
+    print(int_conv('full'))
+    print(int_conv(4.5))
 
 
 # dunder == double underscore
