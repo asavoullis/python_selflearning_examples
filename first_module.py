@@ -162,12 +162,6 @@ def main():
     print(g1(5, x=3))
     print("\n")
 
-    example = set()
-    # to see
-    print(dir(example))
-
-
-
 
 
 
@@ -177,9 +171,10 @@ def main():
 # This is run when this file is directly executed
 if __name__ == '__main__':
     # first main is executed
+    print("first_module is run directly")
+    print("\n")
     main()
 
-    print("first_module is run directly")
 
 # This is run when this file is imported from another file
 else:
