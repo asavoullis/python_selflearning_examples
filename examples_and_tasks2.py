@@ -299,12 +299,32 @@ avg = statistics.mean(data)
 def filter_data(input_data):
     return list(filter(lambda x: x > avg, input_data))
 
+
 """Task27: Remove missing data from list. """
 countries = ["", "Argentina", "Brazil", "Chile", "", "Colombia", "", "Ecuador", "", "", "Venezuela"]
 def rmv_msing_data(list1):
     # in this case filter filters the following data: "", 0, 0.0, 0j, [], (), {}, False, None
     # these are instances which signal they are empty
     return list(filter(None, list1))
+
+
+"""Task28: Extract values from 2 lists at the same time using the ZIP function. """
+x_list = [1, 2, 3]
+y_list = [4, 5, 6]
+def loop_over_2_lists(list1, list2):
+    # zip takes 2 or more lists and zips them together in a tuple
+    for z in zip(list1, list2):
+        print(z)
+    # this is the way to extract them from a tuple
+    for x, y in zip(list1, list2):
+        print(x, y)
+
+    return "\n"
+
+
+"""Task29: """
+
+
 
 
 def main():
@@ -445,6 +465,9 @@ def main():
 
     print("Task27: Remove missing data from list. ")
     print(rmv_msing_data(countries), "\n")
+
+    print("Task28: Extract values from 2 lists at the same time using the ZIP function. ")
+    print(loop_over_2_lists(x_list, y_list))
 
 # dunder == double underscore
 # allows you to check whether the file is being run as a script or not
