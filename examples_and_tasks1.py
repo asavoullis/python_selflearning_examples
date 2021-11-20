@@ -31,7 +31,7 @@ assert	else		import	pass
 break	except
 """
 
-"""Task 1: Print the cube of the ints inside a list. """
+"""Task1: Print the cube of the ints inside a list. """
 num = [2, 5, 7, 3, 2, 4]
 def cube_Of_Ints(list_of_nums):
     cube = []
@@ -41,7 +41,7 @@ def cube_Of_Ints(list_of_nums):
     return "Cube of ints in list: {}".format(cube)
 
 
-"""Task 2: Prints a pattern of stars depending on users input. """
+"""Task2: Prints a pattern of stars depending on users input. """
 def pattern():
     # pattern printing with user input
     # asks the user to enter a number as input, wil return error if not integer
@@ -56,7 +56,7 @@ def pattern():
     return "Here is your pattern"
 
 
-"""Task 3: Use the break function. """
+"""Task3: Use the break function. """
 # print only the first six out of 10 numbers using break
 def use_break():
     for i in range(1, 10):
@@ -67,7 +67,7 @@ def use_break():
     return "Break used before number 7"
 
 
-"""Task 4: Type the word Gilly. """
+"""Task4: Type the word Gilly. """
 def type_Gilly():
     # make the user enter the word Gilly!
     while True:
@@ -80,13 +80,13 @@ def type_Gilly():
             return "Finally!"
 
 
-"""Task 5: Print the average of positive integer numbers, enter a negative integer to stop. """
+"""Task5: Print the average of positive integer numbers, enter a negative integer to stop. """
 def avg_of_pos_nums():
     # output the average of positive numbers
     num5 = 0
     count = 0
     sum = 0
-    # countinue until the user inputs a negative number
+    # continue until the user inputs a negative number
     while num5 >= 0:
         # note here that characters or strings will result in error
 
@@ -99,7 +99,7 @@ def avg_of_pos_nums():
     return 'Sum: ', sum, 'Average: ', avg
 
 
-"""Task 6: Reverse sort order print the strings in a list. """
+"""Task6: Reverse sort order print the strings in a list. """
 def reverse_order_list():
     # reverse sort the string list
     players = ['Messi', 'Benzema', 'Neymar', 'Ronaldo', 'Salah', 'Harry', 'Rooney']
@@ -110,7 +110,7 @@ def reverse_order_list():
     return reverse_players
 
 
-"""Task 7: Sort the dictionary. """
+"""Task7: Sort the dictionary. """
 def sort_dict():
     # Sort the dictionary
     dictio = {'f': 1, 'b': 4, 'a': 3, 'e': 9, 'c': 2}
@@ -119,7 +119,7 @@ def sort_dict():
     return "\n"
 
 
-"""Task 8: Output only the even aged animals. """
+"""Task8: Output only the even aged animals. """
 def dict_even_aged_animals():
     # Sort the dictionary
     animals = [{'name': "Dog", "age": 11}, {'name': "Cat", "age": 16},
@@ -129,7 +129,7 @@ def dict_even_aged_animals():
     return "\n"
 
 
-"""Task 9: Weekday or Vacation. """
+"""Task9: Weekday or Vacation. """
 #   BOOLEAN IMPLEMENTATION FUNCTION ##
 # Write a function where if you input:
 #  True and True  you get: True
@@ -138,8 +138,6 @@ def dict_even_aged_animals():
 #  False and False  you get: True
 weekday_input = True
 vacation_input = False
-
-
 def sleep_in(weekday, vacation):
     # if not weekday or vacation:
     # same as the statement below
@@ -162,7 +160,7 @@ def sleep_in(weekday, vacation):
 # print(type(weekday_input))
 
 
-"""Task 10: Check how many even ints are in a list. For every even int square it and add it to the sum. """
+"""Task10: Check how many even ints are in a list. For every even int square it and add it to the sum. """
 # Check how many even ints in a list using a function.
 # Additionally, if it finds an even int then squares the int and then adds it to the sum   -VERSION 2
 inputlist1 = [1, 2, 3, 4, 5, 6, 7, 9]  # 3
@@ -183,7 +181,7 @@ def count_even_in_list(inputlist):
     return count, sumofeven
 
 
-"""Task 11: Check if the first or the last element in a list is 7. """
+"""Task11: Check if the first or the last element in a list is 7. """
 # given an array of ints within a list check if the first or the last element is a 7
 # if its a 7 print True else False
 list1 = [7, 5, 6, 8, 9, 6, 7, 8]
@@ -199,7 +197,7 @@ def first_last_7(nums):
         return False
 
 
-"""Task 12: Return the string with every character outputted twice in the same order. """
+"""Task12: Return the string with every character outputted twice in the same order. """
 # Given a string return the string where every char in the original,
 # there are 2 same chars in the same order
 str1 = 'Hello'
@@ -217,7 +215,7 @@ def double_chars(string):
     return to_return
 
 
-"""Task 13: Python Functional implementation. 
+"""Task13: Python Functional implementation. 
 Use various functions to perform string manipulation with the input of the user. """
 def get_name_and_number():
     # Using a while True loop to get the different elements for a list of integers.
@@ -247,7 +245,7 @@ def hello_name(name):
     return "Hello " + name + "!"
 
 
-"""Task 14: Using context manager - with. """
+"""Task14: Using context manager - with. """
 # using with allows you not to have to have to close that file manually  f.close() - this is not only for files, its whenever you are setting up and tearing down resources eg threads and releasing logs OR with databases
 def file_context_manager_with():
     with open('test.txt', 'r') as f:  # opens the file
@@ -263,7 +261,7 @@ def file_context_manager_with():
     return f'There are {word_count} words'
 
 
-"""Task 15: Acquiring index and element from list using for loop. """
+"""Task15: Acquiring index and element from list using for loop. """
 # acquiring both the element and its index from a list.
 names_list = ['Mat', 'John', 'Max', 'Chris', 'Dave', 'Akis']
 
@@ -276,21 +274,19 @@ def get_index_and_element():
     return "\n"
 
 
-"""Task 16: Looping over 3 lists and combine output - using zip. """
+"""Task16: Looping over 3 lists and combine output - using zip. """
 # Given two lists print the same index elements together
 names_list2 = ['Peter Parker', 'Clark Kent', 'Wade Wilson', 'Bruce Wayne']
 heroes = ['Spiderman', 'Superman', 'Deadpool', 'Batman']
 universes = ['Marvel', 'DC', 'Marvel', 'DC']
-
-
-### Traditional way
+#   Traditional way
 # to get both the index and the element use the enumerate function
 # for index, name in enumerate(names_list2):
 
 # advanced way - using zip - #Zip can be used with 3 lists
 # # zip is actually returning a tuple of 3 items but we are unpacking them by setting 3 different variables
 
-#	hero = heroes[index]
+#   hero = heroes[index]
 def combine_three_lists(listone, listtwo, listthree):
     for name, hero, universe in zip(listone, listtwo, listthree):
         print(f'{name} is actually {hero} from {universe}.')
@@ -302,7 +298,7 @@ def combine_three_lists(listone, listtwo, listthree):
     return "\n"
 
 
-"""Task 17: Unpacking. """
+"""Task17: Unpacking. """
 def unpack_examples():
     # when unpacking and you are not going to use that variable you can set it to _
     # to avoid warnings or errors due to unused variable
@@ -321,7 +317,7 @@ def unpack_examples():
     return "\n"
 
 
-"""Task 18: Understanding try, except, else and finally . """
+"""Task18: Understanding try, except, else and finally . """
 # v1
 def f1():
     # returns only 2
@@ -432,69 +428,70 @@ def multiply_vector(list):
 
 
 """Task25: Calculate the cartesian (cross) product of the 2 lists. """
-A = [1, 3 ,5 ,7]
-B = [2, 4 ,6, 8]
+A = [1, 3, 5, 7]
+B = [2, 4, 6, 8]
 def cartesian_product(list1, list2):
     return [(a,b) for a in list1 for b in list2]
 
 
 
 def main():
-    print("Task 1: Print the cube of the ints inside a list.")
+    print("Task1: Print the cube of the ints inside a list.")
     print(cube_Of_Ints(num), "\n")
-    print("Task 2: Prints a pattern of stars depending on users input. ")
+    print("Task2: Prints a pattern of stars depending on users input. ")
     print(pattern(), "\n")
-    print("Task 3: Use the break function. ")
+    print("Task3: Use the break function. ")
     print(use_break(), "\n")
-    print("Task 4: Type the word Gilly: ")
+    print("Task4: Type the word Gilly: ")
     print(type_Gilly(), "\n")
-    print("Task 5: Print the average of positive integer numbers, enter a negative integer to stop. ")
+    print("Task5: Print the average of positive integer numbers, enter a negative integer to stop. ")
     print(avg_of_pos_nums(), "\n")
 
-    print("Task 6: Reverse sort order print the strings in a list. ")
+    print("Task6: Reverse sort order print the strings in a list. ")
     print(reverse_order_list(), "\n")
-    print("Task 7: Sort the dictionary. ")
+    print("Task7: Sort the dictionary. ")
     print(sort_dict())
-    print("Task 8: Output only the even aged animals. ")
+    print("Task8: Output only the even aged animals. ")
     print(dict_even_aged_animals())
-    print("Task 9: Weekday or Vacation. ")
+    print("Task9: Weekday or Vacation. ")
     print(sleep_in(weekday_input, vacation_input), "\n")
 
-    print("Task 10: Check how many even ints are in a list. For every even int square it and add it to the sum. ")
+    print("Task10: Check how many even ints are in a list. For every even int square it and add it to the sum. ")
     count_even_in_list(inputlist1)
     print(f"We have {count_even_in_list(inputlist1)[0]} even integers in {inputlist1},with a sum of {count_even_in_list(inputlist1)[1]}")
     count_even_in_list(inputlist2)
     print(f"We have {count_even_in_list(inputlist2)[0]} even integers in {inputlist2},with a sum of {count_even_in_list(inputlist2)[1]}")
     print("\n")
 
-    print("Task 11: Check if the first or the last element in a list is 7. ")
+    print("Task11: Check if the first or the last element in a list is 7. ")
     print(f"In {list1} its {first_last_7(list1)}")
     print(f"In {list2} its {first_last_7(list2)}")
     print(f"In {list3} its {first_last_7(list3)}", "\n")
 
-    print("Task 12: Return the string with every character outputted twice in the same order. ")
+    print("Task12: Return the string with every character outputted twice in the same order. ")
     print(double_chars(str1))
     print(double_chars(str2))
     print(double_chars(str3), "\n")
 
-    print("Task 13: Python Functional implimentation. Use various functions to perform string manipulation with the input of the user. ")
+    print("Task13: Python Functional implementation. Use various functions to perform string manipulation with the input \
+     of the user. ")
     name, n= get_name_and_number()
     print(hello_name(name))
     print(string_multiplier(name, n), "\n")
 
-    print("Task 14: Using context manager - with. ")
+    print("Task14: Using context manager - with. ")
     print(file_context_manager_with(), "\n")
 
-    print("Task 15: Acquiring index and element from list using for loop. ")
+    print("Task15: Acquiring index and element from list using for loop. ")
     print(get_index_and_element())
 
-    print("Task 16: Looping over 3 lists and combine output - using zip. ")
+    print("Task16: Looping over 3 lists and combine output - using zip. ")
     print(combine_three_lists(names_list2, heroes, universes))
 
-    print("Task 17: Unpacking. ")
+    print("Task17: Unpacking. ")
     print(unpack_examples())
 
-    print("Task 18: Understanding try, except, else and finally .")
+    print("Task18: Understanding try, except, else and finally .")
     print(f1())
     divide(3, 2)
     divide(3, 0)
