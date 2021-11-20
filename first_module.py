@@ -140,9 +140,7 @@ def main():
     # prints the names of the functions in the current document
     print(dir())
     print("\n")
-    import datetime
-    print(dir(datetime))
-    print("\n")
+
 
     print(volume_of_sphere(2))
     print("\n")
