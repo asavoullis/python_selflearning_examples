@@ -4,6 +4,7 @@
 import timeit
 import numpy as np
 import pandas as pd
+import math
 
 """Task1: Sum the numbers from 0 to n-1 in different ways. """
 # although the for and the while loop are essentially doing the same, the while loop takes longer than the for loop to run
@@ -48,7 +49,7 @@ def sum_math(n=50_000_000):
 ##  conclusion:
 # the fastest way to loop in python is to:
 # not to loop in python
-# try to compute the answer mathamtically ahead of time definately do that
+# try to compute the answer mathematically ahead of time definitely do that
 # loop in a c built in function such as numpy library
 # call a c function that can do the looping
 # use python builtin functions like sum or map
@@ -72,13 +73,14 @@ def incriment(number, by=1):
     return number + by
 
 
-# multiple variable input - we can pass multiple key value pairs or multiple keyword arguments to a function and python will automatically package them into a dictionary
+# multiple variable input - we can pass multiple key value pairs or multiple keyword arguments to a function and
+# python will automatically package them into a dictionary
 def save_user(**user):
     # makes it a dictionary
     print(user)
     # you can also specify which key you want
     print(user["id"])
-    return (user)
+    return user
 
 
 """Task3: Scope - Global vs Local Variables. """
@@ -88,12 +90,13 @@ def greet(name):
     # global message
     # avoid using the global inside the variable - easy to make mistakes and cause bugs
 
-    # the scope of the variable message and name is the greet function, they are local variables inside the greet function - they don't exist anywhere else
+    # the scope of the variable message and name is the greet function, they are local variables inside the greet
+    # function - they don't exist anywhere else
     message = "a"
 
 
-"""Task4: Create a function which takes a single integer. """
-# Create a function that when passed an integer, will return Fizz if the int is divisible by 3, Buzz if the int is divisible by 5, FizzBuzz if divisible by both 3 and 5 else the number
+"""Task4: Create a function that when passed an integer, will return Fizz if the int is divisible by 3,
+Buzz if the int is divisible by 5, FizzBuzz if divisible by both 3 and 5 else the number. """
 def fizz_buzz(input):
     if (input % 3 == 0) and (input % 5 == 0):
         return "FizzBuzz"
@@ -110,7 +113,7 @@ tup1 = (1, "a", True)
 tup2 = (4, 5, 6, False)
 def tupleconcat(tupl1, tupl2):
     # adds them in order first tup1 and then tup2 at its end
-    return (tupl1 + tupl2)
+    return tupl1 + tupl2
 
 
 """Task 6: Initialize a 5 by 5 numpy array with only zeros. """
@@ -130,7 +133,7 @@ data = ["1", 2, "three", 4.0]
 def createa_Pandas_Series(inputdata):
     series = pd.Series(inputdata)
     typeofseries = type(series)
-    return (series, typeofseries)
+    return series, typeofseries
 
 
 """Task 9: Reverse a string. """
@@ -138,7 +141,7 @@ strng1 = "Hello"
 strng2 = "My name is Johnas123"
 def reverse_String(inputstrg):
     str_reverse = inputstrg[::-1]
-    return (str_reverse)
+    return str_reverse
 
 
 """Task 10: Create a new column in pandas by using values from other column. """
@@ -186,7 +189,7 @@ def sum_double(a, b):
     if a == b:
         return 2 * (a + b)
     else:
-        return (a + b)
+        return a + b
 
 
 
@@ -314,7 +317,7 @@ def main():
     print("Task 4: The fizz_buzz function. ")
     print(fizz_buzz(15), fizz_buzz(3), fizz_buzz(5), fizz_buzz(4), "\n")
 
-    print("Task 5: Concatinate 2 tuples together. ")
+    print("Task 5: Concatenate 2 tuples together. ")
     print(tupleconcat(tup1, tup2), "\n")
 
     print("Task 6: Initialize a 5 by 5 numpy array with only zeros. ")
@@ -324,7 +327,7 @@ def main():
     #print(read_csv_file_pandas(file.csv))
     print("\n")
 
-    print("Task 8: Creat a Pandas Series from data. ")
+    print("Task 8: Create a Pandas Series from data. ")
     print(createa_Pandas_Series(data), "\n")
 
     print("Task 9: Reverse the string. ")
