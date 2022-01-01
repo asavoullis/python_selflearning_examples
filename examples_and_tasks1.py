@@ -31,6 +31,7 @@ assert	else		import	pass
 break	except
 """
 
+
 """Task1: Print the cube of the ints inside a list. """
 num = [2, 5, 7, 3, 2, 4]
 def cube_Of_Ints(list_of_nums):
