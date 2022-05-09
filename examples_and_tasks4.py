@@ -139,6 +139,27 @@ for key, value in person_info.items():
     setattr(person2, key, value)
 
 
+"""Task10: Given an array of ints, return True if the array contains a 2 next to a 2 somewhere. """
+def has22(nums):
+# has22([1, 2, 2]) → True
+#has22([1, 2, 1, 2]) → False
+# has22([2, 1, 2]) → False
+    for x in range(len(nums) - 1):
+        if (nums[x] == 2) and (nums[x + 1] == 2):
+            return True
+    return False
+
+
+def has22_v2(nums):
+    return any(x == y == 2 for x, y in zip(nums, nums[1:]))
+
+
+"""Task11:Return the sum of the numbers in the array, except ignore sections of numbers starting with a 6 and extending\
+ to the next 7 (every 6 will be followed by at least one 7). Return 0 for no numbers. """
+def sum67(nums):
+    pass
+
+
 def main():
     print(multiple_assignment_expression(), '\n')
 
@@ -162,6 +183,15 @@ def main():
 
     for key in person_info.keys():
         print("v2 for loop:", getattr(person2, key))
+
+    print('\n')
+    print('Task10: Given an array of ints, return True if the array contains a 2 next to a 2 somewhere. ')
+    print(has22([2, 1, 2]))
+    print(has22([1, 2, 1, 2]))
+    print(has22([]))
+    print(has22_v2([4, 2, 4, 2, 2, 5]), '\n')
+
+    print('')
 
 
 # dunder == double underscore
