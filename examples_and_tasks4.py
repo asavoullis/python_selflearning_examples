@@ -2,12 +2,12 @@
 
 import datetime
 
-# in Python an assignment (d = 8) is not an expression, its a statement
+# in Python an assignment (d = 8) is not an expression, it's a statement
 # in other languages assignments are also expressions and return d back to you.
 # python expressions were added in 3.8
 
 
-"""Task 1: assign multiple expressions together from right to left"""
+"""Task 1: assign multiple expressions together from right to left. """
 def multiple_assignment_expression():
     # parenthesis are there because they have to be, you are not allowed to assign multiple expressions together unless you put them in parenthesis
     (a := (b := (c := (d := 0))))
@@ -18,7 +18,7 @@ def multiple_assignment_expression():
     return (a, b, c, d)
 
 
-"""Task2: Explore string formatting """
+"""Task2: Explore string formatting. """
 def equals_debugging():
     str_value = "other 😊"
     num_value = 1234
@@ -28,7 +28,7 @@ def equals_debugging():
     print("\n")
 
 
-"""Task3: Explore string formatting 2"""
+"""Task3: Explore string formatting 2. """
 def conversions():
     str_value = "other 😊"
     print(f'{str_value!a}')  # converts non ascii characters to an ascii version
@@ -37,7 +37,7 @@ def conversions():
     print("\n")
 
 
-"""Task4: Explore string formatting using a class """
+"""Task4: Explore string formatting using a class. """
 # empty class
 class MyClass:
     # all it does is define a format method which takes a format_spec and returns a string
@@ -46,7 +46,7 @@ class MyClass:
         return "Myclass()"
 
 
-"""Task5: Explore string formatting 3"""
+"""Task5: Explore string formatting 3. """
 def formatiing():
     num_value = 123.456
     now = datetime.datetime.utcnow()
@@ -59,21 +59,21 @@ def formatiing():
     print("\n")
 
 
-"""Task6: Explore  chained assignments - multiple equal signs"""
+"""Task6: Explore  chained assignments - multiple equal signs. """
 def multiple_assignment():
     c = d = e = f = []
     print(c, d, e, f)
     print("\n")
 
 
-"""Task7: Tuple unpacking"""
+"""Task7: Tuple unpacking. """
 def tuple_assignment():
     a, b = 1, 2
     print(a, b)
     print("\n")
 
 
-# advanced unpacking
+"""Task8: More advanced unpacking. """
 def tricky_assignments():
     # recursive cyclic structure   ... = cyclic reference
     # a becomes a member of its self b = []
@@ -89,6 +89,7 @@ def tricky_assignments():
     print("\n")
 
 
+"""Task9: More advanced unpacking 2. """
 def tricky_assignemnt2():
     a, b = a[b] = a = [1, 2, 3], 2
     print(a, b)
@@ -149,8 +150,8 @@ def main():
 
     multiple_assignment()
 
-
     tuple_assignment()
+
     tricky_assignments()
     tricky_assignemnt2()
 
