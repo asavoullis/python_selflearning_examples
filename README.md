@@ -137,4 +137,92 @@ The array length may be less than 4
 
 11: Simplify if statements with if x in list 
 
-12: counts longest ascending order numbers in a string
+12: Counts longest ascending order numbers in a string
+
+13: Given a string name, e.g. "Bob", return a greeting of the form "Hello Bob!
+
+14: Given two strings, a and b, return the result of putting them together in the order abba
+
+15: Given a string, return a "rotated left 2" version where the first 2 chars are moved to the end. The string length will be at least 2
+
+16: Given 2 strings return their concatenation, except omit the first char of each. 
+The strings will be at least length 1
+
+17: Given 2 strings, a and b, return a string of the form short+long+short, 
+with the shorter string on the outside and the longer string on the inside
+
+18: Given a string, return a version without the first and last char, so "Hello" yields "ell"
+
+19: Given a string of even length, return the first half. So the string "WooHoo" yields "Woo"
+
+20: Given an array of ints, return True if the array contains a 2 next to a 2 somewhere
+
+21: sum67 + v2
+
+22: sum13
+
+23: centered_average
+
+24: big_diff
+
+25: count_evens
+
+26: xyz_there 
+
+27: end_other + v2
+
+28: count_code
+
+29: count_hi
+
+30: double_charv2
+
+31: cat_dog
+
+32: make_chocolate
+
+
+## python_selflearning_examples4.py 
+
+1: Assign multiple expressions together from right to left
+
+2: Explore string formatting
+
+3: Explore string formatting 2
+
+4: Explore string formatting using a class
+
+5: Explore string formatting 3
+
+6: Explore  chained assignments - multiple equal signs
+
+7: Tuple unpacking
+
+8: More advanced unpacking
+
+9: More advanced unpacking 2
+
+10: List-2 > has22 + v2
+
+11: List-2 > sum67
+
+12: List-2 > sum13
+
+13: List-2 > centered_average
+
+14: List-2 > big_diff
+
+15: List-2 > count_evens
+
+16: String-2 > xyz_there
+
+17: String-2 > end_other + v2
+
+18:
+
+19: 
+
+20:
+
+
+
