@@ -211,8 +211,30 @@ def count_evens(nums):
     return count
 
 
+"""Task16: String-2 > xyz_there. Return True if the given string contains an appearance of "xyz" where the xyz is not 
+directly preceeded by a period (.). So "xxyz" counts but "x.xyz" does not."""
+def xyz_there(str):
+    for i in range(len(str)):
+        if str[i] != '.' and str[i+1:i+4] == 'xyz':
+            return True
+        if str[0:3] == 'xyz':
+            return True
+    return False
 
 
+"""Task17: String-2 > end_other. Given two strings, return True if either of the strings appears at the very end of the 
+other string, ignoring upper/lower case differences (in other words, the computation should not be "case sensitive"). 
+Note: s.lower() returns the lowercase version of a string. """
+def end_other(a, b):
+    a = a.lower()
+    b = b.lower()
+    return b.endswith(a) or a.endswith(b)
+
+
+def end_other_v2(a, b):
+    a = a.lower()
+    b = b.lower()
+    return a[-(len(b)):] == b or a == b[-(len(a)):]
 
 
 
@@ -277,6 +299,20 @@ def main():
     print(count_evens([2, 11, 9, 0])) #2
     print(count_evens([1, 3, 5])) #0
     print(count_evens([2, 5, 12]), '\n') #2
+
+    print('Task16: String-2 > xyz_there. ')
+    print(xyz_there('abc.xxyz')) #True
+    print(xyz_there('1.xyz.xyz2.xyz')) #False
+    print(xyz_there('abc.xyzxyz')) #True
+    print(xyz_there('abc.xyz'), '\n') #False
+
+    print('Task17: String-2 > end_other. ')
+    print(end_other('abcXYZ', 'abcDEF')) #False
+    print(end_other('Z', '12xz')) #True
+    print(end_other_v2('Hiabcx', 'bc')) #False
+    print(end_other_v2('Hiabc', 'bc')) #True
+    print(end_other_v2('abc', 'abXabc'), '\n') #True
+
 
 
 
