@@ -1,6 +1,8 @@
-Table of Contents: 
+# Table of Contents: 
 
-python_selflearning_examples1.py 
+
+
+## python_selflearning_examples1.py 
 
 1: Print the cube of the ints inside a list
   
@@ -55,7 +57,7 @@ divide them by 5
 
 
 
-python_selflearning_examples2.py 
+## python_selflearning_examples2.py 
 
 1:Sum the numbers from 0 to n-1 in different ways - complexity  
 
@@ -111,7 +113,7 @@ The array length may be less than 4
 
 
 
-python_selflearning_examples3.py 
+## python_selflearning_examples3.py 
 
 1: Iterate with enumerate instead of range + len
 
