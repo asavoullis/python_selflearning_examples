@@ -7,7 +7,7 @@ import datetime
 # python expressions were added in 3.8
 
 
-"""Task 1: assign multiple expressions together from right to left. """
+"""Task 1: Assign multiple expressions together from right to left. """
 def multiple_assignment_expression():
     # parenthesis are there because they have to be, you are not allowed to assign multiple expressions together unless you put them in parenthesis
     (a := (b := (c := (d := 0))))
