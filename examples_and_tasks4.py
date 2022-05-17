@@ -326,19 +326,67 @@ def guess_game():
     return f"You got the right answer after {counter} tries! :) "
 
 
-"""Task23: String length counter. """
-def test_str_2analysis4():
-    pass
+"""Task23: String-2 > cat_dog. Return True if the string "cat" and "dog" appear the same number of times 
+in the given string."""
+def cat_dog_v1(strg):
+    count_cat = 0
+    count_dog = 0
+    for i in range(len(strg) - 2):
+        if strg[i:i + 3] == 'dog':
+            count_dog += 1
+        if strg[i:i + 3] == 'cat':
+            count_cat += 1
+    return count_cat == count_dog
 
 
-"""Task24: String length counter. """
-def test_str_2analysis2():
-    pass
+def cat_dog_v2(strng):
+    if strng.count('cat') == strng.count('dog'):
+        return True
+    else:
+        return False
 
 
-"""Task25: String length counter. """
-def test_str_2analysis3():
-    pass
+"""Task24: String-2 > count_hi. Return the number of times the string "hi" appears anywhere in the given string. """
+def count_hi(strng):
+    # can also be done as v1 of Task 23
+    return strng.count('hi')
+
+
+"""Task25: String-2 > double_char. 
+Given a string, return a string where for every char in the original, there are two chars. """
+def double_char(str):
+    result = ''
+    for char in str:
+        result += char * 2
+    return result
+
+
+"""Task26: Fibonacci. """
+def fibonacci():
+    a, b = 0, 1
+    while b < 1000:
+        # end = ' ' makes the print function print in the same line
+        # The flush() method in Python file handling clears the internal buffer of the file
+        print(b, end=' ', flush=True)
+        a, b = b, a + b
+
+
+"""Task27: Is prime?"""
+def list_primes():
+    for n in range(40):
+        if isprime(n):
+            print(n, end=' ', flush=True)
+    print()
+
+
+def isprime(n):
+    if n <= 1:
+        return False
+    for x in range(2, n):
+        if n % x == 0:
+            return False
+        else:
+            return True
 
 
 
@@ -373,54 +421,54 @@ def main():
 
     print('\n')
     print('Task10: Given an array of ints, return True if the array contains a 2 next to a 2 somewhere. ')
-    print(has22([2, 1, 2]))  #False
-    print(has22([1, 2, 1, 2]))  #False
-    print(has22([]))  #False
-    print(has22_v2([4, 2, 4, 2, 2, 5]), '\n')  #True
+    print(has22([2, 1, 2]))  # False
+    print(has22([1, 2, 1, 2]))  # False
+    print(has22([]))  # False
+    print(has22_v2([4, 2, 4, 2, 2, 5]), '\n')  # True
 
     print('Task11: Return the sum of the numbers in the array, except ignore sections of numbers starting with a 6 and '
           'extending to the next 7 (every 6 will be followed by at least one 7). Return 0 for no numbers.')
-    print(sum67([1, 2, 2]))  #5
-    print(sum67([1, 2, 2, 6, 99, 99, 7]))  #5
-    print(sum67([1, 6, 7, 7]))  #1+7=8
-    print(sum67([6, 7, 1, 6, 7, 7]))  #1+7=8
-    print(sum67([6, 8, 1, 6, 7]))  #0
+    print(sum67([1, 2, 2]))  # 5
+    print(sum67([1, 2, 2, 6, 99, 99, 7]))  # 5
+    print(sum67([1, 6, 7, 7]))  # 1+7=8
+    print(sum67([6, 7, 1, 6, 7, 7]))  # 1+7=8
+    print(sum67([6, 8, 1, 6, 7]))  # 0
     print(sum67([]), '\n')
 
     print('Task12: Return the sum of the numbers in the array, returning 0 for an empty array. Except the number 13 is '
           'very unlucky, so it does not count and numbers that come immediately after a 13 also do not count. ')
-    print(sum13([13, 1, 2, 13, 2, 1, 13]))  #2+1=3
-    print(sum13([1, 2, 13, 2, 1, 13]))  #1+2+1=4
-    print(sum13([5, 13, 2]), '\n')  #5
+    print(sum13([13, 1, 2, 13, 2, 1, 13]))  # 2+1=3
+    print(sum13([1, 2, 13, 2, 1, 13]))  # 1+2+1=4
+    print(sum13([5, 13, 2]), '\n')  # 5
 
     print('Task13: List-2 > centered_average. ')
-    print(centered_average([-10, -4, -2, -4, -2, 0]))  #3
-    print(centered_average([0, 2, 3, 4, 100]))  #3
-    print(centered_average([-10, -4, -2, -4, -2, 0]), '\n')  #-3
+    print(centered_average([-10, -4, -2, -4, -2, 0]))  # 3
+    print(centered_average([0, 2, 3, 4, 100]))  # 3
+    print(centered_average([-10, -4, -2, -4, -2, 0]), '\n')  # -3
 
     print("Task14: List-2 > big_diff. ")
-    print(big_diff([5, 1, 6, 1, 9, 9]))  #8
-    print(big_diff([7, 7, 6, 8, 5, 5, 6]))  #3
-    print(big_diff([10, 0]))  #10
-    print(big_diff([2, 2]), '\n')  #0
+    print(big_diff([5, 1, 6, 1, 9, 9]))  # 8
+    print(big_diff([7, 7, 6, 8, 5, 5, 6]))  # 3
+    print(big_diff([10, 0]))  # 10
+    print(big_diff([2, 2]), '\n')  # 0
 
     print("Task15: List-2 > count_evens. ")
-    print(count_evens([2, 11, 9, 0]))  #2
-    print(count_evens([1, 3, 5]))  #0
-    print(count_evens([2, 5, 12]), '\n')  #2
+    print(count_evens([2, 11, 9, 0]))  # 2
+    print(count_evens([1, 3, 5]))  # 0
+    print(count_evens([2, 5, 12]), '\n')  # 2
 
     print('Task16: String-2 > xyz_there. ')
-    print(xyz_there('abc.xxyz'))  #True
-    print(xyz_there('1.xyz.xyz2.xyz'))  #False
-    print(xyz_there('abc.xyzxyz'))  #True
-    print(xyz_there('abc.xyz'), '\n')  #False
+    print(xyz_there('abc.xxyz'))  # True
+    print(xyz_there('1.xyz.xyz2.xyz'))  # False
+    print(xyz_there('abc.xyzxyz'))  # True
+    print(xyz_there('abc.xyz'), '\n')  # False
 
     print('Task17: String-2 > end_other. ')
-    print(end_other('abcXYZ', 'abcDEF'))  #False
-    print(end_other('Z', '12xz'))  #True
-    print(end_other_v2('Hiabcx', 'bc'))  #False
-    print(end_other_v2('Hiabc', 'bc'))  #True
-    print(end_other_v2('abc', 'abXabc'), '\n')  #True
+    print(end_other('abcXYZ', 'abcDEF'))  # False
+    print(end_other('Z', '12xz'))  # True
+    print(end_other_v2('Hiabcx', 'bc'))  # False
+    print(end_other_v2('Hiabc', 'bc'))  # True
+    print(end_other_v2('abc', 'abXabc'), '\n')  # True
 
     print("Task18: Fortune Cookie. ")
     print(fortune_cookie(), '\n')
@@ -435,7 +483,27 @@ def main():
     print(str_analysis(), '\n')
 
     print("Task22: Guess Game. ")
-    # print(guess_game())
+    # print(guess_game(), '\n')
+
+    print("Task23: String-2 > cat_dog. ")
+    print(cat_dog_v1('1cat1cadodog'))  # True
+    print(cat_dog_v2('catcat'))  # False
+    print(cat_dog_v1('c'))  # True
+    print(cat_dog_v2('catxdogxdogxca'), '\n')  # False
+
+    print("Task24: String-2 > count_hi. ")
+    print(count_hi('Hi is no HI on ahI'))  # 0
+    print(count_hi('ABChi hi'), '\n')  # 2
+
+    print('Task25: String-2 > double_char. ')
+    print(double_char('Hi-There'), '\n')  # HHii--TThheerree
+
+    print('Task26: Fibonacci. ')
+    print(fibonacci(), '\n')
+
+    print('Task27: Is prime?. ')
+    print(list_primes())
+
 
 
 # dunder == double underscore

@@ -548,22 +548,19 @@ except ignoring the largest and smallest values in the array.")
     print(big_diff([10, 3, 5, 6]))  # 7
     print(big_diff([7, 2, 10, 9]))  # 8
     print(big_diff([2, 10, 7, 2]))  # 8
-    print(big_diff([2, 2]))  # 0
-    print("\n")
+    print(big_diff([2, 2]), '\n')  # 0
 
     print("Task25: Return the number of even ints in the given array. ")
     print(count_evens([2, 1, 2, 3, 4]))  # 3
     print(count_evens([2, 2, 0]))  # 3
-    print(count_evens([1, 3, 5]))  # 0
-    print("\n")
+    print(count_evens([1, 3, 5]), '\n')  # 0
 
     print('Task26: Return True if the given string contains an appearance of "xyz" where the xyz is not directly preceeded by a period. ')
     print(xyz_there('abc.xyz'))  # False
     print(xyz_there('xyz.abc'))  # True
     print(xyz_there('abcxyz'))  # True
     print(xyz_there('abc.xyzxyz'))  # False
-    print(xyz_there('1.xyz.xyz2.xyz'))  # False
-    print("\n")
+    print(xyz_there('1.xyz.xyz2.xyz'), '\n')  # False
 
     print("Task27: Given two strings, return True if either of the strings appears at the very end of the other string, ignoring upper/lower case differences. ")
     print(end_other('ab', 'ab12'))  # False
@@ -573,44 +570,38 @@ except ignoring the largest and smallest values in the array.")
     print(end_other('abc', 'abXabc'))  # True
     print(end_otherv2('abc', 'abXabc'))
     print(end_other('yz', '12xz'))  # False
-    print(end_otherv2('yz', '12xz'))
-    print("\n")
+    print(end_otherv2('yz', '12xz'), '\n')
 
     print('Task28: Return the number of times that the string "code" appears anywhere in the given string, \
 except we will accept any letter for the "d", so "cope" and "cooe" count.')
     print(count_code('ode'))  # 0
     print(count_code('cozexxcope'))  # 2
     print(count_code('cozfxxcope'))  # 1
-    print(count_code('AAcodeBBcoleCCccoreDD'))  # 3
-    print("\n")
+    print(count_code('AAcodeBBcoleCCccoreDD'), '\n')  # 3
 
     print("Task29: Return the number of times that the string 'hi' appears anywhere in the given string. ")
     print(count_hi('abc hi ho'))  # 1
     print(count_hi('ABChi hi'))  # 2
-    print(count_hi('hiho not HOHIhi'))  # 2
-    print("\n")
+    print(count_hi('hiho not HOHIhi'), '\n')  # 2
 
     print("Task30: Given a string, return a string where for every char in the original, there are two chars. ")
     print(double_char('Hi-There'))
     print(double_charv2('Hi-There'))
     print(double_char('Word!'))
-    print(double_charv2('Word!'))
-    print("\n")
+    print(double_charv2('Word!'), '\n')
 
     print('Task31: Return True if the string "cat" and "dog" appear the same number of times in the given string. ')
     print(cat_dog('1cat1cadodog'))  # True
     print(cat_dog('catcat'))  # False
     print(cat_dog('c'))  # True
-    print(cat_dog('catxdogxdogxca'))  # False
-    print('\n')
+    print(cat_dog('catxdogxdogxca'), '\n')  # False
 
     print("Task32: We want make a package of goal kilos of chocolate. We have small bars (1 kilo each) and big bars (5 kilos each). \
 Return the number of small bars to use, assuming we always use big bars before small bars. Return -1 if it can't be done.")
     print(make_chocolate(4, 1, 10))  # -1
     print(make_chocolate(4, 1, 7))  # 2
     print(make_chocolate(4, 1, 9))  # 4
-    print(make_chocolate(1, 2, 5))  # 0
-    print("\n")
+    print(make_chocolate(1, 2, 5), '\n')  # 0
 
 
 if __name__ == '__main__':
