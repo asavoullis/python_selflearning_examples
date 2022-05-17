@@ -1,6 +1,6 @@
 # Python practise examples and tasks 3
 
-# used for taks5
+# used for task5
 import sys
 
 # used for task7
@@ -60,7 +60,8 @@ def store_unique_values_with_sets():
     my_set = set(my_list)
     print(my_set)
     # you can create a set with curly bracers.
-    # This allows python to make some optimizations and it also has some handy methods for calculating the intersections and differences of sets.
+    # This allows python to make some optimizations and it also has some handy methods for
+    # calculating the intersections and differences of sets.
     primes = {2, 3, 5, 7, 11, 13, 17, 19}
     print(primes)
     return "\n"
@@ -277,18 +278,19 @@ starting with a 6 and extending to the next 7
 (every 6 will be followed by at least one 7). Return 0 for no numbers."""
 def sum67(nums):
     flag = False
-    sum = 0
+    sum1 = 0
 
     for num in nums:
-        if (num == 6):  # Turn the flag on if the number is 6
+        if num == 6:  # Turn the flag on if the number is 6
             flag = True
             continue
-        if (num == 7 and flag is True):  # Turn the flag Off when 7 is seen after 6
+        if num == 7 and flag is True:  # Turn the flag Off when 7 is seen after 6
             flag = False
             continue
-        if (flag is False):  # Keep on adding the nums otherwise
-            sum += num
-    return sum
+        if flag is False:  # Keep on adding the nums otherwise
+            sum1 += num
+    return sum1
+
 
 def sum67v2(nums):
     state = 0
@@ -344,26 +346,28 @@ def count_evens(nums):
     return count
 
 
-"""Task26: Return True if the given string contains an appearance of "xyz" where the xyz is not directly preceeded by a fullstop. 
-So "xxyz" counts but "x.xyz" does not. """
-def xyz_there(str):
-    for i in range(0, len(str) - 2):
-        if str[i-1] != "." and str[i:i+3] == "xyz":
+"""Task26: Return True if the given string contains an appearance of "xyz" where the xyz is not directly preceeded by a\
+fullstop. So "xxyz" counts but "x.xyz" does not. """
+def xyz_there(strg):
+    for i in range(0, len(strg) - 2):
+        if strg[i-1] != "." and strg[i:i+3] == "xyz":
             return True
     return False
 
 
-"""Task27: Given two strings, return True if either of the strings appears at the very end of the other string, ignoring upper/lower case. """
+"""Task27: Given two strings, return True if either of the strings appears at the very end of the other string,
+ ignoring upper/lower case. """
 def end_other(a, b):
-    alen = len(a)
-    blen = len(b)
+    a_len = len(a)
+    b_len = len(b)
     a = a.lower()
     b = b.lower()
-    if a[-blen:] == b:
+    if a[-b_len:] == b:
         return True
-    if b[-alen:] == a:
+    if b[-a_len:] == a:
         return True
     return False
+
 
 def end_otherv2(a, b):
     # using the function endswith
@@ -374,40 +378,41 @@ def end_otherv2(a, b):
 
 """Task28: Return the number of times that the string "code" appears anywhere in the given string, 
 except we'll accept any letter for the 'd', so "cope" and "cooe" count."""
-def count_code(str):
+def count_code(strg):
     count = 0
-    for i in range(len(str) - 3):
-        if str[i:i + 2] == "co" and str[i + 3] == "e":
+    for i in range(len(strg) - 3):
+        if strg[i:i + 2] == "co" and strg[i + 3] == "e":
             count += 1
     return count
 
 
 """Task29: Return the number of times that the string "hi" appears anywhere in the given string."""
-def count_hi(str):
+def count_hi(strg):
     count = 0
-    for i in range(len(str)-1):
-        if str[i:i+2] == "hi":
+    for i in range(len(strg)-1):
+        if strg[i:i+2] == "hi":
             count += 1
     return count
 
 
 """Task30: Given a string, return a string where for every char in the original, there are two chars. """
-def double_char(str):
+def double_char(strg):
     str_output = ""
-    for i in str:
+    for i in strg:
         str_output = str_output + i*2
     return str_output
 
-def double_charv2(str):
+
+def double_charv2(strg):
     result = ""
-    for i in range(len(str)):
-        result += str[i] + str[i]
+    for i in range(len(strg)):
+        result += strg[i] + strg[i]
     return result
 
 
 """Task31: Return True if the string "cat" and "dog" appear the same number of times in the given string. """
-def cat_dog(str):
-    if str.count('cat') == str.count('dog'):
+def cat_dog(strg):
+    if strg.count('cat') == strg.count('dog'):
         return True
     else:
         return False
@@ -423,7 +428,6 @@ def make_chocolate(small, big, goal):
     if remainder <= small:
         return remainder
     return -1
-
 
 
 def main():
@@ -522,68 +526,68 @@ with the shorter string on the outside and the longer string on the inside.")
     print(sum67v2([1, 2, 2, 6, 99, 99, 7]))
     print(sum67([1, 1, 6, 7, 2]))
     print(sum67v2([1, 1, 6, 7, 2]))
-    print(sum67([1, 2, 2]))  #5
+    print(sum67([1, 2, 2]))  # 5
     print(sum67v2([1, 2, 2]))
     print("\n")
 
     print("Task22: Return the sum of the numbers in the array, returning 0 for an empty array. Except the number 13 is very unlucky, \
 so it does not count and numbers that come immediately after a 13 also do not count.")
-    print(sum13([1, 2, 2, 1]))  #6
-    print(sum13([1, 2, 2, 1, 13]))  #6
-    print(sum13([13, 1, 2, 13, 2, 1, 13])) #3
+    print(sum13([1, 2, 2, 1]))   # 6
+    print(sum13([1, 2, 2, 1, 13]))   # 6
+    print(sum13([13, 1, 2, 13, 2, 1, 13]))  # 3
     print("\n")
 
     print("Task23: Return the 'centered' average of an array of ints, which we'll say is the mean average of the values, \
 except ignoring the largest and smallest values in the array.")
-    print(centered_average([1, 2, 3, 4, 100])) #5
-    print(centered_average([1, 1, 5, 5, 10, 8, 7])) #5
-    print(centered_average([-10, -4, -2, -4, -2, 0])) #-3
+    print(centered_average([1, 2, 3, 4, 100]))  # 5
+    print(centered_average([1, 1, 5, 5, 10, 8, 7]))  # 5
+    print(centered_average([-10, -4, -2, -4, -2, 0]))  # -3
     print("\n")
 
     print("Task24: Given an array length 1 or more of ints, return the difference between the largest and smallest values in the array")
-    print(big_diff([10, 3, 5, 6])) #7
-    print(big_diff([7, 2, 10, 9])) #8
-    print(big_diff([2, 10, 7, 2])) #8
-    print(big_diff([2, 2])) #0
+    print(big_diff([10, 3, 5, 6]))  # 7
+    print(big_diff([7, 2, 10, 9]))  # 8
+    print(big_diff([2, 10, 7, 2]))  # 8
+    print(big_diff([2, 2]))  # 0
     print("\n")
 
     print("Task25: Return the number of even ints in the given array. ")
-    print(count_evens([2, 1, 2, 3, 4])) #3
-    print(count_evens([2, 2, 0])) #3
-    print(count_evens([1, 3, 5])) #0
+    print(count_evens([2, 1, 2, 3, 4]))  # 3
+    print(count_evens([2, 2, 0]))  # 3
+    print(count_evens([1, 3, 5]))  # 0
     print("\n")
 
     print('Task26: Return True if the given string contains an appearance of "xyz" where the xyz is not directly preceeded by a period. ')
-    print(xyz_there('abc.xyz')) #False
-    print(xyz_there('xyz.abc')) #True
-    print(xyz_there('abcxyz')) #True
-    print(xyz_there('abc.xyzxyz')) #False
-    print(xyz_there('1.xyz.xyz2.xyz')) #False
+    print(xyz_there('abc.xyz'))  # False
+    print(xyz_there('xyz.abc'))  # True
+    print(xyz_there('abcxyz'))  # True
+    print(xyz_there('abc.xyzxyz'))  # False
+    print(xyz_there('1.xyz.xyz2.xyz'))  # False
     print("\n")
 
     print("Task27: Given two strings, return True if either of the strings appears at the very end of the other string, ignoring upper/lower case differences. ")
-    print(end_other('ab', 'ab12')) #False
+    print(end_other('ab', 'ab12'))  # False
     print(end_otherv2('ab', 'ab12'))
-    print(end_other('AbC', 'HiaBc')) #True
+    print(end_other('AbC', 'HiaBc'))  # True
     print(end_otherv2('AbC', 'HiaBc'))
-    print(end_other('abc', 'abXabc')) #True
+    print(end_other('abc', 'abXabc'))  # True
     print(end_otherv2('abc', 'abXabc'))
-    print(end_other('yz', '12xz')) #False
+    print(end_other('yz', '12xz'))  # False
     print(end_otherv2('yz', '12xz'))
     print("\n")
 
     print('Task28: Return the number of times that the string "code" appears anywhere in the given string, \
 except we will accept any letter for the "d", so "cope" and "cooe" count.')
-    print(count_code('ode')) #0
-    print(count_code('cozexxcope')) #2
-    print(count_code('cozfxxcope')) #1
-    print(count_code('AAcodeBBcoleCCccoreDD')) #3
+    print(count_code('ode'))  # 0
+    print(count_code('cozexxcope'))  # 2
+    print(count_code('cozfxxcope'))  # 1
+    print(count_code('AAcodeBBcoleCCccoreDD'))  # 3
     print("\n")
 
     print("Task29: Return the number of times that the string 'hi' appears anywhere in the given string. ")
-    print(count_hi('abc hi ho')) #1
-    print(count_hi('ABChi hi')) #2
-    print(count_hi('hiho not HOHIhi')) #2
+    print(count_hi('abc hi ho'))  # 1
+    print(count_hi('ABChi hi'))  # 2
+    print(count_hi('hiho not HOHIhi'))  # 2
     print("\n")
 
     print("Task30: Given a string, return a string where for every char in the original, there are two chars. ")
@@ -594,21 +598,20 @@ except we will accept any letter for the "d", so "cope" and "cooe" count.')
     print("\n")
 
     print('Task31: Return True if the string "cat" and "dog" appear the same number of times in the given string. ')
-    print(cat_dog('1cat1cadodog')) #True
-    print(cat_dog('catcat')) #False
-    print(cat_dog('c')) #True
-    print(cat_dog('catxdogxdogxca')) #False
+    print(cat_dog('1cat1cadodog'))  # True
+    print(cat_dog('catcat'))  # False
+    print(cat_dog('c'))  # True
+    print(cat_dog('catxdogxdogxca'))  # False
+    print('\n')
 
     print("Task32: We want make a package of goal kilos of chocolate. We have small bars (1 kilo each) and big bars (5 kilos each). \
 Return the number of small bars to use, assuming we always use big bars before small bars. Return -1 if it can't be done.")
-    print(make_chocolate(4, 1, 10)) #-1
-    print(make_chocolate(4, 1, 7)) #2
-    print(make_chocolate(4, 1, 9)) #4
-    print(make_chocolate(1, 2, 5)) #0
+    print(make_chocolate(4, 1, 10))  # -1
+    print(make_chocolate(4, 1, 7))  # 2
+    print(make_chocolate(4, 1, 9))  # 4
+    print(make_chocolate(1, 2, 5))  # 0
     print("\n")
+
 
 if __name__ == '__main__':
     main()
-
-
-

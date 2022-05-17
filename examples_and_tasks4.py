@@ -3,21 +3,23 @@
 
 import datetime
 import random
+import time
 
-# in Python an assignment (d = 8) is not an expression, it's a statement
-# in other languages assignments are also expressions and return d back to you.
-# python expressions were added in 3.8
+# Why is UTF-8 a good choice for the default editor encoding?
+# The Unicode character set in the editor should match the Unicode standard of Python 3.
+# The character set of the editor should match Python's Unicode compliance.
 
 
 """Task 1: Assign multiple expressions together from right to left. """
 def multiple_assignment_expression():
-    # parenthesis are there because they have to be, you are not allowed to assign multiple expressions together unless you put them in parenthesis
+    # parenthesis are there because they have to be,
+    # you are not allowed to assign multiple expressions together unless you put them in parenthesis
     (a := (b := (c := (d := 0))))
     # d:= 0 is going to return 0
     # := goes from right to left
     # normal = goes from left to right
     # we assign a, b, c, d to be 0
-    return (a, b, c, d)
+    return a, b, c, d
 
 
 """Task2: Explore string formatting. """
@@ -60,6 +62,10 @@ def formatiing():
     print(f'{num_value:{nested_format}}')
     print("\n")
 
+# in Python an assignment (d = 8) is not an expression, it's a statement
+# in other languages assignments are also expressions and return d back to you.
+# python expressions were added in 3.8
+
 
 """Task6: Explore  chained assignments - multiple equal signs. """
 def multiple_assignment():
@@ -99,7 +105,7 @@ def tricky_assignemnt2():
 
 
 # dynamically adding values v1
-class Person():
+class Person:
     pass
 
 
@@ -116,6 +122,7 @@ def do_it():
     for i in range(7):
         print(useful_function(i))
 
+
 person = Person()
 
 first_key = 'first'
@@ -130,7 +137,7 @@ first = getattr(person, first_key)
 
 
 # v2
-class Person2():
+class Person2:
     pass
 
 
@@ -176,7 +183,8 @@ def sum13(nums):
     result = 0
     pause = False
     for num in nums:
-        if pause == False and num != 13:
+        # if pause == False and num != 13:
+        if not pause and num != 13:
             result += num
         if num == 13:
             pause = True
@@ -190,10 +198,10 @@ average of the values, except ignoring the largest and smallest values in the ar
 copies of the smallest value, ignore just one copy, and likewise for the largest value. Use int division to produce 
 the final average. You may assume that the array is length 3 or more. """
 def centered_average(nums):
-    sum = 0
+    sum1 = 0
     for element in nums:
-        sum += element
-    return (sum - min(nums) - max(nums)) / (len(nums)-2)
+        sum1 += element
+    return (sum1 - min(nums) - max(nums)) / (len(nums)-2)
 
 
 """Task14: List-2 > big_diff. Given an array length 1 or more of ints, return the difference between the largest and 
@@ -215,11 +223,11 @@ def count_evens(nums):
 
 """Task16: String-2 > xyz_there. Return True if the given string contains an appearance of "xyz" where the xyz is not 
 directly preceeded by a period (.). So "xxyz" counts but "x.xyz" does not."""
-def xyz_there(str):
-    for i in range(len(str)):
-        if str[i] != '.' and str[i+1:i+4] == 'xyz':
+def xyz_there(str1):
+    for i in range(len(str1)):
+        if str1[i] != '.' and str1[i+1:i+4] == 'xyz':
             return True
-        if str[0:3] == 'xyz':
+        if str1[0:3] == 'xyz':
             return True
     return False
 
@@ -268,7 +276,7 @@ def list_manipulation():
     print(fav_movies)
     # deleting an item from list - remove 'The Lego Movie'
     del(fav_movies[2])
-    return(fav_movies)
+    return fav_movies
 
 
 """Task20: Exploring dictionaries. """
@@ -301,25 +309,36 @@ def str_analysis():
 
 """Task22: Guess game. """
 def guess_game():
-    guess = int(input("Hi! Welcome to the guessing game! Please guess a number between 1 and 100. "))
+    print("Hi! Welcome to the guessing game! Please guess a number between 1 and 100. ")
+    time.sleep(2)
+    guess = int(input("Pick your number... "))
     correct_number = random.randint(1, 100)
     counter = 0
-
+    time.sleep(1)
     while guess != correct_number:
+        time.sleep(1)
         counter += 1
         if guess > correct_number:
             guess = int(input("Too high! What is your next guess?: "))
         else:
             guess = int(input("Too low: What is your next guess?: "))
 
-
     return f"You got the right answer after {counter} tries! :) "
 
 
 """Task23: String length counter. """
-def str_2analysis():
+def test_str_2analysis4():
     pass
 
+
+"""Task24: String length counter. """
+def test_str_2analysis2():
+    pass
+
+
+"""Task25: String length counter. """
+def test_str_2analysis3():
+    pass
 
 
 
@@ -354,54 +373,54 @@ def main():
 
     print('\n')
     print('Task10: Given an array of ints, return True if the array contains a 2 next to a 2 somewhere. ')
-    print(has22([2, 1, 2])) #False
-    print(has22([1, 2, 1, 2])) #False
-    print(has22([])) #False
-    print(has22_v2([4, 2, 4, 2, 2, 5]), '\n') #True
+    print(has22([2, 1, 2]))  #False
+    print(has22([1, 2, 1, 2]))  #False
+    print(has22([]))  #False
+    print(has22_v2([4, 2, 4, 2, 2, 5]), '\n')  #True
 
     print('Task11: Return the sum of the numbers in the array, except ignore sections of numbers starting with a 6 and '
           'extending to the next 7 (every 6 will be followed by at least one 7). Return 0 for no numbers.')
-    print(sum67([1, 2, 2])) #5
-    print(sum67([1, 2, 2, 6, 99, 99, 7])) #5
-    print(sum67([1, 6, 7, 7])) #1+7=8
-    print(sum67([6, 7, 1, 6, 7, 7])) #1+7=8
-    print(sum67([6, 8, 1, 6, 7])) #0
+    print(sum67([1, 2, 2]))  #5
+    print(sum67([1, 2, 2, 6, 99, 99, 7]))  #5
+    print(sum67([1, 6, 7, 7]))  #1+7=8
+    print(sum67([6, 7, 1, 6, 7, 7]))  #1+7=8
+    print(sum67([6, 8, 1, 6, 7]))  #0
     print(sum67([]), '\n')
 
     print('Task12: Return the sum of the numbers in the array, returning 0 for an empty array. Except the number 13 is '
           'very unlucky, so it does not count and numbers that come immediately after a 13 also do not count. ')
-    print(sum13([13, 1, 2, 13, 2, 1, 13])) #2+1=3
-    print(sum13([1, 2, 13, 2, 1, 13])) #1+2+1=4
-    print(sum13([5, 13, 2]), '\n') #5
+    print(sum13([13, 1, 2, 13, 2, 1, 13]))  #2+1=3
+    print(sum13([1, 2, 13, 2, 1, 13]))  #1+2+1=4
+    print(sum13([5, 13, 2]), '\n')  #5
 
     print('Task13: List-2 > centered_average. ')
-    print(centered_average([-10, -4, -2, -4, -2, 0])) #3
-    print(centered_average([0, 2, 3, 4, 100])) #3
-    print(centered_average([-10, -4, -2, -4, -2, 0]), '\n') #-3
+    print(centered_average([-10, -4, -2, -4, -2, 0]))  #3
+    print(centered_average([0, 2, 3, 4, 100]))  #3
+    print(centered_average([-10, -4, -2, -4, -2, 0]), '\n')  #-3
 
     print("Task14: List-2 > big_diff. ")
-    print(big_diff([5, 1, 6, 1, 9, 9])) #8
-    print(big_diff([7, 7, 6, 8, 5, 5, 6])) #3
-    print(big_diff([10, 0])) #10
-    print(big_diff([2, 2]), '\n') #0
+    print(big_diff([5, 1, 6, 1, 9, 9]))  #8
+    print(big_diff([7, 7, 6, 8, 5, 5, 6]))  #3
+    print(big_diff([10, 0]))  #10
+    print(big_diff([2, 2]), '\n')  #0
 
     print("Task15: List-2 > count_evens. ")
-    print(count_evens([2, 11, 9, 0])) #2
-    print(count_evens([1, 3, 5])) #0
-    print(count_evens([2, 5, 12]), '\n') #2
+    print(count_evens([2, 11, 9, 0]))  #2
+    print(count_evens([1, 3, 5]))  #0
+    print(count_evens([2, 5, 12]), '\n')  #2
 
     print('Task16: String-2 > xyz_there. ')
-    print(xyz_there('abc.xxyz')) #True
-    print(xyz_there('1.xyz.xyz2.xyz')) #False
-    print(xyz_there('abc.xyzxyz')) #True
-    print(xyz_there('abc.xyz'), '\n') #False
+    print(xyz_there('abc.xxyz'))  #True
+    print(xyz_there('1.xyz.xyz2.xyz'))  #False
+    print(xyz_there('abc.xyzxyz'))  #True
+    print(xyz_there('abc.xyz'), '\n')  #False
 
     print('Task17: String-2 > end_other. ')
-    print(end_other('abcXYZ', 'abcDEF')) #False
-    print(end_other('Z', '12xz')) #True
-    print(end_other_v2('Hiabcx', 'bc')) #False
-    print(end_other_v2('Hiabc', 'bc')) #True
-    print(end_other_v2('abc', 'abXabc'), '\n') #True
+    print(end_other('abcXYZ', 'abcDEF'))  #False
+    print(end_other('Z', '12xz'))  #True
+    print(end_other_v2('Hiabcx', 'bc'))  #False
+    print(end_other_v2('Hiabc', 'bc'))  #True
+    print(end_other_v2('abc', 'abXabc'), '\n')  #True
 
     print("Task18: Fortune Cookie. ")
     print(fortune_cookie(), '\n')
@@ -413,11 +432,10 @@ def main():
     print(exploring_dictionaries(), '\n')
 
     print("Task21: String length counter. ")
-    print(str_analysis(),'\n')
+    print(str_analysis(), '\n')
 
     print("Task22: Guess Game. ")
-    print(guess_game())
-
+    # print(guess_game())
 
 
 # dunder == double underscore
