@@ -1,6 +1,8 @@
 # Python practise examples and tasks 4
+#
 
 import datetime
+import random
 
 # in Python an assignment (d = 8) is not an expression, it's a statement
 # in other languages assignments are also expressions and return d back to you.
@@ -237,6 +239,38 @@ def end_other_v2(a, b):
     return a[-(len(b)):] == b or a == b[-(len(a)):]
 
 
+"""Task18: Fortune Cookie. """
+def fortune_cookie():
+    # includes 1 to 100
+    lucky_number = random.randint(1, 100)
+    fortune_number = random.randint(1, 3)
+    fortune_text = ''
+
+    if fortune_number == 1:
+        fortune_text = 'You will have a great day!'
+    if fortune_number == 2:
+        fortune_text = 'Today will be tough...but worth it'
+    if fortune_number == 3:
+        fortune_text = 'You will get married this year!'
+
+    return f"{fortune_text} Your Lucky Number is {lucky_number}"
+
+
+"""Task19: Lists: Add, insert, delete. """
+def list_manipulation():
+    fav_movies = ['Sandlot', 'The Lego Movie', 'Dune']
+    print(fav_movies)
+    # gets added to the back always
+    fav_movies.append('Iron Man')
+    print(fav_movies)
+    # add an item in a specific place  - position 2
+    fav_movies.insert(1, 'Batman')
+    print(fav_movies)
+    # deleting an item from list - remove 'The Lego Movie'
+    del(fav_movies[2])
+    return(fav_movies)
+
+
 
 def main():
     print(multiple_assignment_expression(), '\n')
@@ -313,6 +347,11 @@ def main():
     print(end_other_v2('Hiabc', 'bc')) #True
     print(end_other_v2('abc', 'abXabc'), '\n') #True
 
+    print("Task18: Fortune Cookie. ")
+    print(fortune_cookie(), '\n')
+
+    print('Task19: Lists: Add, insert, delete. ')
+    print(list_manipulation())
 
 
 
