@@ -271,6 +271,62 @@ def list_manipulation():
     return(fav_movies)
 
 
+"""Task20: Exploring dictionaries. """
+def exploring_dictionaries():
+    cats = {"Jane": 6, "Tom": 14, "Sara": 8}
+    # adding a key and value
+    cats["Wilson"] = 1
+    del(cats["Tom"])
+    print(len(cats))
+    return cats
+
+
+"""Task21: String length counter. """
+def str_analysis():
+    text = """Four score and seven years ago our Fathers. -- , and seven seven ago seven and hi hi."""
+    print(text.split())
+    print("We have " + str(len(text.split())) + " words in our string.")
+
+    # lets count how many times we have each word
+    word_count = {}
+
+    for word in text.lower().split():
+        if word in word_count:
+            word_count[word] += 1
+        else:
+            word_count[word] = 1
+
+    return word_count
+
+
+"""Task22: Guess game. """
+def guess_game():
+    guess = int(input("Hi! Welcome to the guessing game! Please guess a number between 1 and 100. "))
+    correct_number = random.randint(1, 100)
+    counter = 0
+
+    while guess != correct_number:
+        counter += 1
+        if guess > correct_number:
+            guess = int(input("Too high! What is your next guess?: "))
+        else:
+            guess = int(input("Too low: What is your next guess?: "))
+
+
+    return f"You got the right answer after {counter} tries! :) "
+
+
+"""Task23: String length counter. """
+def str_2analysis():
+    pass
+
+
+
+
+
+
+
+
 
 def main():
     print(multiple_assignment_expression(), '\n')
@@ -351,7 +407,16 @@ def main():
     print(fortune_cookie(), '\n')
 
     print('Task19: Lists: Add, insert, delete. ')
-    print(list_manipulation())
+    print(list_manipulation(), '\n')
+
+    print('Task20: Exploring dictionaries.')
+    print(exploring_dictionaries(), '\n')
+
+    print("Task21: String length counter. ")
+    print(str_analysis(),'\n')
+
+    print("Task22: Guess Game. ")
+    print(guess_game())
 
 
 
