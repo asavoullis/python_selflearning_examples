@@ -313,17 +313,18 @@ def guess_game():
     time.sleep(2)
     guess = int(input("Pick your number... "))
     correct_number = random.randint(1, 100)
-    counter = 0
+    counter = 1
     time.sleep(1)
     while guess != correct_number:
         time.sleep(1)
         counter += 1
         if guess > correct_number:
-            guess = int(input("Too high! What is your next guess?: "))
+            guess = int(input("Too high! ,'\n' What is your next guess?: "))
         else:
-            guess = int(input("Too low: What is your next guess?: "))
-
-    return f"You got the right answer after {counter} tries! :) "
+            guess = int(input("Too low: ,'\n' What is your next guess?: "))
+    # alternative
+    return 'You got the right answer after {} tries! :) '.format(counter)
+    #return f"You got the right answer after {counter} tries! :) "
 
 
 """Task23: String-2 > cat_dog. Return True if the string "cat" and "dog" appear the same number of times 
