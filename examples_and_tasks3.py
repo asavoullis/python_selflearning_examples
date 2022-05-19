@@ -463,7 +463,7 @@ def main():
 
     print("Task11: Simplify if statements with if x in list. ")
     print(countLongestAscending(string0))
-    print(countLongestAscending(string1))
+    print(countLongestAscending(string1), '\n')
 
     print("Task12: Function that returns the length of the longest sequence of ascending digits found in a string. \
 Non-digit characters should terminate a sequence of digits.")
@@ -472,53 +472,44 @@ Non-digit characters should terminate a sequence of digits.")
     print(countLongestAscending(arrayexample))
     print(countLongestAscending(arrayexample2))
     print(countLongestAscending(string1))
-    print(countLongestAscending(string0))
-    print("\n")
+    print(countLongestAscending(string0), '\n')
 
     print('Task13: Given a string name, e.g. "Bob", return a greeting of the form "Hello Bob!". ')
     print(hello_name("Bob"))
-    print(hello_name("X"))
-    print("\n")
+    print(hello_name("X"), '\n')
 
     print("Task14: Given two strings, a and b, return the result of putting them together in the order abba. ")
     print(make_abba('Hi', 'Bye'))
-    print(make_abba('What', 'Up'))
-    print("\n")
+    print(make_abba('What', 'Up'), '\n')
 
     print('Task15: Given a string, return a "rotated left 2" version where the first 2 chars are moved to the end. ')
     print(left2('Hello'))
     print(left2('Chocolate'))
-    print(left2('12345'))
-    print("\n")
+    print(left2('12345'), '\n')
 
     print('Task16: Given 2 strings, return their concatenation, except omit the first char of each. ')
     print(non_start('shotl', 'java'))
     print(non_start('mart', 'dart'))
-    print(non_start('ab', 'xy'))
-    print("\n")
+    print(non_start('ab', 'xy'), '\n')
 
     print("Task17: Given 2 strings, a and b, return a string of the form short+long+short, \
 with the shorter string on the outside and the longer string on the inside.")
     print(combo_string('Hello', 'hi'))
-    print(combo_string('hi', 'Hello'))
-    print("\n")
+    print(combo_string('hi', 'Hello'), '\n')
 
     print('Task18: Given a string, return a version without the first and last char, so "Hello" yields "ell". ')
     print(without_end('java'))
-    print(without_end('coding'))
-    print("\n")
+    print(without_end('coding'), '\n')
 
     print('Task19: Given a string of even length, return the first half. So the string "WooHoo" yields "Woo". ')
     print(first_half('WooHoo'))
-    print(first_half('HelloThere'))
-    print("\n")
+    print(first_half('HelloThere'), '\n')
 
     print("Task20: Given an array of ints, return True if the array contains a 2 next to a 2 somewhere. ")
     print(has22([2, 1, 2, 2]))
     print(has22v2([2, 1, 2, 2]))
     print(has22([2, 1, 2]))
-    print(has22v2([2, 1, 2]))
-    print("\n")
+    print(has22v2([2, 1, 2]), '\n')
 
     print("Return the sum of the numbers in the array, except ignore sections of numbers starting with a 6 and extending to the next 7 \
     (every 6 will be followed by at least one 7). Return 0 for no numbers")
@@ -527,22 +518,19 @@ with the shorter string on the outside and the longer string on the inside.")
     print(sum67([1, 1, 6, 7, 2]))
     print(sum67v2([1, 1, 6, 7, 2]))
     print(sum67([1, 2, 2]))  # 5
-    print(sum67v2([1, 2, 2]))
-    print("\n")
+    print(sum67v2([1, 2, 2]), '\n')
 
     print("Task22: Return the sum of the numbers in the array, returning 0 for an empty array. Except the number 13 is very unlucky, \
 so it does not count and numbers that come immediately after a 13 also do not count.")
     print(sum13([1, 2, 2, 1]))   # 6
     print(sum13([1, 2, 2, 1, 13]))   # 6
-    print(sum13([13, 1, 2, 13, 2, 1, 13]))  # 3
-    print("\n")
+    print(sum13([13, 1, 2, 13, 2, 1, 13]), '\n')  # 3
 
     print("Task23: Return the 'centered' average of an array of ints, which we'll say is the mean average of the values, \
 except ignoring the largest and smallest values in the array.")
     print(centered_average([1, 2, 3, 4, 100]))  # 5
     print(centered_average([1, 1, 5, 5, 10, 8, 7]))  # 5
-    print(centered_average([-10, -4, -2, -4, -2, 0]))  # -3
-    print("\n")
+    print(centered_average([-10, -4, -2, -4, -2, 0]), '\n')  # -3
 
     print("Task24: Given an array length 1 or more of ints, return the difference between the largest and smallest values in the array")
     print(big_diff([10, 3, 5, 6]))  # 7
