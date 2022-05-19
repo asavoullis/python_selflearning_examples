@@ -1,13 +1,14 @@
 # Python practise examples and tasks 5
 
-"""
+from functools import reduce
+from decimal import *
 
+"""
 6 Python Tips and Tricks YOU Should Know
 https://www.youtube.com/watch?v=qEr9iRX4K0o
-
 """
 
-from functools import reduce
+
 
 
 class Astrobody:
@@ -18,6 +19,8 @@ class Star(Astrobody):
     pass
 
 
+
+"""Task1: Passing a variable number of arguments to a function using special symbols. """
 def make_dict(**kwargs):
     """
     Passing a variable number of arguments to a function using special symbols:
@@ -35,43 +38,44 @@ def make_dict(**kwargs):
     """
     return kwargs
 
+
+"""Task2: Explore with open -file. """
 def func_file():
     """ """
     with open('hello.txt', 'w') as file:
         file.write("hello!")
 
     print(file.closed)
+    file.close()
 
-    #end of asssessment
 
-
+"""Task3: Swap variables in a single line. """
 def swap_variables(a, b):
     """ Swaps the values of a and b in a single line - without the need for a 3rd variable """
     a, b = b, a
     return a, b
 
 
+"""Task4: find the max and the min values of a list using functions. """
 def max_min_of_list(input_list):
     largest = max(input_list)
     smallest = min(input_list)
     return largest, smallest
 
 
+"""Task5: List comprehension. """
 def list_comprehension():
     """
     List comprehension offers a shorter syntax when you want to create a new list based on the values of an existing list.
 
-    instead of using a for loop like
+    instead of using a for loop like this
     evens = []
     for x in range(20):
         if x%2 ==0:
             evens.append(x)
     print(evens)
-
-    range(start, end, step)
-
-
     """
+    # range(start, end, step) using this instead
     evens = [x for x in range(20) if x % 2 == 0]
     odds = [x for x in range(1, 20, 2)]
     return odds, evens
@@ -189,3 +193,173 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+
+
+
+
+
+
+def main():
+    strng = "hellotherecat"
+
+    for i in range(len(strng) -2 ):
+        print(strng[i:i])
+        print(strng[i:i + 2], '\n')
+
+    x = 'seven {} {}'.format(8, 9)
+    print('x is {1} {0}'.format(8, 9), '\n')
+
+    # adds 8 spaces to the right of 9 - 9 digits in total
+    z = 'seven "{1:<9}" "{0}"'.format(8, 9)
+    print(z, '\n')
+
+    # adds 8 spaces to the right of 9 and 6 spaces to the left of 8 - 9 digits and 7 digits each
+    y = 'seven "{1:<9}" "{0:>7}"'.format(8, 9)
+    print(y, '\n')
+
+    # adds 8 zeros to the right of 9 and 6 zeros to the left of 8
+    u = 'seven "{1:<09}" "{0:>07}"'.format(8, 9)
+    print(u, '\n')
+
+    # adds 8 zeros to the right of 9 and 6 zeros to the left of 8
+    x2 = 'seven "{1:<09}" "{0:>07}"'.format(8, 123456)
+    print(x2, '\n')
+
+    a = 8
+    b = 9
+    x = f'seven {a} {b}'
+    print('x is {}'.format(x))
+
+    # you get an int
+    z1 = 7 // 3
+    print(z1)
+
+    # you get a float
+    z2 = 7/3
+    print(z2)
+
+    # you get remainder - int
+    z3 = 7 % 3
+    print()
+
+
+    # when working with money you want to use the decimals library of python
+
+    a = Decimal('.10')
+    b = Decimal('.30')
+    x = a + a + a - b
+    print('x is {}'.format(x))
+    print(type(x))
+
+    c = .10
+    d = .30
+    y = c + c + c - d
+    print('x is {}'.format(y))
+    print(type(y))
+
+    # it's the Decimal from the decimal libray
+    # <class 'decimal.Decimal'>
+
+
+
+
+
+if __name__ == '__main__':
+    main()
+
+
+
+
+
+
+
+
+
+
+
+# Which of the following code fragments is equivalent to np.recfromcsv(filename)?
+# np.loadtxt(filename, delimiter=',')
+
+# nrows = number of rows of the file to read
+# titanic_data = pd.read_csv('titanic_csv', nrows =2, header =0)
+
+# file = open('filename.txt', del='\t')
+# file.close()
+
+
+"""
+file = open('filename.txt', mode ='r')
+file.close()
+
+        the code is the SAME AS:
+with open('filename.txt', 'r') as file:
+
+"""
+
+"""
+when the file has no header
+s = pd.read_csv(file, header = None)
+"""
+
+
+
+
+    x = 'seven {} {}'.format(8, 9)
+    print('x is {1} {0}'.format(8, 9), '\n')
+
+    # adds 8 spaces to the right of 9 - 9 digits in total
+    z = 'seven "{1:<9}" "{0}"'.format(8, 9)
+    print(z, '\n')
+
+    # adds 8 spaces to the right of 9 and 6 spaces to the left of 8 - 9 digits and 7 digits each
+    y = 'seven "{1:<9}" "{0:>7}"'.format(8, 9)
+    print(y, '\n')
+
+    # adds 8 zeros to the right of 9 and 6 zeros to the left of 8
+    u = 'seven "{1:<09}" "{0:>07}"'.format(8, 9)
+    print(u, '\n')
+
+    # adds 8 zeros to the right of 9 and 6 zeros to the left of 8
+    x2 = 'seven "{1:<09}" "{0:>07}"'.format(8, 123456)
+    print(x2, '\n')
+
+    a = 8
+    b = 9
+    x = f'seven {a} {b}'
+    print('x is {}'.format(x))
+
+    # you get an int
+    z1 = 7 // 3
+    print(z1)
+
+    # you get a float
+    z2 = 7/3
+    print(z2)
+
+    # you get remainder - int
+    z3 = 7 % 3
+    print()
+
+
+    # when working with money you want to use the decimals library of python
+
+    a = Decimal('.10')
+    b = Decimal('.30')
+    x = a + a + a - b
+    print('x is {}'.format(x))
+    print(type(x))
+
+    c = .10
+    d = .30
+    y = c + c + c - d
+    print('x is {}'.format(y))
+    print(type(y))
+
+    # it's the Decimal from the decimal libray
+    # <class 'decimal.Decimal'>
+
+
+
+
