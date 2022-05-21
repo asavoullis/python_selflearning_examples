@@ -81,6 +81,7 @@ def list_comprehension():
     return odds, evens
 
 
+"""Task6: Experimenting with functions - map, filter, reduce. """
 def square(n):
     return n ** 2
 
@@ -110,15 +111,110 @@ def string_to_list(string):
 
 
 def main():
+    sun = Star()
+    print(sun.description, '\n')
+
+    print('Example00: More List Comprehension Examples. ')
+    vals = [25, 30, 33, 35]
+    new_vals = [val + 32 for val in vals]
+    print(new_vals, '\n')
+
+    print([i * 3 for i in range(5)], '\n')
+    print([i for i in range(5) if i > 2], '\n')
+
+    print('Example01: String Slicing. ')
+    strng = "hellotherecat"
+    for i in range(len(strng) - 2):
+        print(strng[i:i])
+        print(strng[i:i + 2], '\n')
+
+    print('Example02: Enumerate Example. ')
+    letters = ['a', 'b', 'c']
+    for index, value in enumerate(letters):
+        print(index, ':', value)
+    print('\n')
+
+    print("Example03: Dictionary Example. ")
+    d = {'one': 1, 'two': 2, 'three': 3, 'four': 4}
+    print(d['two'], '\n')
+
+
+    print('Example04: String Formatting. ')
+    x = 'seven {} {}'.format(8, 9)
+    print('x is {1} {0}'.format(8, 9), '\n')
+
+    # adds 8 spaces to the right of 9 - 9 digits in total
+    z = 'seven "{1:<9}" "{0}"'.format(8, 9)
+    print(z, '\n')
+
+    # adds 8 spaces to the right of 9 and 6 spaces to the left of 8 - 9 digits and 7 digits each
+    y = 'seven "{1:<9}" "{0:>7}"'.format(8, 9)
+    print(y, '\n')
+
+    # adds 8 zeros to the right of 9 and 6 zeros to the left of 8
+    u = 'seven "{1:<09}" "{0:>07}"'.format(8, 9)
+    print(u, '\n')
+
+    # adds 8 zeros to the right of 9 and 6 zeros to the left of 8
+    x2 = 'seven "{1:<09}" "{0:>07}"'.format(8, 123456)
+    print(x2, '\n')
+
+    a = 8
+    b = 9
+    x = f'seven {a} {b}'
+    print('x is {}'.format(x))
+
+
+    print('Example05: Python Types - Int and Float. ')
+    # you get an int
+    z1 = 7 // 3
+    print(z1)
+
+    # you get a float
+    z2 = 7 / 3
+    print(z2)
+
+    # you get remainder - int
+    z3 = 7 % 3
+    print()
+
+    # when working with money you want to use the decimals library of python
+
+    a = Decimal('.10')
+    b = Decimal('.30')
+    x = a + a + a - b
+    print('x is {}'.format(x))
+    print(type(x))
+
+    c = .10
+    d = .30
+    y = c + c + c - d
+    print('x is {}'.format(y))
+    print(type(y))
+
+    # it's the Decimal from the decimal libray
+    # <class 'decimal.Decimal'>
+
+    print('Task1: Passing a variable number of arguments to a function using special symbols. ')
+    print(make_dict(a=1, b=2), '\n')
+
+    print('Task2: Explore with open -file. ')
+    #func_file()
+
+    print('Task3: Swap variables in a single line. ')
     a = 10
     b = 20
     print(swap_variables(a, b), '\n')
 
+    print("Task4: find the max and the min values of a list using functions. ")
     list1 = [6, 12, 125, -25, 54, 23, 66, 77, 88, -12]
     print('largest, smallest numbers of list:', max_min_of_list(list1), '\n')
 
+    print('Task5: List comprehension. ')
     print("odds:", list_comprehension()[0], '\nevens:', list_comprehension()[1], '\n')
 
+
+    print('Task6: Experimenting with functions - map, filter, reduce and lambda functions. ')
     '''
     The map() function executes a specified function for each item in an iterable.
     The item is sent to the function as a parameter.
@@ -168,115 +264,9 @@ def main():
     product2 = reduce(lambda x, y: x * y, list1)
     print(product2, '\n')
 
-    sun = Star()
-    print(sun.description, '\n')
-
-    vals = [25, 30, 33, 35]
-    new_vals = [val + 32 for val in vals]
-    print(new_vals, '\n')
-
-    print([i * 3 for i in range(5)], '\n')
-
-    letters = ['a', 'b', 'c']
-    for index, value in enumerate(letters):
-        print(index, ':', value)
-    print('\n')
-
-    d = {'one': 1, 'two': 2, 'three': 3, 'four': 4}
-    print(d['two'], '\n')
-
-    print(make_dict(a=1, b=2), '\n')
-
-    print([i for i in range(5) if i > 2], '\n')
-
-    func_file()
 
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
-
-
-def main():
-    strng = "hellotherecat"
-
-    for i in range(len(strng) -2 ):
-        print(strng[i:i])
-        print(strng[i:i + 2], '\n')
-
-    x = 'seven {} {}'.format(8, 9)
-    print('x is {1} {0}'.format(8, 9), '\n')
-
-    # adds 8 spaces to the right of 9 - 9 digits in total
-    z = 'seven "{1:<9}" "{0}"'.format(8, 9)
-    print(z, '\n')
-
-    # adds 8 spaces to the right of 9 and 6 spaces to the left of 8 - 9 digits and 7 digits each
-    y = 'seven "{1:<9}" "{0:>7}"'.format(8, 9)
-    print(y, '\n')
-
-    # adds 8 zeros to the right of 9 and 6 zeros to the left of 8
-    u = 'seven "{1:<09}" "{0:>07}"'.format(8, 9)
-    print(u, '\n')
-
-    # adds 8 zeros to the right of 9 and 6 zeros to the left of 8
-    x2 = 'seven "{1:<09}" "{0:>07}"'.format(8, 123456)
-    print(x2, '\n')
-
-    a = 8
-    b = 9
-    x = f'seven {a} {b}'
-    print('x is {}'.format(x))
-
-    # you get an int
-    z1 = 7 // 3
-    print(z1)
-
-    # you get a float
-    z2 = 7/3
-    print(z2)
-
-    # you get remainder - int
-    z3 = 7 % 3
-    print()
-
-
-    # when working with money you want to use the decimals library of python
-
-    a = Decimal('.10')
-    b = Decimal('.30')
-    x = a + a + a - b
-    print('x is {}'.format(x))
-    print(type(x))
-
-    c = .10
-    d = .30
-    y = c + c + c - d
-    print('x is {}'.format(y))
-    print(type(y))
-
-    # it's the Decimal from the decimal libray
-    # <class 'decimal.Decimal'>
-
-
-
-
-
-if __name__ == '__main__':
-    main()
-
-
-
-
-
-
-
-
-
 
 
 # Which of the following code fragments is equivalent to np.recfromcsv(filename)?
@@ -304,62 +294,17 @@ s = pd.read_csv(file, header = None)
 """
 
 
+# Which line is an expression but NOT a statement?
+# True - This expression is not a stand-alone line of code.
+# Incorrect x=x+1 This is a valid line of code, and is therefore both an expression and a statement.
 
+# Which loop type will always complete at least one iteration?
+# none of these answers (for while)
+# In all Python loop types, the evaluation is done before the loop starts.
 
-    x = 'seven {} {}'.format(8, 9)
-    print('x is {1} {0}'.format(8, 9), '\n')
+# if the function doesn't have a print or a return then:
+# The function will return a value of none.
+# When a return value is not specified explicitly, a function returns a none value
 
-    # adds 8 spaces to the right of 9 - 9 digits in total
-    z = 'seven "{1:<9}" "{0}"'.format(8, 9)
-    print(z, '\n')
-
-    # adds 8 spaces to the right of 9 and 6 spaces to the left of 8 - 9 digits and 7 digits each
-    y = 'seven "{1:<9}" "{0:>7}"'.format(8, 9)
-    print(y, '\n')
-
-    # adds 8 zeros to the right of 9 and 6 zeros to the left of 8
-    u = 'seven "{1:<09}" "{0:>07}"'.format(8, 9)
-    print(u, '\n')
-
-    # adds 8 zeros to the right of 9 and 6 zeros to the left of 8
-    x2 = 'seven "{1:<09}" "{0:>07}"'.format(8, 123456)
-    print(x2, '\n')
-
-    a = 8
-    b = 9
-    x = f'seven {a} {b}'
-    print('x is {}'.format(x))
-
-    # you get an int
-    z1 = 7 // 3
-    print(z1)
-
-    # you get a float
-    z2 = 7/3
-    print(z2)
-
-    # you get remainder - int
-    z3 = 7 % 3
-    print()
-
-
-    # when working with money you want to use the decimals library of python
-
-    a = Decimal('.10')
-    b = Decimal('.30')
-    x = a + a + a - b
-    print('x is {}'.format(x))
-    print(type(x))
-
-    c = .10
-    d = .30
-    y = c + c + c - d
-    print('x is {}'.format(y))
-    print(type(y))
-
-    # it's the Decimal from the decimal libray
-    # <class 'decimal.Decimal'>
-
-
-
+# Expressions and NOT statements: True False
 
