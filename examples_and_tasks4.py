@@ -503,7 +503,7 @@ def main():
     print(fibonacci(), '\n')
 
     print('Task27: Is prime?. ')
-    print(list_primes())
+    print(list_primes(), '\n')  # also returns None
 
 
 
@@ -514,3 +514,4 @@ def main():
 # if your file doesn't contain it then assume the file is used as a library or you should import it.
 if __name__ == '__main__':
     main()
+
