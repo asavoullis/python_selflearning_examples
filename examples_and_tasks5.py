@@ -110,6 +110,42 @@ def string_to_list(string):
     return newlist
 
 
+"""Task7: String Formatting. """
+def what_is_a():
+    a = 5
+    if a > 0:
+        a = 6
+    return 'a is {}'.format(a)
+
+
+"""Task8: Find the problem with this function. """
+def find_the_problem(a):
+    # The problem is that else: will never be executed because the elif condition is always true,
+    # the 'else' block will never get executed.
+    if a > 5:
+        print('a')
+    elif True:
+        print('b')
+    else:
+        print('c')
+
+
+"""Task9: What will be the output of this function? """
+def find_output():
+    a = 1/3
+    b = 3/1
+    return a * b
+
+
+"""Task10: What will be the output of this function? """
+def find_output2():
+    a = '2'
+    b = '2'
+    return a + b
+
+
+
+
 def main():
     sun = Star()
     print(sun.description, '\n')
@@ -141,7 +177,7 @@ def main():
 
     print('Example04: String Formatting. ')
     x = 'seven {} {}'.format(8, 9)
-    print('x is {1} {0}'.format(8, 9), '\n')
+    print('x is {1} {0}'.format(8, 9))
 
     # adds 8 spaces to the right of 9 - 9 digits in total
     z = 'seven "{1:<9}" "{0}"'.format(8, 9)
@@ -264,6 +300,17 @@ def main():
     product2 = reduce(lambda x, y: x * y, list1)
     print(product2, '\n')
 
+    print('Task7: String formatting. ')
+    print(what_is_a(), '\n')
+
+    print("Task8: Find the problem with this function. ")
+    print(find_the_problem(6), '\n')
+
+    print('Task9: What will be the output of this function? ')
+    print(find_output(), '\n')
+
+    print('Task10: What will be the output of this function? ')
+    print(find_output2(), '\n')
 
 if __name__ == '__main__':
     main()
