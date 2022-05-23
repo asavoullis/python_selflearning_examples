@@ -9,15 +9,12 @@ https://www.youtube.com/watch?v=qEr9iRX4K0o
 """
 
 
-
-
 class Astrobody:
     description = 'Natural entity in the observable universe.'
 
 
 class Star(Astrobody):
     pass
-
 
 
 """Task1: Passing a variable number of arguments to a function using special symbols. """
@@ -144,6 +141,34 @@ def find_output2():
     return a + b
 
 
+"""Task11: Exploring dictionaries - keys and values. """
+def dictionary_exploration():
+    x = {'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5}
+    x['three'] = 42
+    for keys, values in x.items():
+        print('k: {}, v: {}'.format(keys, values))
+    return '\n'
+
+
+"""Task12: List from range. """
+def range_list():
+    x = list(range(5))
+    x[3] = 43
+    for i in x:
+        print('i is {}'.format(i))
+    return '\n'
+
+
+"""Task13: Exploring Isinstance. """
+def task_isinstance():
+    # you can use the IS operator if you want to know if 2 objects are the same object
+    # if you want to know if a particular object is of what type use isinstance if you want to print it use type
+    x = (1, 'two', 3.0, [4, 'four'], 5)
+    print('x is of type:', type(x))
+    if isinstance(x, tuple):
+        return True
+    else:
+        return False
 
 
 def main():
@@ -174,7 +199,6 @@ def main():
     d = {'one': 1, 'two': 2, 'three': 3, 'four': 4}
     print(d['two'], '\n')
 
-
     print('Example04: String Formatting. ')
     x = 'seven {} {}'.format(8, 9)
     print('x is {1} {0}'.format(8, 9))
@@ -200,7 +224,6 @@ def main():
     x = f'seven {a} {b}'
     print('x is {}'.format(x))
 
-
     print('Example05: Python Types - Int and Float. ')
     # you get an int
     z1 = 7 // 3
@@ -215,6 +238,8 @@ def main():
     print()
 
     # when working with money you want to use the decimals library of python
+    # when numbers need to be treated as accurate decimals
+    # The Decimal type is useful for accurate arithmetic calculation (e.g., when money is involved)
 
     a = Decimal('.10')
     b = Decimal('.30')
@@ -235,7 +260,7 @@ def main():
     print(make_dict(a=1, b=2), '\n')
 
     print('Task2: Explore with open -file. ')
-    #func_file()
+    # func_file()
 
     print('Task3: Swap variables in a single line. ')
     a = 10
@@ -248,7 +273,6 @@ def main():
 
     print('Task5: List comprehension. ')
     print("odds:", list_comprehension()[0], '\nevens:', list_comprehension()[1], '\n')
-
 
     print('Task6: Experimenting with functions - map, filter, reduce and lambda functions. ')
     '''
@@ -312,6 +336,19 @@ def main():
     print('Task10: What will be the output of this function? ')
     print(find_output2(), '\n')
 
+    print('Task11: Exploring dictionaries - keys and values')
+    print(dictionary_exploration())
+
+    print("Task12: List from range. ")
+    print(range_list())
+
+    print("Task13: Isinstance. ")
+    print(task_isinstance(), '\n')
+
+    print()
+    print()
+
+
 if __name__ == '__main__':
     main()
 
@@ -351,7 +388,15 @@ s = pd.read_csv(file, header = None)
 
 # if the function doesn't have a print or a return then:
 # The function will return a value of none.
-# When a return value is not specified explicitly, a function returns a none value
+# When a return value is not specified explicitly, a function returns a None.
 
-# Expressions and NOT statements: True False
+# Expressions and NOT statements: True False.
+
+# Remember python will evaluate True the value of '0' because it is a non-empty string but,
+# It will evaluate as false: 0, '', None, False, (), [], {}.
+
+# The ID function returns a unique identifier for each Object.
+
+# Accuracy is the true value of calculation.
+# Precision is how close measure values are to each other.
 
