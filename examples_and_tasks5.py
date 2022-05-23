@@ -193,11 +193,12 @@ def digits(x):
     return d
 
 
-"""Task16: Bitwise Operators. """
+"""Task16: Bitwise Operators. & | ^ << >>. """
 def bitwiseoperators():
     """ & and, | or, ^ xor, << shift left, >> shift right # these operators operate on bits (in numbers) """
     x = 0x0a
     y = 0x02
+    # z = x | y or result 00001010
     z = x & y
     # 02x gives us a 2 character string and its in hexadecimal and has a leading 0
     # 0 leading, 2 characters wide, x is for hexadecimal display of an integer value
@@ -207,6 +208,28 @@ def bitwiseoperators():
     # the first four zeros are the hexadecimal 0, next 4 digits are a which is 10 in decimal and 1010 in binary hex
     # x 00001010, y 00000010, z 00000010
     return '\n'
+
+
+"""Task17: Additional controls - while, break, continue, if. """
+def authorize_password(input):
+    secret = 'password'
+    pw = ''
+    auth = False
+    count = 0
+    max_attempt = 5
+
+    while pw != secret:
+        count += 1
+        if count > max_attempt:
+            # stops the while loop
+            break
+        pw = input(f"{count}: What's the secret word? ")
+        if count == 3:
+            # skips the try and goes back to the start of the while loop
+            continue
+    else:
+        auth = True
+    return "Authorized" if auth else "calling the FBI... "
 
 
 def main():
@@ -390,9 +413,11 @@ def main():
     print(digits(9933))
     print(digits(99), '\n')
 
-    print("Task16: Bitwise Operators. ")
+    print("Task16: Bitwise Operators. & | ^ << >>. ")
     print(bitwiseoperators())
 
+    print("Task17: Additional controls - break !=. ")
+    print(authorize_password(input))
 
 if __name__ == '__main__':
     main()
@@ -454,3 +479,11 @@ s = pd.read_csv(file, header = None)
 
 # When is a membership operator true?
 # if a variable is a member of a collection.
+
+# Arithmetic operators +,-,*,/,//,%,**,-,+ performed on ints
+
+# Comparison operators <,>,<=,>=,==,=! compare a value of 2 operands
+
+# Boolean operators: or,and,not,in,not in,is,is not  - test if a value is in or not in a set or identity of the objects
+
+#
