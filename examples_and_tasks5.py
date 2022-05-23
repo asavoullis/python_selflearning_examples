@@ -171,6 +171,44 @@ def task_isinstance():
         return False
 
 
+"""Task14: Conditional Assignments. """
+def task_isinstance():
+    # 0 = False
+    hungry = 0
+    x = 'Feed the bear now!' if hungry else 'Do not feed the bear. '
+    return x
+
+
+"""Task15: Return the number of digits, assume number is between 0 and 999,999. """
+def digits(x):
+    d = 1
+    if x >= 10:
+        d = d+1
+    if x >= 100:
+        d = d+1
+    if x >= 1000:
+        d = d+1
+    if x >= 10000:
+        d = d+1
+    return d
+
+
+"""Task16: Bitwise Operators. """
+def bitwiseoperators():
+    """ & and, | or, ^ xor, << shift left, >> shift right # these operators operate on bits (in numbers) """
+    x = 0x0a
+    y = 0x02
+    z = x & y
+    # 02x gives us a 2 character string and its in hexadecimal and has a leading 0
+    # 0 leading, 2 characters wide, x is for hexadecimal display of an integer value
+    print(f'(hex) x is {x:02x}, y is {y:02x}, z is {z:02x}')
+    # difference here is that the field is 8 characters wide, b is for binary representation of the value
+    print(f'(bin) y is {x:08b}, y is {y:08b}, z is {z:08b}')
+    # the first four zeros are the hexadecimal 0, next 4 digits are a which is 10 in decimal and 1010 in binary hex
+    # x 00001010, y 00000010, z 00000010
+    return '\n'
+
+
 def main():
     sun = Star()
     print(sun.description, '\n')
@@ -345,8 +383,15 @@ def main():
     print("Task13: Isinstance. ")
     print(task_isinstance(), '\n')
 
-    print()
-    print()
+    print('Task14: Conditional Assignments. ')
+    print(task_isinstance())
+
+    print("Task15: Return the number of digits, assume number is between 0 and 999,999. ")
+    print(digits(9933))
+    print(digits(99), '\n')
+
+    print("Task16: Bitwise Operators. ")
+    print(bitwiseoperators())
 
 
 if __name__ == '__main__':
@@ -400,3 +445,12 @@ s = pd.read_csv(file, header = None)
 # Accuracy is the true value of calculation.
 # Precision is how close measure values are to each other.
 
+# conditional operator that tests membership - in.
+# The 'in' operator is used to test whether an item is a member of a collection.
+
+# In which scenario does the convenience of the ternary conditional operator apply the most?
+# A ternary operator specifies both sides of the condition in a single statement.
+# When you want to run both 'if' and 'else' conditions in one line.
+
+# When is a membership operator true?
+# if a variable is a member of a collection.
