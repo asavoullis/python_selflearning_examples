@@ -232,6 +232,27 @@ def authorize_password(input):
     return "Authorized" if auth else "calling the FBI... "
 
 
+"""Task18: Function that takes multiple inputs. """
+def kitten(*args):
+    # *args means a variable length argument input
+
+    # we check if the length is greater is zero, if there are inputs: len(args) = 1
+    if len(args):
+        for s in args:
+            print(s)
+    else:
+        print('Meow.')
+
+
+"""Task19: Functions with keyword (named) arguments. """
+def kitten2(**kwargs):
+    if len(kwargs):
+        for k in kwargs:
+            print('Kitten {} says'.format(k, kwargs[k]))
+    else: print('Meow.')
+
+
+
 def main():
     sun = Star()
     print(sun.description, '\n')
@@ -418,6 +439,19 @@ def main():
 
     print("Task17: Additional controls - break !=. ")
     print(authorize_password(input))
+
+    print("Task18: Function that takes multiple inputs. ")
+    x = ['world', 'meow', 'grrr', 'purr']
+    print(kitten(*x))
+    print(kitten('meow', 'grrr', 'purr'), '\n')
+
+    print("Task19: Functions with keyword (named) arguments. ")
+    x_dict = dict(Buffy='meow', Zilla='girr', Angel='rawr')
+    print('dictionary: {}'.format(x_dict))
+    print(kitten2(Buffy='meow', Zilla='girr', Angel='rawr'), '\n')
+
+    print()
+
 
 if __name__ == '__main__':
     main()
