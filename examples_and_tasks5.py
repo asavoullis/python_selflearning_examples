@@ -2,6 +2,7 @@
 
 from functools import reduce
 from decimal import *
+import time
 
 """
 6 Python Tips and Tricks YOU Should Know
@@ -172,7 +173,7 @@ def task_isinstance():
 
 
 """Task14: Conditional Assignments. """
-def task_isinstance():
+def conditional_assignments():
     # 0 = False
     hungry = 0
     x = 'Feed the bear now!' if hungry else 'Do not feed the bear. '
@@ -250,6 +251,100 @@ def kitten2(**kwargs):
         for k in kwargs:
             print('Kitten {} says'.format(k, kwargs[k]))
     else: print('Meow.')
+
+
+"""Task20: Generator functions, inclusive range. """
+def inclusive_range(*args):
+    # A generator is a special type of function that is useful for creating a series of values
+    # returns all the values from 0 to number stated - (not like range which returns 0 to n-1, we use yield
+    numargs = len(args)
+    start = 0
+    step = 1
+
+    # initialize parameters
+    if numargs < 1:
+        raise TypeError(f'expected at least 1 argument, got {numargs}')
+    elif numargs == 1:
+        stop = args[0]
+    elif numargs == 2:
+        (start, stop) = args
+    elif numargs == 3:
+        (start, stop, step) = args
+    else:
+        raise TypeError(f'expected at most 3 arguments, got {numargs}')
+
+    # generator
+    i = start
+    while i <= stop:
+        # yield is like return except, its for generators, it yields a value and function continues
+        # doesn't stop the function like return
+        yield i
+        i += step
+
+
+"""Task21: Wrappers. Function within a function. """
+def f1(f):
+    # we cannot call f2 directly because its scope is inside the function f1
+    def f2():
+        print('this is f2', 'this is before the function call')
+        # these next 2 lines are for the decorators
+        f()
+        print('this is f2', 'this is after the function call')
+    # this function runs f2 because the return value from f1 is the object f2
+    return f2
+    # we cannot call f2 directly! - we will get a syntax - name error
+    # so f1 is a wrapper for f2
+
+
+"""Task22: Decorators. """
+# it takes function which is defined directly after it. syntax is decorator and below function definition
+@f1
+def f3():
+    print('this is f3')
+
+
+"""Task23: Decorators2. """
+def elapsed_time(f):
+    # wraps the passed function in this case big_sum() that we have inputted and prints the elapsed time
+    def wrapper():
+        t1 = time.time()
+        f()
+        t2 = time.time()
+        print(f'Elapsed time: {(t2 - t1) * 1000} ms')
+    return wrapper
+
+
+# because it has this decorator, it's actually wrapped in the elapsed_time wrapper
+@elapsed_time
+def big_sum():
+    num_list = []
+    for num in (range(0, 10000)):
+        num_list.append(num)
+    print(f'Big sum: {sum(num_list)}')
+
+
+"""Task24: Decorators 3."""
+def F1(f):
+    print('A')
+    def F2():
+        print('B')
+        f()
+        print('C')
+    print('D')
+    return F2
+
+
+@F1
+def F3():
+    print('E')
+
+
+"""Task25: Generator functions 2. """
+def generator(start,stop):
+    while (start<=stop):
+        yield start
+        print(f'start={start}')
+        start+=1
 
 
 
@@ -448,10 +543,37 @@ def main():
     print("Task19: Functions with keyword (named) arguments. ")
     x_dict = dict(Buffy='meow', Zilla='girr', Angel='rawr')
     print('dictionary: {}'.format(x_dict))
-    print(kitten2(Buffy='meow', Zilla='girr', Angel='rawr'), '\n')
+    print(kitten2(Buffy='meow', Zilla='girr', Angel='rawr'))
+    print(kitten2(**x_dict), '\n')
 
-    print()
+    print("Task20: Generator functions, inclusive range. ")
+    for i in inclusive_range(25):
+        print(i, end=' ')
+    print('\n')
 
+    print("Task21: Wrappers. Function within a function. ")
+    # remove the input argument for f1, make it def f1():
+    #x12 = f1()
+    #x12()
+    print('\n')
+
+    print("Task22: Decorators. ")
+    x13 = f1(f3)
+    x13()
+    print('\n')
+
+    print("Task23: Decorators2. ")
+    big_sum()
+    print('\n')
+
+    print("Task24: Decorators 3.")
+    # F1 is called first, returns the reference to F2, and then F2 is started and calls F3 along the way.
+    print(F3())
+    print('\n')
+
+    for counter in generator(3, 4):
+        print(f'counter={counter}')
+    print('\n')
 
 if __name__ == '__main__':
     main()
@@ -520,4 +642,12 @@ s = pd.read_csv(file, header = None)
 
 # Boolean operators: or,and,not,in,not in,is,is not  - test if a value is in or not in a set or identity of the objects
 
-#
+# A generator is a special case of function, that is useful for creating a series of values.
+
+# A certain function func() is expecting an argument list.
+# How would you call this function with a list of arguments specified in a tuple x?
+# func(*x)
+
+# When can an argument list be useful?
+# When you need to call a function with a varying number of arguments.
+
