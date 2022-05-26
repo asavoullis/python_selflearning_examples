@@ -341,10 +341,21 @@ def F3():
 
 """Task25: Generator functions 2. """
 def generator(start,stop):
-    while (start<=stop):
+    # x will be passed by value - ie a copy of x will be passed and therefore when the parameter a is modified
+    # in func, x will stay intact, x =0 and a = 1
+
+    # whereas b will be passed as a reference - ie a pointer to that list so b will be a list with a value [0]
+    # and therefore the function will edit the value of b and make it 1
+    while start <= stop:
         yield start
         print(f'start={start}')
-        start+=1
+        start += 1
+
+
+"""Task26: Find the output of the function. """
+def Func(a, b):
+    a = 1
+    b[0] = 1
 
 
 
@@ -574,6 +585,14 @@ def main():
     for counter in generator(3, 4):
         print(f'counter={counter}')
     print('\n')
+
+    print("Task26: Find the output of the function. ")
+    x = 0
+    y = [0]
+    Func(x, y)
+    print(x, y)
+    print('\n')
+
 
 if __name__ == '__main__':
     main()
