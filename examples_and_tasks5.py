@@ -358,6 +358,77 @@ def Func(a, b):
     b[0] = 1
 
 
+"""Task27: Exploring the input parameters of print. """
+def print_params():
+    # default separator#' ', which means between 2 set of quotes there is a space
+    print('Hi', 'There', end='-')
+    # default end='\n', which means between 2 set of quotes there is a new line
+    print('Hi', 'There', sep='|')
+
+
+"""Task28: List Slicing. """
+def list_slicing():
+    game = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock']
+    # start end step - starts from Paper and then jumps 2 places to Lizard
+    print(game[1:5:2])
+    # prints 2nd and 3rd
+    print(game[1:3])
+
+
+"""Task29: List manipulation. """
+def list_manipulation():
+    game = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock', 'Poker']
+    # gets the index of the item Paper in the game list
+    i = game.index('Paper')
+    print('index: {}'.format(i))
+    # adds the item Computer at the end of the list
+    game.append('Computer')
+    print('Appending computer in list:', game)
+    # inserts the item TV at index 2 of the list
+    game.insert(2, 'TV')
+    print('Inserting at position 3 the item TV:', game)
+    # removes the item Computer from the list
+    game.remove('Computer')
+    print('Removing the item computer from the list:', game)
+    # removes an item from the end list - pop also returns the removed item
+    game.pop()
+    print('Removing the last item of the list:', game)
+    # pop can also be used to remove an item at a particular index
+    game.pop(2)
+    print('Removing the item at position 3:', game)
+    # you can also use del to delete an item in the list or a slice of the list
+    del game[0:1]
+    print('Delete slicing [0:1] from the list:', game)
+    del game[1]
+    print('deleting the 2nd item in list:', game)
+    # prints out this list joined by comma space between the elements
+    print(', '.join(game))
+    print('length of list:', len(game))
+
+
+"""Task30: Using Dictionary items and keys. """
+def print_dict(dictionary):
+    for x in dictionary: print(f'{x}: {dictionary[x]}')
+    # changing value of a key in dict / or adding a new one
+    dictionary['lion'] = 'I am a lion'
+
+
+"""Task31: Dictionary. """
+def print_dict2(dictionary):
+    for k, v in dictionary.items(): print(f'{k}: {v}')
+
+    # there is also .keys - where you can access the keys
+    # for k in dictionary.keys(): print(f'key: {k}')
+
+    # there is also .values - where you can access the items
+    # for v in dictionary.values(): print(f'key: {v}')
+
+
+"""Task32: Experimenting with sets. """
+def sets_exp():
+    a = set("We are gonna need a bigger boat. ")
+
+
 
 def main():
     sun = Star()
@@ -591,6 +662,35 @@ def main():
     y = [0]
     Func(x, y)
     print(x, y)
+    print('\n')
+
+    print("Task27: Exploring the input parameters of print. ")
+    print_params()
+    print('\n')
+
+    print("Task28: List Slicing. ")
+    list_slicing()
+    print('\n')
+
+    print("Task29: List manipulation. ")
+    list_manipulation()
+    print('\n')
+
+    print('Task30: Dictionary manipulation. ')
+    animals = {'kitten': 'meow', 'puppy': 'puff', 'lion': 'rawr', 'dragon': 'kek', 'fly': 'zaga'}
+    print_dict(animals)
+    print('\n')
+
+    print("Task31: Dictionary. ")
+    # another way to make a dictionary - notice the difference in format!
+    animals2 = dict(kitten='meow', puppy='puff', lion='rawr', dragon='kek', fly='zaga')
+    print_dict2(animals2)
+    print('lion says', animals2['lion'])
+    # searching for a value in the dict - returns a boolean
+    print('found!' if 'lion' in animals2 else 'nope!')
+    # you can use the get method to return a value from a dictionary if you don't know if it exists
+    # does not throw an error/exception like animals2['gozilla'] if it can't find the value
+    print(animals2.get('gozilla'))
     print('\n')
 
 
