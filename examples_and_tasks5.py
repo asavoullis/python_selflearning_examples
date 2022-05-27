@@ -340,7 +340,7 @@ def F3():
 
 
 """Task25: Generator functions 2. """
-def generator(start,stop):
+def generator(start, stop):
     # x will be passed by value - ie a copy of x will be passed and therefore when the parameter a is modified
     # in func, x will stay intact, x =0 and a = 1
 
@@ -427,7 +427,6 @@ def print_dict2(dictionary):
 """Task32: Experimenting with sets. """
 def sets_exp():
     a = set("We are gonna need a bigger boat. ")
-
 
 
 def main():
@@ -635,8 +634,8 @@ def main():
 
     print("Task21: Wrappers. Function within a function. ")
     # remove the input argument for f1, make it def f1():
-    #x12 = f1()
-    #x12()
+    # x12 = f1()
+    # x12()
     print('\n')
 
     print("Task22: Decorators. ")
@@ -769,4 +768,3 @@ s = pd.read_csv(file, header = None)
 
 # When can an argument list be useful?
 # When you need to call a function with a varying number of arguments.
-
