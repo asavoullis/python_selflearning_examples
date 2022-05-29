@@ -426,7 +426,18 @@ def print_dict2(dictionary):
 
 """Task32: Experimenting with sets. """
 def sets_exp():
-    a = set("We are gonna need a bigger boat. ")
+    # a set does not allow duplicates, the lists are unordered
+    # usually when you are using sets you are going to be checking the membership of sets - not using them as lists
+    a = set("We are gonna need a bigger boat.")
+    b = set("I'm sorry, Dave. I'm afraid I can't do that.")
+    # but you can sort them
+    print("sorting a:", sorted(a))
+    # show members that are in both sets
+    print("Intersection:", a & b)
+    # show members that are in a or b or both
+    print("Union of a and b", a | b)
+    # show members that are in set a but not in set b
+    return a - b
 
 
 def main():
@@ -691,6 +702,8 @@ def main():
     # does not throw an error/exception like animals2['gozilla'] if it can't find the value
     print(animals2.get('gozilla'))
     print('\n')
+
+    print("Task32: Exploring Dicts. ")
 
 
 if __name__ == '__main__':
