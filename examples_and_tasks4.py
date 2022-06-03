@@ -1,9 +1,10 @@
 # Python practise examples and tasks 4
-#
 
 import datetime
 import random
 import time
+# task28
+import sys
 
 # Why is UTF-8 a good choice for the default editor encoding?
 # The Unicode character set in the editor should match the Unicode standard of Python 3.
@@ -370,6 +371,7 @@ def fibonacci():
         # The flush() method in Python file handling clears the internal buffer of the file
         print(b, end=' ', flush=True)
         a, b = b, a + b
+    return ''
 
 
 """Task27: Is prime?"""
@@ -377,7 +379,7 @@ def list_primes():
     for n in range(40):
         if isprime(n):
             print(n, end=' ', flush=True)
-    print()
+    return ''
 
 
 def isprime(n):
@@ -390,7 +392,24 @@ def isprime(n):
             return True
 
 
-
+"""Task28: Handling Exceptions. """
+def exception_test(inpt):
+    try:
+        int(inpt)
+    # this will be executed if the try fails - if it catches an exception
+    except ValueError:
+        # instead of getting that error we capture it and we can continue
+        return'I caught a value error'
+    except ZeroDivisionError:
+        return'don\'t divide by zero'
+    # unknown error - we can have a default exception
+    except:
+        # sys.exec_info() alone gives you info but adding a [1] gives you the actual error
+        return f'unknown error: {sys.exc_info()[1]}'
+    # if it succeeds - this is only executed if we don't get an error
+    else:
+        return'good job, {}'.format(inpt)
+    return ''
 
 
 
@@ -505,6 +524,10 @@ def main():
     print('Task27: Is prime?. ')
     print(list_primes(), '\n')  # also returns None
 
+    print("Task28: Handling Exceptions. ")
+    c = 'foo'; z = 5/3
+    print('foo:', exception_test(c))
+    print('z:', exception_test(z), '\n')
 
 
 # dunder == double underscore

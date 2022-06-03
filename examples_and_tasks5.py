@@ -263,6 +263,7 @@ def inclusive_range(*args):
 
     # initialize parameters
     if numargs < 1:
+        # raise generates an error
         raise TypeError(f'expected at least 1 argument, got {numargs}')
     elif numargs == 1:
         stop = args[0]
@@ -641,6 +642,12 @@ def main():
     print("Task20: Generator functions, inclusive range. ")
     for i in inclusive_range(25):
         print(i, end=' ')
+    print('\n', 'error try:')
+    try:
+        for i in inclusive_range():
+            print(i, end=' ')
+    except TypeError as e:
+        print(f'range error: {e}')
     print('\n')
 
     print("Task21: Wrappers. Function within a function. ")
@@ -704,6 +711,7 @@ def main():
     print('\n')
 
     print("Task32: Exploring Dicts. ")
+    print(sets_exp())
 
 
 if __name__ == '__main__':
@@ -781,3 +789,10 @@ s = pd.read_csv(file, header = None)
 
 # When can an argument list be useful?
 # When you need to call a function with a varying number of arguments.
+
+# curly brackets {} are used to define both dictionaries and sets
+
+# List comprehensions are commonly used to create a list or collection from another list or iterator.
+
+# x.insert(0,x.pop())
+# This pops the last item in the list and inserts it at the beginning.
