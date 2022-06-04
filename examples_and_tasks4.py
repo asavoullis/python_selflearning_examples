@@ -412,6 +412,43 @@ def exception_test(inpt):
     return ''
 
 
+"""Task29: Swap the case from the string. """
+def string_swap_case():
+    print('Hi {}'.format(42 * 7))
+    return 'Hello, World'.swapcase()
+
+
+"""Task30: String Formatting. """
+def str_frmt():
+    x = 42 * 747
+    # adding commas for thousands separations
+    print('the number is {:,}'.format(x).replace(',', '.'))
+    # 3 decimal places
+    print('the number is {:.3f}'.format(x))
+    y = 42
+    # hexadecimal: x, octal: o, binary: b
+    print('the number is {:x}'.format(y))
+    print(f'the number is {y:b}')
+    return '\n'
+
+
+"""Task31: String splitting and joining. """
+def split_join_examples():
+    s2 = """This is a        long
+    string. """
+    # splits on spaces and new lines by default - also puts them in a list
+    print(s2.split())
+    # splits them on i - i is gone - we get spaces and new lines
+    print(s2.split('i'))
+
+    s1 = "This is a    string"
+    # remember we split it by spaces and we end up with a list
+    l = s1.split()
+    # we join the list l using -:- remember, join takes a list or a tuple as its argument
+    s3 = '-:-'.join(l)
+    print(s3)
+
+
 
 
 
@@ -529,12 +566,19 @@ def main():
     print('foo:', exception_test(c))
     print('z:', exception_test(z), '\n')
 
+    print("Task29: Swap the case from the string. ")
+    print(string_swap_case(), '\n')
 
-# dunder == double underscore
-# allows you to check whether the file is being run as a script or not
-# __main__ = script
-# if __name__ = '__main__' is used to signal that this file is a script and you can run it
+    print("Task30: String Formatting. ")
+    print(str_frmt())
+
+    print("Task31: String splitting and joining. ")
+    print(split_join_examples())
+
+# dunder == double underscore | allows you to check whether the file is being run as a script or not
+# __main__ = script | if __name__ = '__main__' is used to signal that this file is a script and you can run it
 # if your file doesn't contain it then assume the file is used as a library or you should import it.
 if __name__ == '__main__':
     main()
 
+# Triple quotes preserve the tabs, line breaks, and other white spaces in the defined string.
