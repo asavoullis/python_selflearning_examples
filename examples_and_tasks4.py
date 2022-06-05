@@ -447,8 +447,26 @@ def split_join_examples():
     # we join the list l using -:- remember, join takes a list or a tuple as its argument
     s3 = '-:-'.join(l)
     print(s3)
+    return '\n'
 
 
+"""Task32: Opening files . """
+def open_file_func():
+    # it takes a file name and open that file and it returns a file object
+    # the file object itself is an iterator, and so we can use a for loop and get 1 line at a time
+    # without having to buffer the entire file in the memory
+    # default mode = 'r' - read mode | 'w' - write mode
+    f = open('lines.txt', 'r')
+    # with write mode - it empties the file if the file is not empty, and it starts at the beginning and writes
+    # over the file. If the file doesn't exist, it creates it.
+    # 'a' is append mode, this is just like write, but if the file already has some content in it,
+    # it starts at the end of the file + it does not empty the file + it does not create the file.
+    # There's an optional plus, which you can use with any of these modes, which will allow you to both read and write.
+    # And there's an optional letter B or T, which will specify binary or text mode.
+
+    # stripping the new lines and white space at the end of each line
+    for line in f:
+        print(line.rstrip())
 
 
 
@@ -574,6 +592,9 @@ def main():
 
     print("Task31: String splitting and joining. ")
     print(split_join_examples())
+
+    print("Task32: Opening files . ")
+    # open_file_func()
 
 # dunder == double underscore | allows you to check whether the file is being run as a script or not
 # __main__ = script | if __name__ = '__main__' is used to signal that this file is a script and you can run it
