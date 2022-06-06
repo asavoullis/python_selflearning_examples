@@ -438,11 +438,11 @@ def split_join_examples():
     string. """
     # splits on spaces and new lines by default - also puts them in a list
     print(s2.split())
-    # splits them on i - i is gone - we get spaces and new lines
+    # splits them on i | i is gone - we get spaces and new lines
     print(s2.split('i'))
 
     s1 = "This is a    string"
-    # remember we split it by spaces and we end up with a list
+    # remember we split it by spaces & we end up with a list
     l = s1.split()
     # we join the list l using -:- remember, join takes a list or a tuple as its argument
     s3 = '-:-'.join(l)
@@ -452,7 +452,7 @@ def split_join_examples():
 
 """Task32: Opening files . """
 def open_file_func():
-    # it takes a file name and open that file and it returns a file object
+    # it takes a file name and open that file & it returns a file object
     # the file object itself is an iterator, and so we can use a for loop and get 1 line at a time
     # without having to buffer the entire file in the memory
     # default mode = 'r' - read mode | 'w' - write mode
@@ -467,6 +467,50 @@ def open_file_func():
     # stripping the new lines and white space at the end of each line
     for line in f:
         print(line.rstrip())
+
+
+"""Task33: Opening files2 . """
+def open_file_func2():
+    # open in read and text mode - default mode
+    infile = open('lines.txt', 'rt')
+    # opening the output file in write and text mode - it will be created
+    outfile = open('lines-copy.txt', 'wt')
+    for line in infile:
+        # for each line in the infile file we strip the line ending from the line and output them to outfile
+        print(line.rstrip(), file=outfile)
+        # same as above
+        # outfile.writelines()
+
+        # we print a dot & we write on the same line | flush to flush the output the buffer on some OS its needed
+        # prints on terminal - not on the file
+        print('.', end='', flush=True)
+    # close the file
+    outfile.close()
+    return '\n'
+
+
+"""Task34: Opening binary files . """
+def open_binary_files():
+    # open the file using b - binary | if you try text we get error
+    # because the very first byte of the file is not a valid unicode character
+    # CR+LF character(s) are used by the Windows operating system to terminate a text line
+    infile = open('berlin.jpg', 'rb')
+    outfile = open('berlin-copy.jpg', 'wb')
+    # the loop will run until we tell it to break
+    while True:
+        # we read a buffer of 10k bytes as the size of the buffer | size of chunks we read and write
+        # A small buffer will fit into a smaller memory, but will require more iterations to process.
+        buf = infile.read(10240)
+        # if we have bytes - True | else false and break
+        if buf:
+            outfile.write(buf)
+            print('.', end='', flush=True)
+        else:
+            break
+    outfile.close()
+    return '\n'
+
+
 
 
 
@@ -595,6 +639,13 @@ def main():
 
     print("Task32: Opening files . ")
     # open_file_func()
+
+    print("Task33: Opening files2 . ")
+    # open_file_func2()
+
+    print("Task34: Opening binary files . ")
+    # open_binary_files()
+
 
 # dunder == double underscore | allows you to check whether the file is being run as a script or not
 # __main__ = script | if __name__ = '__main__' is used to signal that this file is a script and you can run it
