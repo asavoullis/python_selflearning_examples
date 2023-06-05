@@ -184,7 +184,7 @@ def count_even_in_list(inputlist):
 
 """Task11: Check if the first or the last element in a list is 7. """
 # given an array of ints within a list check if the first or the last element is a 7
-# if its a 7 print True else False
+# if it's a 7 print True else False
 list1 = [7, 5, 6, 8, 9, 6, 7, 8]
 list2 = [77, 5, 6, 8, 9, 6, 7, 78]
 list3 = [9, 5, 6, 8, 9, 6, 7, 7]
