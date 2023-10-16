@@ -325,28 +325,35 @@ print(prod_types['type'].head())
 print("")
 
 
-"""32  """
-
+"""32 Inspect the df and check if the title column contains Fu or Mary """
+# Extract the 'title' column from the DataFrame 'movies' and check if each entry contains the substrings "Fu" or "Mary"
+# The result is a boolean Series where True indicates a match and False indicates no match
+df2 = movies['title'].str.contains("Fu|Mary")
+print(df2.head())
 print("")
 
 
-"""32  """
-
+"""33 Extract the 'rating' column and the index column from the DataFrame """
+print(sales)
+print("")
+index = sales.index.get_level_values(0)
+print(index)
+print("")
+result = pd.Index(sales['date'])
+print(result)
+print(type(result))
 print("")
 
 
-"""32  """
-
-print("")
-
-
-"""33 """
-
-print("")
-
-
-"""34 """
-
+"""34  """
+data = {'title': ['Jaws', 'A Cinderella Story', 'Kung Fu Panda', 'The Shawshank Redemption', 'The Godfather', 'Inception', 'Forrest Gump', 'Pulp Fiction'],
+    'minutes': [126.0, 95.0, 94.0, 142.0, 175.0, 148.0, 142.0, 154.0],
+    'hours': [2.1, 1.583333, 1.566667, 2.366667, 2.916667, 2.466667, 2.366667, 2.566667]}
+movies = pd.DataFrame(data)
+# Create a new column 'hours_to_min' by multiplying the 'hours' column by 60
+movies['hours_to_min'] = movies['hours'] * 60
+# Print the DataFrame with only the 'hours_to_min' and 'minutes' columns
+print(movies[['hours_to_min', 'minutes']])
 print("")
 
 
@@ -381,5 +388,15 @@ print("")
 
 
 """41 """
+
+print("")
+
+
+"""42 """
+
+print("")
+
+
+"""43 """
 
 print("")
