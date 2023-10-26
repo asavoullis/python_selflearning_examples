@@ -198,6 +198,140 @@ print(f"Area of the rectangle: {rectangle_area}")
 
 # Circle
 circle_area = calculator.area(4)
-print(f"Area of the circle: {circle_area}")
+print( f"Area of the circle: {circle_area}")
+print("")
 
-"""14  """
+
+"""14  If key in dictionary print value"""
+d = {'a':0, 'b':1, 'c':2, 'd':3}
+if 'c' in d:
+    print(d['c'])
+else:
+    print('c')
+
+
+"""15  Print all element in the list """
+for name in names:
+    print(name)
+print("")
+
+
+"""16 Make a list with tuples inside that have each element of numbers and their squared values"""
+numbers = [8, 0, 4, 7]
+numbers_squared = [n ** 2 for n in numbers]
+print(list(zip(numbers, numbers_squared)))
+print("")
+
+
+"""17 Adding key-value pair in a dictionary"""
+d = {'a':0, 'b':1, 'c':2, 'd':3}
+d['d'] = 9
+print(d)
+print("")
+
+"""18 Get the value of a key if inside the dictionary else return string"""
+d = {'a':0, 'b':1, 'c':2, 'd':3}
+v = d.get('b', 'Key is not in dictionary!')
+print(v)
+print("")
+
+"""19 Combine the lists, make them into 1, extend the first one"""
+l = [5, 2, 4, 0]
+e = [8, 6, 1, 8]
+l.extend(e)
+print(l)
+print("")
+
+"""20 Add element to a list"""
+l.append(1)
+print(l)
+print("")
+
+
+"""21 Print all key-value pairs from dictionary"""
+d = {'aa':30, 'bb':31, 'cc':32, 'dd':33}
+for k, v in d.items():
+    print(k, v)
+print("")
+
+
+"""22 Convert to set and add element 5"""
+s = ([8, 8, 2, 8])
+s.append(5)
+print(s)
+print("")
+
+
+"""23 Sort the list"""
+l = [8, 9, 2, 4, 6, 7]
+print(sorted(l))
+print("")
+
+
+"""24 creates a dlist"""
+from collections import defaultdict
+
+# This line creates a defaultdict with default values of type int. 
+# A defaultdict is a dictionary subclass in Python that returns a default value for a nonexistent key rather 
+# than raising a KeyError. In this case, the default value is set to 0.
+d = defaultdict(list)
+print(d)
+for x in range(4):
+    d[x].append(x * 2)
+print(list(d.items()))
+print("")
+
+
+"""25 Initialize a new dictionary and add a key-value pair to the dictionary"""
+d = dict()
+d[8] = 1
+print(d)
+print("")
+
+
+"""26 Print in a list the keys of the dictionary"""
+d = {'aa':10, 'bb':11, 'cc':12, 'dd':13}
+print(list(d.keys()))
+print("")
+
+
+"""27 Print difference that set s1 has from s2 """
+# there is also .union .intersection 
+s1 = set([45, 83, 69, 84])
+s2 = set([31, 39, 22, 37])
+res = s1.difference(s2)
+print(res)
+print("")
+
+
+"""28 enumerate and exponentials"""
+n1 = [5, 4, 9, 3]
+n2 = [n ** 3 for n in n1]
+pairs = zip(n1, n2)
+
+# Iterate over each pair and their index using 'enumerate'.
+for idx, pair in enumerate(pairs):
+    # Unpack the pair into variables 'n' and 'm'.
+    n, m = pair
+    
+    # Print a formatted string indicating the result of raising 'n' to the power of 3 and displaying 'm'.
+    print('{} ^ {} = {}'.format(n, 3, m))
+print("")
+
+
+"""29"""
+from collections import Counter
+chars = [0, 3, 1, 2, 3, 2, 3, 1, 2, 3]
+# Use Counter to count the occurrences of each element in the list
+char_count = Counter(chars)
+
+# Print the three most common elements and their counts
+print(char_count.most_common(3))
+print("")
+
+
+"""30 Print the poped element"""
+l1 = [3, 0, 8, 5, 9, 4]
+p = l1.pop()
+print(p)
+print("")
