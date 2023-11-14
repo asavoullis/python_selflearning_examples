@@ -188,12 +188,34 @@ print("")
 
 
 """18  """
-
+books_data = {'title': ['Of Mice and Men', 'The Hobbit', 'The Lord of the Rings'],
+    'num_pages': [352, 277, 1184],
+    'author': ['John Steinbeck', 'J.R.R. Tolkien', 'J.R.R. Tolkien'],
+    'book_id': [142000671, 261103288, 618517650]}
+books_df = pd.DataFrame(books_data)
+publication_data = {'publication_date': ['2003-11-01', '2004-06-15', '2007-09-17'],
+    'publisher': ['Penguin Books', 'Harper', 'HarperCollins'],
+    'book_id': [142000671, 60749911, 261103288]}
+publication_df = pd.DataFrame(publication_data)
+books_publication = books_df.merge(publication_df, on='book_id', how='left')
+print("books and publication left join : \n", books_publication.head())
 print("")
 
 
-"""19  """
+"""19 Slicing use loc[:, ] """
+# To slice a DataFrame, the index must first besorted using .sort_index() .
+# To slice rows at the outer index level, call .loc[] on the DataFrame and pass it the first and last index values
+# separated by a : . Unlike lists, the final value is included in the slice.
 
+data = {'geography': ['France', 'France', 'France', 'France', 'France'],
+    'surname': ['Bartlett', 'Bearce', 'Boni', 'Chin', 'Hao'],
+    'credit_score': [822, 528, 699, 549, 684],
+    'age': [50, 31, 39, 25, 27],
+    'exited': ['No', 'No', 'No', 'No', 'No']}
+churn_srt = pd.DataFrame(data)
+churn_srt.set_index(['geography', 'surname'], inplace=True)
+# churn_srt = churn.set_index(["geography", "surname"]).sort_index()
+print(churn_srt.loc[: , 'credit_score':'age'].head())
 print("")
 
 
