@@ -3,8 +3,7 @@ import numpy as np
 import pandas as pd
 
 """1  Making a Pandas DataFrame with null values and printing the dataframe showing where there are null values """
-data = {
-    'title': ['Squid Game', 'Angry Birds', 'Jaws', 'A Cinderella Story', 'Charmed'],
+data = {'title': ['Squid Game', 'Angry Birds', 'Jaws', 'A Cinderella Story', 'Charmed'],
     'director': [np.nan, np.nan, 'Steven Spielberg', 'Mark Rosman', np.nan],
     'country': [np.nan, 'Finla', 'United States', 'United States, Cana', 'United Stat'] }
 productions = pd.DataFrame(data)
@@ -14,8 +13,7 @@ print("")
 
 
 """2 Find and print the first duplicate of the entry """
-data = {
-    'title': ['The Great British Baking Show', 'The Great British Baking Show', 'Jaws', 'A Cinderella Story', 'A Cinderella Story', 'Kung Fu Panda', 'Kung Fu Panda'],
+data = {'title': ['The Great British Baking Show', 'The Great British Baking Show', 'Jaws', 'A Cinderella Story', 'A Cinderella Story', 'Kung Fu Panda', 'Kung Fu Panda'],
     'release_year': [2021, 2021, 1975, 2004, 2004, 2008, 2008],
     'country': ['UK', 'UK', 'USA', 'USA', 'Canada', 'USA', 'China']}
 productions = pd.DataFrame(data)
@@ -26,8 +24,7 @@ print("")
 
 
 """3  """
-data = {
-    'title': ['The Great British Baking Show', 'The Great British Baking Show', 'Jaws', 'A Cinderella Story', 'A Cinderella Story', 'Kung Fu Panda', 'Kung Fu Panda'],
+data = {'title': ['The Great British Baking Show', 'The Great British Baking Show', 'Jaws', 'A Cinderella Story', 'A Cinderella Story', 'Kung Fu Panda', 'Kung Fu Panda'],
     'release_year': [2021, 2021, 1975, 2004, 2004, 2008, 2008],
     'country': ['UK', 'UK', 'USA', 'USA', 'USA', 'USA', 'USA']} # now the countries also match
 productions = pd.DataFrame(data)
@@ -45,8 +42,7 @@ print("")
 
 
 """5 Making new column and summing up the rows """
-data = {
-    'title': ['Jaws', 'A Cinderella Story', 'Kung Fu Panda'],
+data = {'title': ['Jaws', 'A Cinderella Story', 'Kung Fu Panda'],
     'minutes': [126.0, 95.0, 94.0],
     'hours': [2.1, 1.583333, 1.566667]}
 movies = pd.DataFrame(data)
@@ -58,8 +54,7 @@ print("")
 
 
 """6 Dropping rows with null (None) values """
-data = {
-    'title': ['Squid Game', 'Angry Birds', 'Jaws', 'A Cinderella Story', 'Charmed'],
+data = {'title': ['Squid Game', 'Angry Birds', 'Jaws', 'A Cinderella Story', 'Charmed'],
     'director': [None, None, 'Steven Spielberg', 'Mark Rosman', None],
     'count': [None, 'Finland', 'United States', 'United States, Canada', 'United States']}
 productions = pd.DataFrame(data)
@@ -124,7 +119,7 @@ print(churn["credit_score"].cumsum().head())
 print("")
 
 
-"""12  """
+"""12  Creating a pivot table to analyze sales data  """
 data = {'date': ['2018-01-15', '2018-01-15', '2018-01-16', '2018-01-16', '2018-01-17'],
         'product_line': ['Health and beauty', 'Electronic accessories', 'Home and lifestyle', 'Sports', 'Food and beverages'],
         'product': ['Shampoo', 'Headphones', 'Lamp', 'Yoga mat', 'Milk'],
@@ -149,7 +144,7 @@ print(churn_ind.loc[['Hill', 'Mitchell']])
 print("")
 
 
-"""14 iloc """
+"""14 iloc Printing a subset of rows and columns using integer-based indexing """
 # Printing a subset of rows and columns using integer-based indexing
 # Rows 2 to 3 (exclusive) and columns 1 to 1 (exclusive) are selected
 # Note: In Python, indexing is zero-based, so index 2 corresponds to the third row.
@@ -219,63 +214,114 @@ print(churn_srt.loc[: , 'credit_score':'age'].head())
 print("")
 
 
-"""20  """
-
+"""20  Replace entries in the type column from TVShow to TV Show """
+data = {'type': ['TVShow', 'Movie', 'Movie', 'Movie', 'TVShow'],
+    'title': ['The Great British Baking Show', 'Jaws', 'A Cinderella Story', 'Kung Fu Panda', 'Dear White People']}
+prod_types = pd.DataFrame(data)
+prod_types["type"] = prod_types["type"].replace({"TVShow":"TV Show"})
+print(prod_types.head())
 print("")
 
 
-"""21  """
-
+"""21 Filter the productions df to include only the rows where the 'director' column has missing values (NaN / None) """
+print(productions)
+print("")
+not_cleaned = productions[productions['director'].isna()]
+print(not_cleaned.head())
 print("")
 
 
 """22  """
-
+data = {'tv_show_title': ['The Great British Baking Show', 'Squid Game', 'Charmed', 'Never Have I Ever', "Kim's Convenience"],
+    'seasons': [9, 1, 3, 2, 5]}
+tv = pd.DataFrame(data)
+print(tv)
+# Updating values in the 'seasons' column where the condition 'tv['seasons'] > 2' is met
+# The values in the 'seasons' column for rows where the condition is True will be set to 2
+tv.loc[tv['seasons'] > 2, 'seasons'] = 2
+print("")
+print(tv.head())
 print("")
 
 
-"""23  """
-
+"""23 Change the value from 2 to 5 for the TV show Never Have I Ever """
+tv.loc[tv['tv_show_title'] == 'Never Have I Ever', 'seasons'] = 5
+print(tv.head())
 print("")
 
 
-"""24  """
-
+"""24 Find unique - distinct values of the tv_show_title from the tv DF """
+print(tv['tv_show_title'].unique())
 print("")
 
 
-"""25  """
-
+"""25 Fill the null values in the country column with 'USA' """
+data = {'title': ['Squid Game', 'Angry Birds', 'Jaws', 'Charmed', 'The Vault'],
+    'director': [None, None, 'Steven Spielberg', None, 'Jaume Balagueró'],
+    'country': ['South Korea', 'Finland', None, None, None],
+    'year': [1994, 1993, 2002, 2004, 2011]}
+productions = pd.DataFrame(data)
+productions['country'] = productions['country'].fillna('USA') 
+print(productions)
 print("")
 
 
-"""26  """
-
+"""26 Categorize the movies DataFrame into discrete intervals. use pd.cut """
+data = {'title': ['Jaws', 'A Cinderella Story', 'Dennis the Menace', 'Kung Fu Panda'],
+    'release_year': [1975, 2004, 1993, 2008]}
+movies = pd.DataFrame(data)
+label_ranges = [1970, 2000, 2010, np.inf]
+label_names = ['Pre-millenium', 'Early-2000s', 'Recent']
+movies['labels'] = pd.cut(movies["release_year"], bins = label_ranges, labels = label_names)
+print(movies[['title','labels']].head())
 print("")
 
 
 """27 """
-
+data = {'title': ['Dear White People', 'Angry Birds', 'Angry Birds', 'Jaws', 'Jaws'],
+    'rating': ['TV-MA', 'TV-Y7', 'TV-Y7', 'PG', 'PG']}
+df = pd.DataFrame(data)
+# df.duplicated(), it returns a boolean Series where each element is True if the corresponding row is a duplicate 
+# (i.e., it has appeared earlier in the DataFrame) and False otherwise.
+# df.duplicated(): This generates a boolean Series indicating whether each row is a duplicate.
+# df[df.duplicated()]: This filters the DataFrame df to include only the rows where df.duplicated() is True. 
+# In other words, it selects only the duplicate rows.
+print(df[df.duplicated()])
 print("")
 
 
-"""28  """
-
+"""28 Print the dataframe with True if the entry is null or False if its not """
+print(productions.isnull())
 print("")
 
 
-"""29  """
-
+"""29 Strip the min from the duration column and rename the column to duration_in_minutes """
+data = {'title': ['Kung Fu Panda', 'Kung Fu Panda 2', 'Life as We Know It', 'Mary Magdalene', 'Memoirs of a Geisha'],
+    'duration': ['94 min', '93 min', '115 min', '120 min', '145 min'],
+    'year_released': [1993, 1994, 2000, 2020, 2022]}
+movies = pd.DataFrame(data)
+movies["duration"] = movies['duration'].str.strip(' min') 
+movies = movies.rename(columns={'duration': 'duration_in_minutes'})
+print(movies.head())
 print("")
 
 
-"""30   """
-
+"""30  Change data type of a column and also assert test  """
+# Convert duration_in_minutes to int64
+movies['duration_in_minutes'] = movies['duration_in_minutes'].astype('int64')
+print(movies.dtypes)
+print("")
+assert movies['title'].dtype == 'object'
+print(movies.dtypes)
 print("")
 
 
 """31  """
-
+matches = [('TV Show', 100), ('TVShow', 92), ('MOVIE', 31), ('movie', 31), ('Movie', 31)]
+for match in matches:
+    if match[1] >= 80:
+        prod_types.loc[prod_types['type'] == match[0]] = 'TV Show'
+print(prod_types['type'].head())
 print("")
 
 
