@@ -111,12 +111,12 @@ dept = input()
 departMetrics(N, A, D, T, dept)
 
 """
-3
-John Bob Greg
-Marketing Economics Science
-3 5 2
-Marketing
+5
+John Alice Bob Mary Peter
+HR Sales HR Sales Finance
+10 8 12 6 14
+HR
 
 
-Answer: 1 3.00 John
+Answer: 2 11.00 Bob
 """
