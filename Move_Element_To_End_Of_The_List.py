@@ -141,12 +141,20 @@ solution_instance.moveZeroes(nums)
 print(nums)  # This will print: [1, 3, 12, 0, 0]
 
 
+# https://youtu.be/aayNRwUN3Do?si=CWag_eDIbXGi29KW
 def moveZeroes2(nums: list[int]) -> None:
+    # Initialize left pointer to track the position to swap non-zero elements
     l = 0
+    
+    # Iterate through the list using a right pointer 'r'
     for r in range(len(nums)):
+        # If the current element at 'r' is non-zero,
         if nums[r]:
-            nums[l], nums[r] = nums [r], nums[l]
+            # Swap the non-zero element with the element at 'l'
+            nums[l], nums[r] = nums[r], nums[l]
+            # Move the left pointer 'l' one step forward
             l += 1
+
         
 
 
@@ -184,13 +192,31 @@ print("time took:", stop - start)
 
 # now using extra memory:
 def moveZeroes_with_memory(array):
+    # Initialize an empty list 't' to store non-zero elements
     t = []
+    # Initialize a counter 'z' to count the number of zeros encountered
     z = 0
+    # Iterate through each element 'num' in the input array
     for num in array:
+        # If the current element 'num' is not zero,
         if num != 0:
+            # Append the non-zero element to the list 't'
             t.append(num)
         else:
+            # If the current element is zero, increment the zero counter 'z'
             z += 1
     
+    # Extend the list 't' by adding 'z' number of zeros at the end
     t.extend(z * [0])
+    # Return the modified list 't' with zeros moved to the end
     return t
+
+
+"""
+The algorithm uses an additional list t to store non-zero elements.
+It iterates through each element in the input array.
+If the current element is non-zero, it appends it to the list t.
+If the current element is zero, it increments the zero counter z.
+After processing all elements, it extends the list t by adding z number of zeros at the end. This effectively moves all zeros encountered during the iteration to the end of the list.
+Finally, it returns the modified list t with zeros moved to the end while maintaining the order of non-zero elements.
+"""
